@@ -57,8 +57,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="controls\Telerik.Web.UI.dll" />
-    <Content Include="controls\Telerik.Web.UI.xml" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\font-awesome.css" />
     <Content Include="css\font-awesome.min.css" />
@@ -74,6 +72,21 @@
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery.backstretch.js" />
     <Content Include="js\jquery.js" />
+    <Content Include="sql\procedures\InsertNewUser.sql" />
+    <Content Include="sql\procedures\SelectUserByUserId.sql" />
+    <Content Include="sql\procedures\SelectVolunteerTypes.sql" />
+    <Content Include="sql\procedures\ValidateLogin.sql" />
+    <Content Include="sql\tables\Center.sql" />
+    <Content Include="sql\tables\Child.sql" />
+    <Content Include="sql\tables\Company.sql" />
+    <Content Include="sql\tables\Family.sql" />
+    <Content Include="sql\tables\Staff.sql" />
+    <Content Include="sql\tables\StaffType.sql" />
+    <Content Include="sql\tables\Task.sql" />
+    <Content Include="sql\tables\UserLogon.sql" />
+    <Content Include="sql\tables\Volunteer.sql" />
+    <Content Include="sql\tables\VolunteerLog.sql" />
+    <Content Include="sql\tables\VolunteerType.sql" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +107,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Properties\PublishProfiles\c3techsolutions.com - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\c3techsolutions.com - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
