@@ -21,6 +21,7 @@ namespace ECS.DAL
         /// </developer>
         public string InsertNewUser(string firstName, string lastName, int volTypeId, int compId, string last4Digits, string userId, string pin)
         {
+            string retVal;
             try
             {
                 using (SqlConnection conn = new SqlConnection(Conn))
@@ -28,7 +29,7 @@ namespace ECS.DAL
                     using (SqlCommand command = new SqlCommand("InsertNewUser", conn))
                     {
                         command.CommandType = CommandType.StoredProcedure;
-                        
+
                         command.Parameters.AddWithValue("@FirstName", firstName);
                         command.Parameters.AddWithValue("@LastName", lastName);
                         command.Parameters.AddWithValue("@VolunteerTypeId", volTypeId);
@@ -41,13 +42,21 @@ namespace ECS.DAL
                         command.ExecuteNonQuery();
                     }
                     conn.Close();
-                    return "Successfully added user.";
+                    retVal = "Successfully added user.";
                 }
+            }
+            catch (SqlException sqlEx)
+            {
+                if (sqlEx.Number == 2627)
+                    retVal = userId + " is already taken. Please select a different user name.";
+                else
+                    retVal = sqlEx.Message;
             }
             catch (Exception ex)
             {
-                return ex.Message;
+                retVal = ex.Message;
             }
+            return retVal;
         }
 
         /// <summary>
