@@ -15,13 +15,17 @@ namespace ECS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            LoadVolunteerTypes();
+            if (!IsPostBack)
+                LoadVolunteerTypes();
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             AddNewUser();
-            ClearForm();
+            if (!lblRetVal.Text.Contains("Please select a different user name"))
+                ClearForm();
+            else
+                txtUserName.Focus();
         }
 
         private void LoadVolunteerTypes()
@@ -42,6 +46,7 @@ namespace ECS
             txtPIN.Text = "";
             txtLast4ofPhoneNumber.Text = "";
             txtUserName.Text = "";
+            ddVolunteerType.SelectedIndex = 0;
         }
 
         private void AddNewUser()
@@ -55,6 +60,12 @@ namespace ECS
             int vtype = Convert.ToInt32(ddVolunteerType.SelectedValue);
             string retVal = bll.InsertNewUser(fname, lname, vtype, 0, last4, uname, pin);
             lblRetVal.Text = retVal;
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            ClearForm();
+            lblRetVal.Text = "";
         }
     }
 }
