@@ -161,5 +161,80 @@ namespace ECS.DAL
             return dtVT;
 
         }
+
+        // ad
+        public DataTable GetCenters()
+        {
+            DataTable dtCenter = new DataTable();
+            using (SqlConnection conn = new SqlConnection(Conn))
+            {
+                using (SqlCommand command = new SqlCommand("SelectCenter", conn))
+                {
+                    command.CommandType = CommandType.Text;
+
+                    conn.Open();
+                    dtCenter.Load(command.ExecuteReader());
+                    conn.Close();
+                }
+            }
+            return dtCenter;
+        }
+
+        // ad
+        public DataTable GetTasks()
+        {
+            DataTable dtTask = new DataTable();
+            using (SqlConnection conn = new SqlConnection(Conn))
+            {
+                using (SqlCommand command = new SqlCommand("SelectTask", conn))
+                {
+                    command.CommandType = CommandType.Text;
+
+                    conn.Open();
+                    dtTask.Load(command.ExecuteReader());
+                    conn.Close();
+                }
+            }
+            return dtTask;
+        }
+
+        // ad
+        // need to rework & add sp
+        //
+        //public string InsertNewInKind(int centerID, int taskID, string mintues)
+        //{
+        //    string retVal;
+        //    try
+        //    {
+        //        using (SqlConnection conn = new SqlConnection(Conn))
+        //        {
+        //            using (SqlCommand command = new SqlCommand("InsertNewInKind", conn))
+        //            {
+        //                command.CommandType = CommandType.StoredProcedure;
+
+        //                command.Parameters.AddWithValue("@FirstName", firstName);
+        //                command.Parameters.AddWithValue("@LastName", lastName);
+        //                command.Parameters.AddWithValue("@VolunteerTypeId", volTypeId);
+
+        //                conn.Open();
+        //                command.ExecuteNonQuery();
+        //            }
+        //            conn.Close();
+        //            retVal = "Successfully added user.";
+        //        }
+        //    }
+        //    catch (SqlException sqlEx)
+        //    {
+        //        if (sqlEx.Number == 2627)
+        //            retVal = userId + " is already taken. Please select a different user name.";
+        //        else
+        //            retVal = sqlEx.Message;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        retVal = ex.Message;
+        //    }
+        //    return retVal;
+        //}
     }
 }

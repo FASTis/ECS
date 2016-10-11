@@ -21,5 +21,28 @@ namespace ECS.BLL
             Dal db = new Dal();
             return db.GetVolunteerTypes();
         }
+
+        // ad
+        // need rework dal code & create sp
+        //
+        //public string InsertNewInKind(int centerID, int taskID, string mintues)
+        //{
+        //    Dal db = new Dal();
+        //    return db.InsertNewInKind(centerID, taskID, mintues);
+        //}
+
+        // ad
+        public DataTable GetCenters()
+        {
+            Dal db = new Dal();
+            return db.GetCenters();
+        }
+
+        // ad
+        public DataTable GetTasks()
+        {
+            Dal db = new Dal();
+            return db.GetTasks();
+        }
     }
 }
