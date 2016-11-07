@@ -69,6 +69,7 @@
     <Content Include="img\44.jpg" />
     <Content Include="img\clk2.png" />
     <Content Include="img\colorful.jpg" />
+    <Content Include="img\ECSlogo.png" />
     <Content Include="img\images.jpg" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery.backstretch.js" />
