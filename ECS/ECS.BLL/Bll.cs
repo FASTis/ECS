@@ -49,11 +49,25 @@ namespace ECS.BLL
             Dal db = new Dal();
             return db.ValidateLogin(userId, pin);
         }
-
+        /// <summary>
+        /// Cici Carter
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
         public User GetUserInfo(string userId)
         {
             Dal db = new Dal();
             return db.GetUserInfo(userId);
+        }
+
+        /// <summary>
+        /// Cici Carter
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetVolunteers()
+        {
+            Dal db = new Dal();
+            return db.GetVolunteers();
         }
 
         // ad
