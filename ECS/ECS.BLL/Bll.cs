@@ -11,15 +11,49 @@ namespace ECS.BLL
 {
     public class Bll
     {
+        /// <summary>
+        /// Cici Carter
+        /// </summary>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <param name="volTypeId"></param>
+        /// <param name="compId"></param>
+        /// <param name="last4Digits"></param>
+        /// <param name="userId"></param>
+        /// <param name="pin"></param>
+        /// <returns></returns>
         public string InsertNewUser(string firstName, string lastName, int volTypeId, int compId, string last4Digits, string userId, string pin)
         {
             Dal db = new Dal();
             return db.InsertNewUser(firstName, lastName, volTypeId, compId, last4Digits, userId, pin);
         }
+
+        /// <summary>
+        /// Cici Carter
+        /// </summary>
+        /// <returns></returns>
         public DataTable GetVolunteerTypes()
         {
             Dal db = new Dal();
             return db.GetVolunteerTypes();
+        }
+
+        /// <summary>
+        /// Cici Carter
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="pin"></param>
+        /// <returns></returns>
+        public bool ValidateLogin(string userId, string pin)
+        {
+            Dal db = new Dal();
+            return db.ValidateLogin(userId, pin);
+        }
+
+        public User GetUserInfo(string userId)
+        {
+            Dal db = new Dal();
+            return db.GetUserInfo(userId);
         }
 
         // ad
