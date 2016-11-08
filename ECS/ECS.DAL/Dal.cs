@@ -162,6 +162,26 @@ namespace ECS.DAL
 
         }
 
+        /// <summary>
+        /// Cici Carter
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetVolunteers()
+        {
+            DataTable dtVolunteers = new DataTable();
+            using (SqlConnection conn = new SqlConnection(Conn))
+            {
+                using (SqlCommand command = new SqlCommand("SelectAllUsers", conn))
+                {
+                    command.CommandType = CommandType.Text;
+                    conn.Open();
+                    dtVolunteers.Load(command.ExecuteReader());
+                    conn.Close();
+                }
+            }
+            return dtVolunteers;
+        }
+
         // ad
         public DataTable GetCenters()
         {
