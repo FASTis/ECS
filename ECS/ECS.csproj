@@ -63,13 +63,14 @@
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\style.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Registration.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="img\34.jpg" />
     <Content Include="img\44.jpg" />
     <Content Include="img\clk2.png" />
     <Content Include="img\colorful.jpg" />
-    <Content Include="img\ECSlogo.png" />
     <Content Include="img\images.jpg" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery.backstretch.js" />
@@ -101,6 +102,20 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registration.aspx.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registration.aspx.designer.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LogInKind.aspx.cs">
