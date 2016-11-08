@@ -82,6 +82,7 @@
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery.backstretch.js" />
     <Content Include="js\jquery.js" />
+    <Content Include="ReportConsolidation.aspx" />
     <Content Include="sql\procedures\InsertNewUser.sql" />
     <Content Include="sql\procedures\SelectCenter.sql" />
     <Content Include="sql\procedures\SelectTask.sql" />
@@ -99,6 +100,7 @@
     <Content Include="sql\tables\Volunteer.sql" />
     <Content Include="sql\tables\VolunteerLog.sql" />
     <Content Include="sql\tables\VolunteerType.sql" />
+    <Content Include="ViewReport.aspx" />
     <Content Include="Web.config" />
     <Content Include="LogInKind.aspx" />
   </ItemGroup>
@@ -138,6 +140,18 @@
     </Compile>
     <Compile Include="LogInKind.aspx.designer.cs">
       <DependentUpon>LogInKind.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportConsolidation.aspx.cs">
+      <DependentUpon>ReportConsolidation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportConsolidation.aspx.designer.cs">
+      <DependentUpon>ReportConsolidation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewReport.aspx.cs">
+      <DependentUpon>ViewReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewReport.aspx.designer.cs">
+      <DependentUpon>ViewReport.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
