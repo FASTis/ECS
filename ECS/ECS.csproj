@@ -143,12 +143,14 @@
     </Compile>
     <Compile Include="ReportConsolidation.aspx.cs">
       <DependentUpon>ReportConsolidation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ReportConsolidation.aspx.designer.cs">
       <DependentUpon>ReportConsolidation.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewReport.aspx.cs">
       <DependentUpon>ViewReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ViewReport.aspx.designer.cs">
       <DependentUpon>ViewReport.aspx</DependentUpon>
