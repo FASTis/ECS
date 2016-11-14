@@ -36,10 +36,5 @@ namespace ECS
             else
                 lblRetVal.Text = "There was a problem logging in.";
         }
-
-        protected void btnRegister_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Registration.aspx");
-        }
     }
 }

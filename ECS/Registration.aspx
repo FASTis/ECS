@@ -1,6 +1,6 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master"  AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="ECS.Registration" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master"  AutoEventWireup="false" CodeBehind="Registration.aspx.cs" Inherits="ECS.Registration" %>
 
-<asp:content id="Content1" contentplaceholderid="ContentPlaceHolder1" runat="server">
+<asp:content id="Content2" contentplaceholderid="ContentPlaceHolder1" runat="server">
     <!-- When using a Master Page File, you must put your content inside of a content block. [Cici]-->
         <div>
             <div class="registrationform">

@@ -13,12 +13,9 @@ namespace ECS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
-        protected void RadGrid1_NeedDataSource(object source, Telerik.Web.UI.GridNeedDataSourceEventArgs e)
-        {
             Bll bll = new Bll();
-            RadGrid1.DataSource = bll.GetVolunteers();
+            gvVolunteers.DataSource = bll.GetVolunteers();
         }
+
     }
 }

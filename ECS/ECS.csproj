@@ -62,8 +62,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="controls\Telerik.Web.UI.dll" />
-    <Content Include="controls\Telerik.Web.UI.xml" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="Default.aspx" />
     <Content Include="img\ECSlogo.png" />
