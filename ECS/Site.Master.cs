@@ -7,12 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace ECS
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class ECSSite : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Server.TransferRequest("Login.aspx");
-            //Placeholder; didn't want to mess up anyone else's code. -- Cici
+
         }
     }
 }

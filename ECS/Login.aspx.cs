@@ -21,6 +21,7 @@ namespace ECS
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            lblRetVal.Text = "";
             Bll bll = new Bll();
             bool retVal = bll.ValidateLogin(txtUserName.Text, txtPIN.Text);
             if (retVal)
@@ -36,10 +37,9 @@ namespace ECS
                 lblRetVal.Text = "There was a problem logging in.";
         }
 
-
-        protected void btnCancel_Click(object sender, EventArgs e)
+        protected void btnRegister_Click(object sender, EventArgs e)
         {
-            lblRetVal.Text = "";
+            Response.Redirect("Registration.aspx");
         }
     }
 }

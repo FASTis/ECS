@@ -65,20 +65,13 @@
     <Content Include="controls\Telerik.Web.UI.dll" />
     <Content Include="controls\Telerik.Web.UI.xml" />
     <Content Include="css\bootstrap.min.css" />
-    <Content Include="css\font-awesome.css" />
-    <Content Include="css\font-awesome.min.css" />
-    <Content Include="css\style.css" />
     <Content Include="Default.aspx" />
+    <Content Include="img\ECSlogo.png" />
     <Content Include="Login.aspx" />
     <Content Include="ManageVolunteers.aspx" />
     <Content Include="Registration.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="img\34.jpg" />
-    <Content Include="img\44.jpg" />
-    <Content Include="img\clk2.png" />
-    <Content Include="img\colorful.jpg" />
-    <Content Include="img\images.jpg" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery.backstretch.js" />
     <Content Include="js\jquery.js" />
@@ -100,6 +93,7 @@
     <Content Include="sql\tables\Volunteer.sql" />
     <Content Include="sql\tables\VolunteerLog.sql" />
     <Content Include="sql\tables\VolunteerType.sql" />
+    <Content Include="TestOfWebformUsingMasterPage.aspx" />
     <Content Include="ViewReport.aspx" />
     <Content Include="Web.config" />
     <Content Include="LogInKind.aspx" />
@@ -111,6 +105,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -148,6 +149,13 @@
     <Compile Include="ReportConsolidation.aspx.designer.cs">
       <DependentUpon>ReportConsolidation.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TestOfWebformUsingMasterPage.aspx.cs">
+      <DependentUpon>TestOfWebformUsingMasterPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestOfWebformUsingMasterPage.aspx.designer.cs">
+      <DependentUpon>TestOfWebformUsingMasterPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewReport.aspx.cs">
       <DependentUpon>ViewReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -164,6 +172,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Site.Master" />
     <None Include="Properties\PublishProfiles\c3techsolutions.com - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\c3techsolutions.com - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
