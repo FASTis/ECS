@@ -30,8 +30,12 @@ namespace ECS
                 Session["FirstName"] = user.FirstName;
                 Session["LastName"] = user.LastName;
                 Session["VolunteerType"] = user.VolunteerTypeDescr;
+                Session["Username"] = user.UserID;
+                Session["VolunteerID"] = user.VolunteerID;
                 txtUserName.Text = "";
-                lblRetVal.Text = String.Format("Welcome, {0}! Your last name is {1}, and you are a {2}.", Session["FirstName"], Session["LastName"], Session["VolunteerType"]);
+                txtPIN.Text = "";
+                //lblRetVal.Text = String.Format("Welcome, {0}! Your last name is {1}, and you are a {2}.", Session["FirstName"], Session["LastName"], Session["VolunteerType"]);
+                Response.Redirect("Default.aspx");
             }
             else
                 lblRetVal.Text = "There was a problem logging in.";

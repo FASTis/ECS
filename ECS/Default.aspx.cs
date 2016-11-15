@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.SessionState;
+
 
 namespace ECS
 {
@@ -11,8 +13,23 @@ namespace ECS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Server.TransferRequest("Login.aspx");
-            //Placeholder; didn't want to mess up anyone else's code. -- Cici
+            string sessionUser = "";
+            try
+            {
+                sessionUser = Session["Username"].ToString();
+            }
+            catch (NullReferenceException)
+            {
+                sessionUser = "";
+            }
+
+            if (String.IsNullOrEmpty(sessionUser))
+                Response.Redirect("Login.aspx");
+        }
+
+        protected void btnInkind_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("LogInKind.aspx");
         }
     }
 }

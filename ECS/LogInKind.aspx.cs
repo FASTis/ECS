@@ -65,7 +65,7 @@ namespace ECS
         protected void btnCancel_Click(object sender, EventArgs e)
         {
             ClearForm();
-            lblRetVal.Text = "";
+            //lblRetVal.Text = "";
         }
 
         private void ClearForm()
