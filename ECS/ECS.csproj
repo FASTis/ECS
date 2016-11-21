@@ -29,6 +29,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PublishDatabases>false</PublishDatabases>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -63,9 +64,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\signature-pad.css" />
     <Content Include="Default.aspx" />
     <Content Include="img\ECSlogo.png" />
+    <Content Include="js\app.js" />
+    <Content Include="js\signature_pad.js" />
     <Content Include="Login.aspx" />
+    <Content Include="LogInKindThankYou.aspx" />
     <Content Include="ManageVolunteers.aspx" />
     <Content Include="Registration.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -74,6 +79,10 @@
     <Content Include="js\jquery.backstretch.js" />
     <Content Include="js\jquery.js" />
     <Content Include="ReportConsolidation.aspx" />
+    <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\signature_pad.js" />
+    <Content Include="Scripts\signature_pad.min.js" />
+    <Content Include="signatureForm.aspx" />
     <Content Include="sql\procedures\InsertNewUser.sql" />
     <Content Include="sql\procedures\SelectCenter.sql" />
     <Content Include="sql\procedures\SelectTask.sql" />
@@ -103,6 +112,20 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LogInKindThankYou.aspx.cs">
+      <DependentUpon>LogInKindThankYou.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogInKindThankYou.aspx.designer.cs">
+      <DependentUpon>LogInKindThankYou.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="signatureForm.aspx.cs">
+      <DependentUpon>signatureForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="signatureForm.aspx.designer.cs">
+      <DependentUpon>signatureForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -171,8 +194,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Site.Master" />
+    <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\c3techsolutions.com - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\c3techsolutions.com - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\ecs.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
