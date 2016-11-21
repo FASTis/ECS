@@ -2937,7 +2937,8 @@ output {
 .form-control {
     display: block;
     width: 100%;
-    max-width: 200px; /* added by Cici. */
+    max-width: 300px; /* added by Cici. */
+    min-width: 100px; /* added by Cici. */
     height: 38px;
     padding: 8px 12px;
     font-size: 14px;
