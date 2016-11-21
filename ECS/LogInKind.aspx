@@ -7,7 +7,7 @@
             <div class="logInKindForm">
                 <div class="form-horizontal">
                     <fieldset>
-                        <legend>Enter Your In-kind</legend>
+                        <legend>Enter Your In-kind Hours</legend>
 
                         <!-- select center -->
                        <div class="form-group">

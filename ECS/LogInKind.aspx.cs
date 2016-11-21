@@ -22,6 +22,7 @@ namespace ECS
                 LoadMinutes();
                 LoadCenters();
                 LoadTasks();
+                calendarInKind.SelectedDate = DateTime.Today;
             }
         }
 

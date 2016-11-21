@@ -57,10 +57,6 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="Telerik.Web.UI, Version=2012.2.703.35, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>controls\Telerik.Web.UI.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\bootstrap.min.css" />
@@ -79,9 +75,6 @@
     <Content Include="js\jquery.backstretch.js" />
     <Content Include="js\jquery.js" />
     <Content Include="ReportConsolidation.aspx" />
-    <Content Include="Scripts\app.js" />
-    <Content Include="Scripts\signature_pad.js" />
-    <Content Include="Scripts\signature_pad.min.js" />
     <Content Include="signatureForm.aspx" />
     <Content Include="sql\procedures\InsertNewUser.sql" />
     <Content Include="sql\procedures\SelectCenter.sql" />
@@ -194,7 +187,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Site.Master" />
-    <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\c3techsolutions.com - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\c3techsolutions.com - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\ecs.pubxml" />

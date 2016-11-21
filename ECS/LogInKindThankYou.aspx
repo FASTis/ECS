@@ -3,7 +3,7 @@
     <div id="divSignatureBox" align="center" runat="server" >
         <h3>By signing below, you assert that the information here is correct.</h3>
         <div id="divConfirmation" runat="server"></div>
-        <iframe src="signatureForm.aspx" width="700px" height="400px" scrolling="no" frameborder="0"></iframe>
+        <iframe src="signatureForm.aspx" width="70%" height="350px" scrolling="no" frameborder="0"></iframe>
     </div>
     <div id="divThankYouBox" runat="server" align="center">
     <h3>Thank You!</h3>

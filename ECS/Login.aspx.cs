@@ -18,8 +18,7 @@ namespace ECS
         {
 
         }
-
-        protected void btnSubmit_Click(object sender, EventArgs e)
+        protected void ValidateEntry()
         {
             lblRetVal.Text = "";
             Bll bll = new Bll();
@@ -38,7 +37,11 @@ namespace ECS
                 Response.Redirect("Default.aspx");
             }
             else
-                lblRetVal.Text = "There was a problem logging in.";
+                lblRetVal.Text = "Invalid username or password.";
+        }
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            ValidateEntry();
         }
     }
 }
