@@ -60,6 +60,48 @@ namespace ECS.DAL
         }
 
         /// <summary>
+        /// This updates info for an existing user.
+        /// </summary>
+        /// <developer>
+        /// Cici Carter
+        /// </developer>
+        public string UpdateUser(string firstName, string lastName, string last4Digits, string userId, string pin)
+        {
+            string retVal;
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Conn))
+                {
+                    string sql1 = String.Format(@"Update {0} set FirstName='{1}', LastName='{2}', Last4DigitsOfPhone='{3}' where 
+                                                VolunteerID = (select VolunteerID from UserLogon where UserId='{4}')",
+                                                "Volunteer", firstName, lastName, last4Digits, userId, pin);
+                    using (SqlCommand command1 = new SqlCommand(sql1, conn))
+                    {
+                        command1.CommandType = CommandType.Text;
+                        conn.Open();
+                        command1.ExecuteNonQuery();
+                    }
+
+                    string sql2 = String.Format(@"Update {0} set PIN='{1}' where 
+                                                VolunteerID = (select VolunteerID from UserLogon where UserId='{2}')",
+                                                "UserLogon", pin, userId);
+                    using (SqlCommand command2 = new SqlCommand(sql2, conn))
+                    {
+                        command2.CommandType = CommandType.Text;
+                        command2.ExecuteNonQuery();
+                    }
+                    conn.Close();
+                    retVal = String.Format("Successfully updated user {0}.", userId);
+                }
+            }
+            catch (Exception ex)
+            {
+                retVal = ex.Message;
+            }
+            return retVal;
+        }
+
+        /// <summary>
         /// This determines whether a user login is valid.
         /// </summary>
         /// <developer>
