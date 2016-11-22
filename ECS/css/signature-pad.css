@@ -10,8 +10,8 @@ body {
 .m-signature-pad {
   position: absolute;
   font-size: 10px;
-  width: 700px;
-  height: 400px;
+  width: 90%;
+  height: 90%;
   top: 50%;
   left: 50%;
   margin-left: -350px;
