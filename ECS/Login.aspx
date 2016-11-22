@@ -5,7 +5,7 @@
     <div>
         <div class="registrationform">
             <div class="form-horizontal">
-                    <legend>Please Log On.</legend>
+                    <legend>Please Log On.</legend><br /><div id="newRegMsg" runat="server"></div>
                     <div class="form-group">
                         <asp:Label ID="Label7" runat="server" Text="Username:" CssClass="col-lg-2 control-label"></asp:Label>
                         <div class="col-lg-10">
@@ -24,7 +24,7 @@
                             <asp:Button ID="btnSubmit" runat="server" CssClass="btn btn-primary" Text="Log On" OnClick="btnSubmit_Click" />
                             <asp:Button ID="btnRegister" runat="server" CssClass="btn btn-primary" Text="Register" OnClientClick="window.location.href='Registration.aspx'; return false;" />
                             <br />
-                            <h6><a href="#">Forgot Password</a><br />
+                            <h6><a href="javascript:alert('Not yet implemented.');">Forgot Password</a><br />
                                 <a href="#">Forgot Username</a><br />
                                 <a href="#">Admin Logon</a><br />
                             </h6>

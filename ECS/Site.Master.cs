@@ -20,8 +20,8 @@ namespace ECS
         {
             try
             {
-                sessionUser = String.Format("Logged in as {0} {1}", Session["FirstName"].ToString(), Session["LastName"].ToString());
-                lblUser.Text = sessionUser;
+                sessionUser = String.Format(" ({0} {1})", Session["FirstName"].ToString(), Session["LastName"].ToString());
+                divUser.InnerText = sessionUser;
             }
             catch (NullReferenceException)
             {

@@ -31,5 +31,16 @@ namespace ECS
         {
             Response.Redirect("LogInKind.aspx");
         }
+
+        protected void btnEditProfile_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Profile.aspx");
+        }
+
+        protected void btnLogoff_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("Default.aspx", false);
+        }
     }
 }

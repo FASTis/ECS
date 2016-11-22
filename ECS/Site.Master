@@ -22,25 +22,25 @@
 </head>
 <body style="padding-top:50px;">
     <form id="form1" runat="server">
-    <img src="img/ECSlogo.png" style="max-height:90px;padding-left:25px;" /><br />
-    <asp:Label ID="lblUser" runat="server" style="padding-left:25px;"></asp:Label>
-    <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">ECS Head Start</a>
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder">
-                    <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
-                        class="icon-bar"></span><span class="icon-bar"></span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse navbar-menubuilder">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/">Home</a> </li>
-                    <li><a href="#">Contact Us</a> </li>
-                </ul>
+    <img src="img/ECSlogo.png" style="max-height:90px;padding-left:25px;" />
+        <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="Default.aspx">ECS Head Start<div style="width:200px;font-size:small;" id="divUser" runat="server"></div></a>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-menubuilder-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-menubuilder-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="Default.aspx">Home</a> </li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
     <div class="container">        
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         

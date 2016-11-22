@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LogInKind.aspx.cs" Inherits="ECS.LogInKind" %>
 
 <asp:Content id="ContentLogInKind" contentplaceholderid="ContentPlaceHolder1" runat="server">
-<!-- When using a Master Page File, you must put your content inside of a content block. [Cici]-->
+    <!-- When using a Master Page File, you must put your content inside of a content block. [Cici]-->
         <!-- form to enter in-kind information -->
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <div class="logInKindForm">
@@ -34,14 +34,14 @@
                         <div class="form-group">
                             <asp:Label ID="lblDateMonth" runat="server" Text="Select the date you volunteered:" CssClass="col-md-3 control-label"></asp:Label>
                             <div class="col-md-offset-1 col-md-8">
-                                <asp:Calendar ID="calendarInKind" runat="server" BackColor="White" BorderColor="Black" BorderStyle="Solid" CellSpacing="1" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="250px" NextPrevFormat="ShortMonth" Width="330px">
-                                    <DayHeaderStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" Height="8pt" />
-                                    <DayStyle BackColor="#CCCCCC" />
-                                    <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="White" />
-                                    <OtherMonthDayStyle ForeColor="#999999" />
-                                    <SelectedDayStyle BackColor="#333399" ForeColor="White" />
-                                    <TitleStyle BackColor="#333399" BorderStyle="Solid" Font-Bold="True" Font-Size="12pt" ForeColor="White" Height="12pt" />
-                                    <TodayDayStyle BackColor="#999999" ForeColor="White" />
+                                <asp:Calendar ID="calendarInKind" runat="server" BackColor="#FFFFCC" BorderColor="#FFCC66" Font-Size="8pt" ForeColor="#663399" Height="200px" Width="90%" BorderWidth="1px" DayNameFormat="Shortest" ShowGridLines="True">
+                                    <DayHeaderStyle Font-Bold="True" Height="1px" BackColor="#FFFFCC" />
+                                    <NextPrevStyle Font-Size="9pt" ForeColor="#FFFFCC" />
+                                    <OtherMonthDayStyle ForeColor="#CC9966" />
+                                    <SelectedDayStyle BackColor="#E95420" Font-Bold="True" />
+                                    <SelectorStyle BackColor="#FFCC66" />
+                                    <TitleStyle BackColor="#990000" Font-Bold="True" Font-Size="9pt" ForeColor="#FFFFCC" />
+                                    <TodayDayStyle BackColor="#FFCC66" ForeColor="White" />
                                 </asp:Calendar>
                             </div>
                         </div>

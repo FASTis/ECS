@@ -1,12 +1,12 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master"  AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="ECS.Registration" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="ECS.Profile" %>
 
-<asp:content id="Content2" contentplaceholderid="ContentPlaceHolder1" runat="server">
+<asp:content id="Content3" contentplaceholderid="ContentPlaceHolder1" runat="server">
     <!-- When using a Master Page File, you must put your content inside of a content block. [Cici]-->
         <div>
             <div class="registrationform">
                 <div class="form-horizontal">
                     <fieldset>
-                       <legend>My Profile<i class="fa fa-pencil pull-right"></i></legend>
+                       <legend>Registration Form<i class="fa fa-pencil pull-right"></i></legend>
                        <div class="form-group">
                             <asp:Label ID="Label1" runat="server" Text="First Name" CssClass="col-lg-2 control-label"></asp:Label>
                             <div class="col-lg-10">
@@ -20,13 +20,13 @@
                             </div>
                         </div>
                        <div class="form-group">
-                            <asp:Label ID="Label7" runat="server" Text="Select a User Name" CssClass="col-lg-2 control-label"></asp:Label>
+                            <asp:Label ID="Label7" runat="server" Text="User Name" CssClass="col-lg-2 control-label"></asp:Label>
                             <div class="col-lg-10">
                                 <asp:TextBox ID="txtUserName" runat="server" placeholder="User Name" CssClass="form-control"></asp:TextBox>
                             </div>
                         </div>
                        <div class="form-group">
-                            <asp:Label ID="Label8" runat="server" Text="Select a 4-Digit PIN" CssClass="col-lg-2 control-label"></asp:Label>
+                            <asp:Label ID="Label8" runat="server" Text="4-Digit PIN (hidden)" CssClass="col-lg-2 control-label"></asp:Label>
                             <div class="col-lg-10">
                                 <asp:TextBox ID="txtPIN" runat="server" TextMode="Password" placeholder="PIN" CssClass="form-control"></asp:TextBox>
                             </div>
@@ -60,3 +60,4 @@
             </div>
         </div>
 </asp:content>
+
