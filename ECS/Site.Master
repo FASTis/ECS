@@ -22,7 +22,8 @@
 </head>
 <body style="padding-top:50px;">
     <form id="form1" runat="server">
-    <img src="img/ECSlogo.png" style="max-height:100px;padding-left:25px;" />
+    <img src="img/ECSlogo.png" style="max-height:90px;padding-left:25px;" /><br />
+    <asp:Label ID="lblUser" runat="server" style="padding-left:25px;"></asp:Label>
     <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -40,7 +41,7 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container">        
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
