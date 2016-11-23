@@ -1,0 +1,12 @@
+C:\Users\Texid\Source\Repos\ECS\ECS\bin\ECS.dll.config
+C:\Users\Texid\Source\Repos\ECS\ECS\bin\ECS.dll
+C:\Users\Texid\Source\Repos\ECS\ECS\bin\ECS.pdb
+C:\Users\Texid\Source\Repos\ECS\ECS\bin\ECS.BLL.dll
+C:\Users\Texid\Source\Repos\ECS\ECS\bin\ECS.Model.dll
+C:\Users\Texid\Source\Repos\ECS\ECS\bin\ECS.DAL.dll
+C:\Users\Texid\Source\Repos\ECS\ECS\bin\ECS.BLL.pdb
+C:\Users\Texid\Source\Repos\ECS\ECS\bin\ECS.Model.pdb
+C:\Users\Texid\Source\Repos\ECS\ECS\bin\ECS.DAL.pdb
+C:\Users\Texid\Source\Repos\ECS\ECS\obj\Debug\ECS.csprojResolveAssemblyReference.cache
+C:\Users\Texid\Source\Repos\ECS\ECS\obj\Debug\ECS.dll
+C:\Users\Texid\Source\Repos\ECS\ECS\obj\Debug\ECS.pdb

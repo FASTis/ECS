@@ -1,0 +1,7 @@
+C:\Users\Texid\Source\Repos\ECS\ECS\ECS.DAL\bin\Debug\ECS.DAL.dll
+C:\Users\Texid\Source\Repos\ECS\ECS\ECS.DAL\bin\Debug\ECS.DAL.pdb
+C:\Users\Texid\Source\Repos\ECS\ECS\ECS.DAL\bin\Debug\ECS.Model.dll
+C:\Users\Texid\Source\Repos\ECS\ECS\ECS.DAL\bin\Debug\ECS.Model.pdb
+C:\Users\Texid\Source\Repos\ECS\ECS\ECS.DAL\obj\Debug\ECS.DAL.csprojResolveAssemblyReference.cache
+C:\Users\Texid\Source\Repos\ECS\ECS\ECS.DAL\obj\Debug\ECS.DAL.dll
+C:\Users\Texid\Source\Repos\ECS\ECS\ECS.DAL\obj\Debug\ECS.DAL.pdb

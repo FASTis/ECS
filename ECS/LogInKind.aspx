@@ -34,14 +34,14 @@
                         <div class="form-group">
                             <asp:Label ID="lblDateMonth" runat="server" Text="Select the date you volunteered:" CssClass="col-md-3 control-label"></asp:Label>
                             <div class="col-md-offset-1 col-md-8">
-                                <asp:Calendar ID="calendarInKind" runat="server" BackColor="#FFFFCC" BorderColor="#FFCC66" Font-Size="8pt" ForeColor="#663399" Height="200px" Width="90%" BorderWidth="1px" DayNameFormat="Shortest" ShowGridLines="True">
-                                    <DayHeaderStyle Font-Bold="True" Height="1px" BackColor="#FFFFCC" />
-                                    <NextPrevStyle Font-Size="9pt" ForeColor="#FFFFCC" />
-                                    <OtherMonthDayStyle ForeColor="#CC9966" />
-                                    <SelectedDayStyle BackColor="#E95420" Font-Bold="True" />
-                                    <SelectorStyle BackColor="#FFCC66" />
-                                    <TitleStyle BackColor="#990000" Font-Bold="True" Font-Size="9pt" ForeColor="#FFFFCC" />
-                                    <TodayDayStyle BackColor="#FFCC66" ForeColor="White" />
+                                <asp:Calendar ID="calendarInKind" runat="server" BackColor="#f8f8f8" BorderColor="#aea79f" Font-Size="9pt" ForeColor="#333333" Height="200px" Width="90%" BorderWidth="1px" DayNameFormat="Shortest" ShowGridLines="True">
+                                    <DayHeaderStyle Font-Bold="True" Height="1px" BackColor="#741f72" ForeColor="#f7f7f7" />
+                                    <NextPrevStyle Font-Size="9pt" ForeColor="#333333" />
+                                    <OtherMonthDayStyle ForeColor="#c6c6c6" />
+                                    <SelectedDayStyle BackColor="#e95420" Font-Bold="True" />
+                                    <SelectorStyle BackColor="#e7a413" />
+                                    <TitleStyle BackColor="#e7a413" Font-Bold="True" Font-Size="11pt" ForeColor="#333333" />
+                                    <TodayDayStyle BackColor="#e7a413" ForeColor="White" />
                                 </asp:Calendar>
                             </div>
                         </div>
