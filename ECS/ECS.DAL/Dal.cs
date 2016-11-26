@@ -172,6 +172,7 @@ namespace ECS.DAL
                         u.CompanyName = row["CompanyName"].ToString();
                         u.Last4DigitsOfPhone = row["Last4DigitsOfPhone"].ToString();
                         u.UserID = row["UserID"].ToString();
+                        u.PIN = row["PIN"].ToString();
                     }
                     conn.Close();
                 }
