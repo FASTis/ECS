@@ -11,7 +11,7 @@ namespace ECS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string signatureReceived = Request.QueryString["signature"]; //this is passed by saveButton.addEventListener in app.js [Cici]
+            string signatureReceived = Request.QueryString["signature"]; //this is passed by saveButton.addEventListener in app.js [Cici]            
             if (signatureReceived == "true")
             {
                 divSignatureBox.Visible = false;
@@ -32,7 +32,7 @@ namespace ECS
             string task = Session["Task"].ToString();
 
             string readDescr = Session["ReadDescr"].ToString();
-            if (readDescr == "1")
+            if (readDescr == "True")
                 readDescr = "Yes";
             else
                 readDescr = "No";
@@ -49,6 +49,11 @@ namespace ECS
                               center, task, readDescr, dateVal, hoursVal, minVal);
 
             divConfirmation.InnerHtml = s;
+        }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Default.aspx");
         }
     }
 }

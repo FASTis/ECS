@@ -80,10 +80,15 @@ namespace ECS
             lblRetVal.Text = retVal;
         }
 
-        protected void btnCancel_Click(object sender, EventArgs e)
+        protected void btnReset_Click(object sender, EventArgs e)
         {
             ClearForm();
             lblRetVal.Text = "";
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Default.aspx");
         }
     }
 }

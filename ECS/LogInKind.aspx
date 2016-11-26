@@ -2,6 +2,7 @@
 
 <asp:Content id="ContentLogInKind" contentplaceholderid="ContentPlaceHolder1" runat="server">
     <!-- When using a Master Page File, you must put your content inside of a content block. [Cici]-->
+
         <!-- form to enter in-kind information -->
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <div class="logInKindForm">

@@ -62,40 +62,43 @@ namespace ECS
             ddTasks.DataBind();
         }
 
-        // need to rework dal code & create sp
-        //
-        //private void AddNewInKind()
-        //{
-        //    Bll bll = new Bll();
-        //    int center = Convert.ToInt32(ddCenters.SelectedValue);
-        //    int task = Convert.ToInt32(ddTasks.SelectedValue);
-        //    string minutes = txtMinutes.Text;
-        //    string retVal = bll.InsertNewInKind(center, task, minutes);
-        //    lblRetVal.Text = retVal;
-        //}
-
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            //AddNewInKind();
-            //ClearForm();
-            
-            // Save all data in session variables for use later.[Cici]
-            Session["Center"] = ddCenters.SelectedItem.ToString();
-            Session["Task"] = ddTasks.SelectedItem.ToString();
-            Session["ReadDescr"] = chkTask.Checked;
-            Session["Date"] = calendarInKind.SelectedDate.ToString().Replace(" 12:00:00 AM","");
-            Session["Hours"] = ddHours.SelectedItem;
-            Session["Minutes"] = ddMinutes.SelectedItem;
+            // Validate entries before saving.
+            if (!chkTask.Checked)
+            {
+                string radalertscript = "<script language='javascript'>function f(){radalert('You must click the checkbox indicating that you have read the activity description.', 300, 100, 'ECS Volunteer App: In-Kind'); Sys.Application.remove_load(f);}; Sys.Application.add_load(f);</script>";
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "radalert", radalertscript);
+            }
+            else if (ddHours.SelectedIndex == 0 && ddMinutes.SelectedIndex == 0)
+            {
+                string radalertscript = "<script language='javascript'>function f(){radalert('Please enter hours, minutes, or both.', 300, 100, 'ECS Volunteer App: In-Kind'); Sys.Application.remove_load(f);}; Sys.Application.add_load(f);</script>";
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "radalert", radalertscript);
+            }
+            else
+            {
+                // Save all data in session variables for use later.[Cici]
+                Session["Center"] = ddCenters.SelectedItem.ToString();
+                Session["Task"] = ddTasks.SelectedItem.ToString();
+                Session["ReadDescr"] = chkTask.Checked;
+                Session["Date"] = calendarInKind.SelectedDate.ToString().Replace(" 12:00:00 AM", ""); // remove the midnight text! argh!
+                Session["Hours"] = ddHours.SelectedItem;
+                Session["Minutes"] = ddMinutes.SelectedItem;
 
-            //Open signatureForm. [Cici]
-            Response.Redirect("LogInKindThankYou.aspx");
-            
+                //Open signatureForm. [Cici]
+                Response.Redirect("LogInKindThankYou.aspx");
 
+            }
+        }
+
+        protected void btnReset_Click(object sender, EventArgs e)
+        {
+            ClearForm();
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            ClearForm();
+            Response.Redirect("Default.aspx");
         }
 
         private void ClearForm()

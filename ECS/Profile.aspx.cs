@@ -29,8 +29,8 @@ namespace ECS
             txtUserName.Text = Session["Username"].ToString();
             txtPIN.Text = Session["PIN"].ToString();
             ddVolunteerType.SelectedIndex = Convert.ToInt32(Session["VolunteerTypeID"]);
-            ddVolunteerType.Enabled = false;
             txtUserName.Enabled = false;
+            ddVolunteerType.Enabled = false;
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -82,10 +82,15 @@ namespace ECS
             lblRetVal.Text = retVal;
         }
 
-        protected void btnCancel_Click(object sender, EventArgs e)
+        protected void btnReset_Click(object sender, EventArgs e)
         {
             LoadUserInfo();
             lblRetVal.Text = "";
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Default.aspx");
         }
     }
 }

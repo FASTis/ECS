@@ -2,6 +2,7 @@
 
 <asp:Content ID="ContentLogin" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <!-- When using a Master Page File, you must put your content inside of a content block. [Cici]-->
+
     <div>
         <div class="registrationform">
             <div class="form-horizontal">
@@ -24,9 +25,9 @@
                             <asp:Button ID="btnSubmit" runat="server" CssClass="btn btn-primary" Text="Log On" OnClick="btnSubmit_Click" />
                             <asp:Button ID="btnRegister" runat="server" CssClass="btn btn-primary" Text="Register" OnClientClick="window.location.href='Registration.aspx'; return false;" />
                             <br />
-                            <h6><a href="javascript:alert('Not yet implemented.');">Forgot Password</a><br />
-                                <a href="#">Forgot Username</a><br />
-                                <a href="#">Admin Logon</a><br />
+                            <h6><a href="javascript:openWin('The <b>Forgot Password</b> feature is not yet implemented.');">Forgot Password</a><br />
+                                <a href="javascript:openWin('The <b>Forgot Username</b> feature is not yet implemented.');">Forgot Username</a><br />
+                                <a href="javascript:openWin('<b>Admin Functionality</b> is not yet implemented.');">Admin Logon</a><br />
                             </h6>
                             <br />
                             <h5><strong>

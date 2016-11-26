@@ -32,7 +32,7 @@ namespace ECS
                 Session["Username"] = user.UserID;
                 Session["VolunteerID"] = user.VolunteerID;
                 Session["Last4OfPhone"] = user.Last4DigitsOfPhone;
-                Session["PIN"] = user.Last4DigitsOfPhone;
+                Session["PIN"] = user.PIN;
                 txtUserName.Text = "";
                 txtPIN.Text = "";
                 //lblRetVal.Text = String.Format("Welcome, {0}! Your last name is {1}, and you are a {2}.", Session["FirstName"], Session["LastName"], Session["VolunteerType"]);

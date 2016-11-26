@@ -8,5 +8,7 @@
     <div id="divThankYouBox" runat="server" align="center">
     <h3>Thank You!</h3>
     <p>Your in-kind hours have been logged, and your signature has been captured.</p>
+        <asp:Button ID="btnSubmit" runat="server" CssClass="btn btn-primary" Text="Back To Menu" OnClick="btnSubmit_Click" />
     </div>
+
 </asp:Content>
