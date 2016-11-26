@@ -14,5 +14,6 @@ namespace ECS.Model
         public string CompanyName { get; set; }        
         public string Last4DigitsOfPhone { get; set; }
         public string UserID { get; set; }
+        public string PIN { get; set; }
     }
 }
