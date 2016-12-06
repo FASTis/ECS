@@ -44,7 +44,6 @@
               </form>
 
           </div>
-
   <script src="js/signature_pad.js"></script>
   <script src="js/app.js"></script>
 </body>

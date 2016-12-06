@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using ECS.BLL;
 
 namespace ECS
 {
@@ -45,7 +46,7 @@ namespace ECS
                                 <br /><b>Task:</b> {1}
                                 <br /><b>Read Description?</b> {2}
                                 <br /><b>Date:</b> {3}</td>
-                                <br /><b>Time Logged:</b> {4} : {5}",
+                                <br /><b>Time Logged:</b> {4} hours : {5} minutes",
                               center, task, readDescr, dateVal, hoursVal, minVal);
 
             divConfirmation.InnerHtml = s;

@@ -14,7 +14,7 @@
                        <div class="form-group">
                             <asp:Label ID="lblCenter" runat="server" Text="Select A Center" CssClass="col-md-3 control-label"></asp:Label>
                             <div class="col-md-offset-1 col-md-8">
-                                <asp:DropDownList ID="ddCenters" runat="server" CssClass="form-control ddl" AutoPostBack="True">
+                                <asp:DropDownList ID="ddCenters" runat="server" CssClass="form-control ddl" AutoPostBack="False">
                                     <asp:ListItem></asp:ListItem>
                                 </asp:DropDownList>                              
                             </div> 
@@ -24,10 +24,10 @@
                        <div class="form-group">
                             <asp:Label ID="lblTask" runat="server" Text="Select An Activity" CssClass="col-md-3 control-label"></asp:Label>
                             <div class="col-md-offset-1 col-md-8">
-                                <asp:DropDownList ID="ddTasks" runat="server" CssClass="form-control ddl" AutoPostBack="True">
+                                <asp:DropDownList ID="ddTasks" runat="server" CssClass="form-control ddl" AutoPostBack="False">
                                     <asp:ListItem></asp:ListItem>
                                 </asp:DropDownList><br />
-                            <asp:CheckBox ID="chkTask" runat="server" Text="&nbsp;&nbsp;Select if you've read the activity description." AutoPostBack="True"></asp:CheckBox>                          
+                            <asp:CheckBox ID="chkTask" runat="server" Text="&nbsp;&nbsp;Select if you've read<br>&nbsp;&nbsp;the activity description." AutoPostBack="False"></asp:CheckBox>                          
                             </div>
                         </div>
 
@@ -51,14 +51,14 @@
                         <div class="form-group">
                             <asp:Label ID="Label1" runat="server" Text="Enter the hours you volunteered that day:" CssClass="col-md-3 control-label"></asp:Label>
                             <div class="col-md-offset-1 col-md-8">
-                                <asp:DropDownList ID="ddHours" runat="server"  CssClass="form-control ddl" AutoPostBack="True"></asp:DropDownList>
+                                <asp:DropDownList ID="ddHours" runat="server"  CssClass="form-control ddl" AutoPostBack="False"></asp:DropDownList>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <asp:Label ID="Label2" runat="server" Text="Enter the minutes you volunteered that day:" CssClass="col-md-3 control-label"></asp:Label>
                             <div class="col-md-offset-1 col-md-8">
-                                <asp:DropDownList ID="ddMinutes" runat="server"  CssClass="form-control ddl" AutoPostBack="True"></asp:DropDownList>
+                                <asp:DropDownList ID="ddMinutes" runat="server"  CssClass="form-control ddl" AutoPostBack="False"></asp:DropDownList>
                             </div>
                         </div>
 

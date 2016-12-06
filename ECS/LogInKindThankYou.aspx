@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LogInKindThankYou.aspx.cs" Inherits="ECS.LogInKindThankYou" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <div id="divSignatureBox" align="center" runat="server" >
         <h3>By signing below, you assert that the information here is correct.</h3>
         <div id="divConfirmation" runat="server"></div>

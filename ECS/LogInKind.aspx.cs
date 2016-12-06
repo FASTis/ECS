@@ -77,18 +77,42 @@ namespace ECS
             }
             else
             {
-                // Save all data in session variables for use later.[Cici]
-                Session["Center"] = ddCenters.SelectedItem.ToString();
-                Session["Task"] = ddTasks.SelectedItem.ToString();
-                Session["ReadDescr"] = chkTask.Checked;
-                Session["Date"] = calendarInKind.SelectedDate.ToString().Replace(" 12:00:00 AM", ""); // remove the midnight text! argh!
-                Session["Hours"] = ddHours.SelectedItem;
-                Session["Minutes"] = ddMinutes.SelectedItem;
-
-                //Open signatureForm. [Cici]
-                Response.Redirect("LogInKindThankYou.aspx");
-
+                SaveToSession();
+                LogToDb();
             }
+        }
+
+        private void LogToDb()
+        {
+            int volunteerId = Convert.ToInt32(Session["VolunteerID"]);
+            int taskId = Convert.ToInt32(Session["TaskID"]);
+            int centerId = Convert.ToInt32(Session["CenterId"]);
+            int hoursVal = Convert.ToInt32(Session["Hours"]);
+            int minVal = Convert.ToInt32(Session["Minutes"]);
+
+            Bll bll = new Bll();
+            string returnedValue = bll.LogInKind(volunteerId, taskId, centerId, hoursVal, minVal);
+
+            if (!returnedValue.Contains("success"))
+            {
+                string radalertscript = "<script language='javascript'>function f(){radalert('" + returnedValue + "', 300, 100, 'ECS Volunteer App: In-Kind'); Sys.Application.remove_load(f);}; Sys.Application.add_load(f);</script>";
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "radalert", radalertscript);
+            }
+            else
+                Response.Redirect("LogInKindThankYou.aspx");
+        }
+
+        private void SaveToSession()
+        {
+            // Save all data in session variables for use later.[Cici]
+            Session["Center"] = ddCenters.SelectedItem.ToString();
+            Session["CenterId"] = ddCenters.SelectedValue;
+            Session["Task"] = ddTasks.SelectedItem.ToString();
+            Session["TaskId"] = ddTasks.SelectedValue;
+            Session["ReadDescr"] = chkTask.Checked;
+            Session["Date"] = calendarInKind.SelectedDate.ToString().Replace(" 12:00:00 AM", ""); // remove the midnight text! argh!
+            Session["Hours"] = ddHours.SelectedValue;
+            Session["Minutes"] = ddMinutes.SelectedValue;
         }
 
         protected void btnReset_Click(object sender, EventArgs e)

@@ -45,7 +45,7 @@ namespace ECS
                 Session["VolunteerType"] = user.VolunteerTypeDescr;
                 Session["VolunteerID"] = user.VolunteerID;
                 Session["Last4OfPhone"] = user.Last4DigitsOfPhone;
-                Session["PIN"] = user.Last4DigitsOfPhone;
+                Session["PIN"] = user.PIN;
             }
 
         }

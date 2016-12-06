@@ -23,7 +23,7 @@
 </head>
 <body style="padding-top:50px;">
     <form id="form1" runat="server">
-    <img src="img/ECSlogo.png" style="max-height:90px;padding-left:25px;" />
+    <img src="img/ECSlogo.png" style="max-height:90px;padding-left:25px;" /><div runat="server" id="divSig"></div>
         <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
             <div class="container">
                 <div class="navbar-header">
@@ -38,6 +38,9 @@
                     
                 </div>
                 <div class="collapse navbar-collapse" id="navbar-menubuilder-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="http://www.ecs4kids.org/">ECS Home</a> </li>
+                    </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="Default.aspx">Home</a> </li>
                     </ul>
