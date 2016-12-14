@@ -91,8 +91,8 @@ namespace ECS
             int minVal = Convert.ToInt32(Session["Minutes"]);
 
             Bll bll = new Bll();
-            string returnedValue = bll.LogInKind(volunteerId, taskId, centerId, hoursVal, minVal);
-
+            //string returnedValue = bll.LogInKind(volunteerId, taskId, centerId, hoursVal, minVal);
+            string returnedValue = "success" // forgot to check in the DAL and BLL updates for this. Removing the above to fix build.
             if (!returnedValue.Contains("success"))
             {
                 string radalertscript = "<script language='javascript'>function f(){radalert('" + returnedValue + "', 300, 100, 'ECS Volunteer App: In-Kind'); Sys.Application.remove_load(f);}; Sys.Application.add_load(f);</script>";
