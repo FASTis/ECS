@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Web.SessionState;
 
 
 namespace ECS
@@ -25,6 +19,13 @@ namespace ECS
 
             if (String.IsNullOrEmpty(sessionUser))
                 Response.Redirect("Login.aspx");
+            else
+            {
+                if (Session["IsAdmin"].ToString().Equals("true"))
+                    divAdmin.Visible = true;
+                else
+                    divAdmin.Visible = false;
+            }
         }
 
         protected void btnInkind_Click(object sender, EventArgs e)
@@ -41,6 +42,16 @@ namespace ECS
         {
             Session.Abandon();
             Response.Redirect("Default.aspx", false);
+        }
+
+        protected void btnEditTables_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("EditTables.aspx");
+        }
+
+        protected void btnRunReports_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RunReports.aspx");
         }
     }
 }

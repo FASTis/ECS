@@ -26,21 +26,35 @@ namespace ECS
             if (retVal)
             {
                 User user = bll.GetUserInfo(txtUserName.Text);
-                Session["FirstName"] = user.FirstName;
-                Session["LastName"] = user.LastName;
-                Session["VolunteerType"] = user.VolunteerTypeDescr;
-                Session["Username"] = user.UserID;
-                Session["VolunteerID"] = user.VolunteerID;
-                Session["Last4OfPhone"] = user.Last4DigitsOfPhone;
-                Session["PIN"] = user.PIN;
+                SetSessionVariablesForUser(user);
                 txtUserName.Text = "";
                 txtPIN.Text = "";
-                //lblRetVal.Text = String.Format("Welcome, {0}! Your last name is {1}, and you are a {2}.", Session["FirstName"], Session["LastName"], Session["VolunteerType"]);
                 Response.Redirect("Default.aspx");
             }
             else
                 lblRetVal.Text = "Invalid username or password.";
         }
+
+        private void SetSessionVariablesForUser(User user)
+        {
+            Session["FirstName"] = user.FirstName;
+            Session["LastName"] = user.LastName;
+            Session["VolunteerType"] = user.VolunteerTypeDescr;
+            Session["Username"] = user.UserID;
+            Session["VolunteerID"] = user.VolunteerID;
+            Session["Last4OfPhone"] = user.Last4DigitsOfPhone;
+            Session["PIN"] = user.PIN;
+
+            // Convert this to data-driven by "IsAdmin" flag in table. [Cici]
+            if ((Session["FirstName"].ToString().Contains("Cici")) ||
+                (Session["FirstName"].ToString().Contains("Ashley")) ||
+                (Session["FirstName"].ToString().Contains("Tillman")) ||
+                (Session["FirstName"].ToString().Contains("Shawna")))
+                Session["IsAdmin"] = "true";
+            else
+                Session["IsAdmin"] = "false";
+        }
+
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             ValidateEntry();
