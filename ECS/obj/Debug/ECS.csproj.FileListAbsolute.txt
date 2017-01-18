@@ -10,3 +10,6 @@ C:\Users\Texid\Source\Repos\ECS\ECS\bin\ECS.DAL.pdb
 C:\Users\Texid\Source\Repos\ECS\ECS\obj\Debug\ECS.csprojResolveAssemblyReference.cache
 C:\Users\Texid\Source\Repos\ECS\ECS\obj\Debug\ECS.dll
 C:\Users\Texid\Source\Repos\ECS\ECS\obj\Debug\ECS.pdb
+C:\Users\Texid\OneDrive\Documents\GitHub\ECS\ECS\obj\Debug\ECS.csprojResolveAssemblyReference.cache
+C:\Users\Texid\OneDrive\Documents\GitHub\ECS\ECS\obj\Debug\ECS.dll
+C:\Users\Texid\OneDrive\Documents\GitHub\ECS\ECS\obj\Debug\ECS.pdb
