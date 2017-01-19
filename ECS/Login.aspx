@@ -25,8 +25,8 @@
                             <asp:Button ID="btnSubmit" runat="server" CssClass="btn btn-primary" Text="Log On" OnClick="btnSubmit_Click" />
                             <asp:Button ID="btnRegister" runat="server" CssClass="btn btn-primary" Text="Register" OnClientClick="window.location.href='Registration.aspx'; return false;" />
                             <br />
-                            <h6><a href="javascript:openWin('The <b>Forgot Password</b> feature is not yet implemented.');">Forgot Password</a><br />
-                                <a href="javascript:openWin('The <b>Forgot Username</b> feature is not yet implemented.');">Forgot Username</a><br />
+                            <h6><a href="ForgottenPassword.aspx">Forgot Password</a><br />
+                                <a href="ForgottenUsername.aspx">Forgot Username</a><br />
                                 <!--<a href="javascript:openWin('<b>Admin Functionality</b> is not yet implemented.');">Admin Logon</a><br />-->
                             </h6>
                             <br />
