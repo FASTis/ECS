@@ -261,43 +261,23 @@ namespace ECS.DAL
             return dtTask;
         }
 
-        // ad
-        // need to rework & add sp
-        //
-        //public string InsertNewInKind(int centerID, int taskID, string mintues)
-        //{
-        //    string retVal;
-        //    try
-        //    {
-        //        using (SqlConnection conn = new SqlConnection(Conn))
-        //        {
-        //            using (SqlCommand command = new SqlCommand("InsertNewInKind", conn))
-        //            {
-        //                command.CommandType = CommandType.StoredProcedure;
-
-        //                command.Parameters.AddWithValue("@FirstName", firstName);
-        //                command.Parameters.AddWithValue("@LastName", lastName);
-        //                command.Parameters.AddWithValue("@VolunteerTypeId", volTypeId);
-
-        //                conn.Open();
-        //                command.ExecuteNonQuery();
-        //            }
-        //            conn.Close();
-        //            retVal = "Successfully added user.";
-        //        }
-        //    }
-        //    catch (SqlException sqlEx)
-        //    {
-        //        if (sqlEx.Number == 2627)
-        //            retVal = userId + " is already taken. Please select a different user name.";
-        //        else
-        //            retVal = sqlEx.Message;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        retVal = ex.Message;
-        //    }
-        //    return retVal;
-        //}
+        public object GetStaffTypes()
+        {
+            DataTable dtStaffTypes = new DataTable();
+            using (SqlConnection conn = new SqlConnection(Conn))
+            {
+                string sel = String.Format("select StaffTypeId, StaffTypeDescr");
+                string tbl = "StaffType";
+                string sql = String.Format("{0} from {1}", sel, tbl);
+                using (SqlCommand command = new SqlCommand(sql, conn))
+                {
+                    command.CommandType = CommandType.Text;
+                    conn.Open();
+                    dtStaffTypes.Load(command.ExecuteReader());
+                    conn.Close();
+                }
+            }
+            return dtStaffTypes;
+        }
     }
 }
