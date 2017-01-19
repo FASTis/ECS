@@ -106,5 +106,11 @@ namespace ECS.BLL
             Dal db = new Dal();
             return db.GetTasks();
         }
+
+        public object GetStaffTypes()
+        {
+            Dal db = new Dal();
+            return db.GetStaffTypes();
+        }
     }
 }
