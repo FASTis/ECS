@@ -13,8 +13,14 @@ namespace ECS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Bll bll = new Bll();
-            gvVolunteers.DataSource = bll.GetVolunteers();
+            if (Session["IsAdmin"].ToString().Equals("false"))
+                Response.Redirect("Default.aspx");
+            else
+            {
+                Bll bll = new Bll();
+                gvVolunteers.DataSource = bll.GetVolunteers();
+                gvVolunteers.DataBind();
+            }
         }
 
     }

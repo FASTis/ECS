@@ -27,7 +27,7 @@
                             <br />
                             <h6><a href="javascript:openWin('The <b>Forgot Password</b> feature is not yet implemented.');">Forgot Password</a><br />
                                 <a href="javascript:openWin('The <b>Forgot Username</b> feature is not yet implemented.');">Forgot Username</a><br />
-                                <a href="javascript:openWin('<b>Admin Functionality</b> is not yet implemented.');">Admin Logon</a><br />
+                                <!--<a href="javascript:openWin('<b>Admin Functionality</b> is not yet implemented.');">Admin Logon</a><br />-->
                             </h6>
                             <br />
                             <h5><strong>

@@ -7,6 +7,7 @@
                     <asp:Button ID="btnEdit" runat="server" CssClass="btn btn-primary" Text="Edit"  />                           
                     <asp:Button ID="btnDelete" runat="server" CssClass="btn btn-warning" Text="Delete"  />
                     </div>
-                    <br />
-                    <asp:GridView ID="gvVolunteers" runat="server"></asp:GridView>
+                    <br /><br />
+                    <asp:GridView ID="gvVolunteers" runat="server" CssClass="table table-striped table-hover">
+                    </asp:GridView>
 </asp:Content>
