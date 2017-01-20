@@ -45,7 +45,7 @@ namespace ECS
             Session["Last4OfPhone"] = user.Last4DigitsOfPhone;
             Session["PIN"] = user.PIN;
 
-            // Convert this to data-driven by "IsAdmin" flag in table. [Cici]
+            // TODO: Convert this to data-driven by "IsAdmin" flag in table. [Cici]
             if ((Session["FirstName"].ToString().Contains("Cici")) ||
                 (Session["FirstName"].ToString().Contains("Ashley")) ||
                 (Session["FirstName"].ToString().Contains("Tillman")) ||
