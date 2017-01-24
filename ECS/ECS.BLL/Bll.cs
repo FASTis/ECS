@@ -112,5 +112,11 @@ namespace ECS.BLL
             Dal db = new Dal();
             return db.GetStaffTypes();
         }
+
+        public string GetPIN(string username, string last4ofPhone)
+        {
+            Dal db = new Dal();
+            return db.GetPIN(username, last4ofPhone);
+        }
     }
 }
