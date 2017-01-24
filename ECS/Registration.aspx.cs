@@ -33,6 +33,7 @@ namespace ECS
                 Session["VolunteerID"] = user.VolunteerID;
                 Session["Last4OfPhone"] = user.Last4DigitsOfPhone;
                 Session["PIN"] = user.Last4DigitsOfPhone;
+                Session["IsAdmin"] = "false";
                 Response.Redirect("Default.aspx");
             }
             else
