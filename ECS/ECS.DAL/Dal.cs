@@ -279,5 +279,38 @@ namespace ECS.DAL
             }
             return dtStaffTypes;
         }
+        /// <summary>
+        /// Returns PIN
+        /// </summary>
+        /// <author>
+        /// Cici Carter
+        /// </author>
+        /// <returns>PIN</returns>
+        public string GetPIN(string username, string last4ofPhone)
+        {
+            string pin = "PIN not found in database for that user/phone combination.";
+            DataTable dt = new DataTable();
+
+            using (SqlConnection conn = new SqlConnection(Conn))
+            {
+                string sel = "select PIN";
+                string tbl = "UserLogon u join Volunteer v on u.VolunteerID=v.VolunteerID";
+                string cri = string.Format("UserID='{0}' and Last4DigitsOfPhone='{1}'", username, last4ofPhone);
+                string sql = String.Format("{0} from {1} where {2}", sel, tbl, cri);
+
+                using (SqlCommand command = new SqlCommand(sql, conn))
+                {
+                    command.CommandType = CommandType.Text;
+                    conn.Open();
+                    dt.Load(command.ExecuteReader());
+                    foreach (DataRow row in dt.Rows) // should only be one row.
+                    {
+                        pin = row["PIN"].ToString();
+                    }
+                    conn.Close();
+                }
+            }
+            return pin;
+        }
     }
 }
