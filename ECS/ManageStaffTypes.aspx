@@ -2,6 +2,12 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    <ul class="breadcrumb">
+        <li><a href="Default.aspx">Home</a></li>
+        <li><a href="EditTables.aspx">Edit Tables</a></li>
+        <li class="active">Manage Staff Types</li>
+    </ul>
+    
     <legend>Manage Staff Types</legend>
     <br />
     <asp:Button ID="btnAdd" runat="server" CssClass="btn btn-primary" Text="Add New Staff Type" OnClientClick="window.location.href='/EditStaffTypes.aspx?mode=A';return false;"/>
