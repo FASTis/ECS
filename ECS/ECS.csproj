@@ -85,7 +85,6 @@
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery.backstretch.js" />
     <Content Include="js\jquery.js" />
-    <Content Include="ReportConsolidation.aspx" />
     <Content Include="RunReports.aspx" />
     <Content Include="signatureForm.aspx" />
     <Content Include="sql\procedures\InsertNewUser.sql" />
@@ -105,8 +104,6 @@
     <Content Include="sql\tables\Volunteer.sql" />
     <Content Include="sql\tables\VolunteerLog.sql" />
     <Content Include="sql\tables\VolunteerType.sql" />
-    <Content Include="TestOfWebformUsingMasterPage.aspx" />
-    <Content Include="ViewReport.aspx" />
     <Content Include="Web.config" />
     <Content Include="LogInKind.aspx" />
   </ItemGroup>
@@ -209,27 +206,6 @@
     </Compile>
     <Compile Include="LogInKind.aspx.designer.cs">
       <DependentUpon>LogInKind.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ReportConsolidation.aspx.cs">
-      <DependentUpon>ReportConsolidation.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ReportConsolidation.aspx.designer.cs">
-      <DependentUpon>ReportConsolidation.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="TestOfWebformUsingMasterPage.aspx.cs">
-      <DependentUpon>TestOfWebformUsingMasterPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="TestOfWebformUsingMasterPage.aspx.designer.cs">
-      <DependentUpon>TestOfWebformUsingMasterPage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ViewReport.aspx.cs">
-      <DependentUpon>ViewReport.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ViewReport.aspx.designer.cs">
-      <DependentUpon>ViewReport.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
