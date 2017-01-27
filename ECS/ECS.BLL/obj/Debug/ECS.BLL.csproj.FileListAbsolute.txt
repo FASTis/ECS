@@ -16,3 +16,12 @@ C:\Users\Texid\OneDrive\Documents\GitHub\ECS\ECS\ECS.BLL\bin\Debug\ECS.Model.pdb
 C:\Users\Texid\OneDrive\Documents\GitHub\ECS\ECS\ECS.BLL\obj\Debug\ECS.BLL.csprojResolveAssemblyReference.cache
 C:\Users\Texid\OneDrive\Documents\GitHub\ECS\ECS\ECS.BLL\obj\Debug\ECS.BLL.dll
 C:\Users\Texid\OneDrive\Documents\GitHub\ECS\ECS\ECS.BLL\obj\Debug\ECS.BLL.pdb
+C:\Users\e6079583\Documents\_misc\SrProject-UpdatedCode\ECS-master\ECS\ECS.BLL\bin\Debug\ECS.BLL.dll
+C:\Users\e6079583\Documents\_misc\SrProject-UpdatedCode\ECS-master\ECS\ECS.BLL\bin\Debug\ECS.BLL.pdb
+C:\Users\e6079583\Documents\_misc\SrProject-UpdatedCode\ECS-master\ECS\ECS.BLL\bin\Debug\ECS.DAL.dll
+C:\Users\e6079583\Documents\_misc\SrProject-UpdatedCode\ECS-master\ECS\ECS.BLL\bin\Debug\ECS.Model.dll
+C:\Users\e6079583\Documents\_misc\SrProject-UpdatedCode\ECS-master\ECS\ECS.BLL\bin\Debug\ECS.DAL.pdb
+C:\Users\e6079583\Documents\_misc\SrProject-UpdatedCode\ECS-master\ECS\ECS.BLL\bin\Debug\ECS.Model.pdb
+C:\Users\e6079583\Documents\_misc\SrProject-UpdatedCode\ECS-master\ECS\ECS.BLL\obj\Debug\ECS.BLL.csprojResolveAssemblyReference.cache
+C:\Users\e6079583\Documents\_misc\SrProject-UpdatedCode\ECS-master\ECS\ECS.BLL\obj\Debug\ECS.BLL.dll
+C:\Users\e6079583\Documents\_misc\SrProject-UpdatedCode\ECS-master\ECS\ECS.BLL\obj\Debug\ECS.BLL.pdb
