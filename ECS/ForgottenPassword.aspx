@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="ForgottenPassword.aspx.cs" Inherits="ECS.ForgottenPassword" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" Inherits="ECS.ForgottenPassword" Codebehind="ForgottenPassword.aspx.cs" %>
 
 <asp:Content id="ContentForgotPassword" contentplaceholderid="ContentPlaceHolder1" runat="server">
 

@@ -312,5 +312,90 @@ namespace ECS.DAL
             }
             return pin;
         }
+
+        public string GetStaffTypeForID(string id)
+        {
+            DataTable dt = new DataTable();
+            string staffType = "";
+
+            using (SqlConnection conn = new SqlConnection(Conn))
+            {
+                string sel = "select StaffTypeDescr";
+                string tbl = "StaffType";
+                string cri = string.Format("StaffTypeID='{0}'", id);
+                string sql = String.Format("{0} from {1} where {2}", sel, tbl, cri);
+
+                using (SqlCommand command = new SqlCommand(sql, conn))
+                {
+                    command.CommandType = CommandType.Text;
+                    conn.Open();
+                    dt.Load(command.ExecuteReader());
+                    foreach (DataRow row in dt.Rows) // should only be one row.
+                    {
+                        staffType = row["StaffTypeDescr"].ToString();
+                    }
+                    conn.Close();
+                }
+            }
+            return staffType;
+        }
+
+        public string UpdateStaffType(string id, string sType)
+        {
+            string retVal; // this stands for "returned value". This is just what we're going to return to whatever called this method.
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Conn))
+                {
+                    string sql = String.Format(@"Update {0} set StaffTypeDescr='{1}' where StaffTypeID={2}",
+                                                "StaffType", sType, id);
+
+                    //create a new sql command, and execute the query.
+                    using (SqlCommand command = new SqlCommand(sql, conn))
+                    {
+                        command.CommandType = CommandType.Text;
+                        conn.Open();
+                        command.ExecuteNonQuery(); // this is used for adds, updates, and deletes.
+                    }
+                    
+                    conn.Close();
+                    retVal = String.Format("Staff Type successfully updated.");
+                }
+            }
+            catch (Exception ex)
+            {
+                retVal = ex.Message;
+            }
+            return retVal;
+        }
+
+        public string AddStaffType(string sType)
+        {
+            string retVal; // this stands for "returned value". This is just what we're going to return to whatever called this method.
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Conn))
+                {
+                    string sql = String.Format(@"Insert {0} (StaffTypeDescr) values ('{1}')",
+                                                "StaffType", sType);
+
+                    //create a new sql command, and execute the query.
+                    using (SqlCommand command = new SqlCommand(sql, conn))
+                    {
+                        command.CommandType = CommandType.Text;
+                        conn.Open();
+                        command.ExecuteNonQuery(); // this is used for adds, updates, and deletes.
+                    }
+
+                    conn.Close();
+                    retVal = String.Format("Staff Type successfully added.");
+                }
+            }
+            catch (Exception ex)
+            {
+                retVal = ex.Message;
+            }
+            return retVal;
+        }
     }
 }
