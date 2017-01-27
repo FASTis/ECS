@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="EditStaffType.aspx" />
     <Content Include="ForgottenPassword.aspx" />
     <Content Include="ForgottenUsername.aspx" />
     <Content Include="ManageStaffTypes.aspx" />
@@ -108,6 +109,13 @@
     <Content Include="LogInKind.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EditStaffType.aspx.cs">
+      <DependentUpon>EditStaffType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditStaffType.aspx.designer.cs">
+      <DependentUpon>EditStaffType.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ForgottenPassword.aspx.cs">
       <DependentUpon>ForgottenPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
