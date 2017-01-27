@@ -8,8 +8,11 @@
         <li class="active">Edit Staff Type</li>
     </ul>
     
-    <legend>Edit Staff Type</legend>
+        <div class="form-horizontal">
+            <fieldset>
+                <legend>Edit Staff Type</legend>
 
+                <!-- username -->
                 <div class="form-group">
                     <asp:Label ID="lblStaffType" runat="server" Text="Staff Type:" CssClass="col-lg-2 control-label"></asp:Label>
                     <div class="col-lg-10">
@@ -17,11 +20,14 @@
                     </div>
                 </div>
 
+                <!-- submit/cancel button -->
                 <br />
                 <div class="form-group">
                     <div class="col-lg-10 col-lg-offset-2">
-                            <asp:Button ID="btnSubmit" runat="server" CssClass="btn btn-primary" Text="Submit"/>
-                            <asp:Button ID="btnCancel" runat="server" CssClass="btn btn-warning" Text="Cancel"/>
+                            <asp:Button ID="btnSubmit" runat="server" CssClass="btn btn-primary" Text="Submit" OnClick="btnSubmit_Click" />
+                            <asp:Button ID="btnCancel" runat="server" CssClass="btn btn-warning" Text="Cancel" OnClick="btnCancel_Click" />
                     </div>
                 </div>
+            </fieldset>
+        </div>
 </asp:Content>
