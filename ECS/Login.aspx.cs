@@ -49,8 +49,9 @@ namespace ECS
             if ((Session["FirstName"].ToString().Contains("Cici")) ||
                 (Session["FirstName"].ToString().Contains("Ashley")) ||
                 (Session["FirstName"].ToString().Contains("Tillman")) ||
-                (Session["FirstName"].ToString().Contains("Shawna")))
-                Session["IsAdmin"] = "true";
+                (Session["FirstName"].ToString().Contains("Shawna")) ||
+                (Session["FirstName"].ToString().Contains("Admin")))
+                Session["IsAdmin"] = "true"; 
             else
                 Session["IsAdmin"] = "false";
         }
