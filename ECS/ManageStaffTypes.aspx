@@ -10,14 +10,14 @@
     
     <legend>Manage Staff Types</legend>
     <br />
-    <asp:Button ID="btnAdd" runat="server" CssClass="btn btn-primary" Text="Add New Staff Type" OnClientClick="window.location.href='/EditStaffType.aspx?mode=A';return false;"/>
+    <asp:Button ID="btnAdd" runat="server" CssClass="btn btn-primary" Text="Add New Staff Type" OnClientClick="window.location.href='EditStaffType.aspx?mode=A';return false;"/>
     <br />
     <br />
     <asp:GridView ID="gvStaffTypes" runat="server" CssClass="table table-striped table-hover" AutoGenerateColumns="false" Width="50%">
         <Columns>
             <asp:BoundField DataField="StaffTypeDescr" HeaderText="Staff Type" />
-            <asp:HyperLinkField DataNavigateUrlFields="StaffTypeId" HeaderText=" " DataNavigateUrlFormatString="/EditStaffType.aspx?id={0}&mode=E" Text="Edit" ItemStyle-HorizontalAlign="center" />
-            <asp:HyperLinkField DataNavigateUrlFields="StaffTypeId" HeaderText=" " DataNavigateUrlFormatString="/EditStaffType.aspx?id={0}&mode=D" Text="Delete" ItemStyle-HorizontalAlign="center" />
+            <asp:HyperLinkField DataNavigateUrlFields="StaffTypeId" HeaderText=" " DataNavigateUrlFormatString="EditStaffType.aspx?id={0}&mode=E" Text="Edit" ItemStyle-HorizontalAlign="center" />
+            <asp:HyperLinkField DataNavigateUrlFields="StaffTypeId" HeaderText=" " DataNavigateUrlFormatString="EditStaffType.aspx?id={0}&mode=D" Text="Delete" ItemStyle-HorizontalAlign="center" />
         </Columns>
     </asp:GridView>
 </asp:Content>
