@@ -3,6 +3,11 @@
 <asp:Content ID="ContentLogInKind" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <!-- When using a Master Page File, you must put your content inside of a content block. [Cici]-->
 
+    <ul class="breadcrumb">
+        <li><a href="Default.aspx">Home</a></li>
+        <li class="active">Log In Kind Hours</li>
+    </ul>
+
     <!-- form to enter in-kind information -->
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-horizontal">
