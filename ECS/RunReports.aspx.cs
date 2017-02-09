@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using ECS.BLL;
+using ECS.Model;
 
 namespace ECS
 {
@@ -13,6 +16,22 @@ namespace ECS
         {
             if (Session["IsAdmin"].ToString().Equals("false"))
                 Response.Redirect("Default.aspx");
+
+            if (!IsPostBack)
+            {
+                LoadCenters();
+            }
+        }
+
+        private void LoadCenters()
+        {
+            DataTable dt = new DataTable();
+            Bll bll = new Bll();
+            dt = bll.GetCenters();
+            ddCenters.DataTextField = "CenterName";
+            ddCenters.DataValueField = "CenterID";
+            ddCenters.DataSource = dt;
+            ddCenters.DataBind();
         }
     }
 }
