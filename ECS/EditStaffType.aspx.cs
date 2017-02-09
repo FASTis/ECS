@@ -52,7 +52,8 @@ namespace ECS
                 case "A":
                     retValue = _bll.AddStaffType(sType);
                     break;
-                case "D":                    
+                case "D":
+                    retValue = "The delete feature has not yet been implemented.";
                     break;
                 default:
                     break;
