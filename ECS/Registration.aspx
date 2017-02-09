@@ -6,7 +6,7 @@
             <div class="registrationform">
                 <div class="form-horizontal">
                     <fieldset>
-                       <legend>My Profile<i class="fa fa-pencil pull-right"></i></legend>
+                       <legend>Registration Form<i class="fa fa-pencil pull-right"></i></legend>
                        <div class="form-group">
                             <asp:Label ID="Label1" runat="server" Text="First Name" CssClass="col-lg-2 control-label"></asp:Label>
                             <div class="col-lg-10">
