@@ -2,6 +2,10 @@
 
 <asp:content id="Content3" contentplaceholderid="ContentPlaceHolder1" runat="server">
     <!-- When using a Master Page File, you must put your content inside of a content block. [Cici]-->
+    <ul class="breadcrumb">
+        <li><a href="Default.aspx">Home</a></li>
+        <li class="active">My Profile</li>
+    </ul>
         <div>
             <div class="registrationform">
                 <div class="form-horizontal">
