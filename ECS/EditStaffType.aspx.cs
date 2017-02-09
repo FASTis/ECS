@@ -43,31 +43,37 @@ namespace ECS
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             string sType = txtStaffType.Text;
-            string retValue = "";
+            string returnedMessage = "";
             switch (_mode)
             {
                 case "E":
-                    retValue = _bll.UpdateStaffType(_id, sType);
+                    returnedMessage = _bll.UpdateStaffType(_id, sType);
                     break;
                 case "A":
-                    retValue = _bll.AddStaffType(sType);
+                    returnedMessage = _bll.AddStaffType(sType);
                     break;
                 case "D":
-                    retValue = "The delete feature has not yet been implemented.";
+                    returnedMessage = "The delete feature has not yet been implemented.";
+                    btnCancel.Text = "Close Form";
                     break;
                 default:
                     break;
             }
 
             //Return the value to the user.
-            string radalertscript = "<script language='javascript'>function f(){radalert('" + retValue + "', 300, 100, 'ECS Volunteer App: Edit Staff Type'); Sys.Application.remove_load(f);}; Sys.Application.add_load(f);</script>";
-            Page.ClientScript.RegisterStartupScript(this.GetType(), "radalert", radalertscript);
+            DisplayPopup(returnedMessage);
 
-            if (retValue.Contains("success"))
+            if (returnedMessage.Contains("success"))
             {
                 btnCancel.Text = "Close Form";
             }
 
+        }
+
+        private void DisplayPopup(string returnedMessage)
+        {
+            string radalertscript = "<script language='javascript'>function f(){radalert('" + returnedMessage + "', 300, 100, 'ECS Volunteer App: Edit Staff Type'); Sys.Application.remove_load(f);}; Sys.Application.add_load(f);</script>";
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "radalert", radalertscript);
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
