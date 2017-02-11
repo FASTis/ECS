@@ -4,9 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
-using ECS.BLL;
-using ECS.Model;
+using ECS.BLL; //This line must be present in order to access the methods in the BLL.
 
 namespace ECS
 {
@@ -16,22 +14,18 @@ namespace ECS
         {
             if (Session["IsAdmin"].ToString().Equals("false"))
                 Response.Redirect("Default.aspx");
-
-            if (!IsPostBack)
+            else
             {
-                LoadCenters();
+                int monthNumber = Convert.ToInt16(ddMonths.SelectedValue);                
+                Bll bll = new Bll();
+                gvReportData.DataSource = bll.GetReportForMonth(monthNumber);
+                gvReportData.DataBind();
             }
         }
 
-        private void LoadCenters()
+        protected void btnRunReport_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            Bll bll = new Bll();
-            dt = bll.GetCenters();
-            ddCenters.DataTextField = "CenterName";
-            ddCenters.DataValueField = "CenterID";
-            ddCenters.DataSource = dt;
-            ddCenters.DataBind();
+
         }
     }
 }
