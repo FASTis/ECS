@@ -413,5 +413,43 @@ namespace ECS.DAL
             }
             return dtReportData;
         }
+
+        /// <summary>
+        ///  Cici Carter - This logs in-kind in minutes.
+        /// </summary>
+        /// <param name="volunteerId"></param>
+        /// <param name="taskId"></param>
+        /// <param name="centerId"></param>
+        /// <param name="numHrs"></param>
+        /// <param name="numMins"></param>
+        /// <returns></returns>
+        public string LogInKind(int volunteerId, int taskId, int centerId, int numHrs, int numMins)
+        {
+            int totalMinutes = (60 * numHrs) + numMins;
+            string retVal;
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Conn))
+                {
+                    string sql = String.Format(@"Insert {0} (VolunteerId, TaskId, CenterId, NumberMinutes)
+                                                 values ({1}, {2}, {3}, {4})", "dbo.VolunteerLog",
+                                                 volunteerId, taskId, centerId, totalMinutes);
+                    using (SqlCommand command1 = new SqlCommand(sql, conn))
+                    {
+                        command1.CommandType = CommandType.Text;
+                        conn.Open();
+                        command1.ExecuteNonQuery();
+                    }
+
+                    conn.Close();
+                    retVal = "In-Kind time was successfully logged.";
+                }
+            }
+            catch (Exception ex)
+            {
+                retVal = ex.Message;
+            }
+            return retVal;
+        }
     }
 }

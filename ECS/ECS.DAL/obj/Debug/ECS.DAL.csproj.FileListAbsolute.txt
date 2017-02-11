@@ -15,3 +15,10 @@ C:\Users\e6079583\Documents\_misc\SrProject-UpdatedCode\ECS-master\ECS\ECS.DAL\b
 C:\Users\e6079583\Documents\_misc\SrProject-UpdatedCode\ECS-master\ECS\ECS.DAL\obj\Debug\ECS.DAL.csprojResolveAssemblyReference.cache
 C:\Users\e6079583\Documents\_misc\SrProject-UpdatedCode\ECS-master\ECS\ECS.DAL\obj\Debug\ECS.DAL.dll
 C:\Users\e6079583\Documents\_misc\SrProject-UpdatedCode\ECS-master\ECS\ECS.DAL\obj\Debug\ECS.DAL.pdb
+C:\Users\cicic_000\Downloads\ECS-master (02-11-17)\ECS-master\ECS\ECS.DAL\bin\Debug\ECS.DAL.dll
+C:\Users\cicic_000\Downloads\ECS-master (02-11-17)\ECS-master\ECS\ECS.DAL\bin\Debug\ECS.DAL.pdb
+C:\Users\cicic_000\Downloads\ECS-master (02-11-17)\ECS-master\ECS\ECS.DAL\bin\Debug\ECS.Model.dll
+C:\Users\cicic_000\Downloads\ECS-master (02-11-17)\ECS-master\ECS\ECS.DAL\bin\Debug\ECS.Model.pdb
+C:\Users\cicic_000\Downloads\ECS-master (02-11-17)\ECS-master\ECS\ECS.DAL\obj\Debug\ECS.DAL.csprojResolveAssemblyReference.cache
+C:\Users\cicic_000\Downloads\ECS-master (02-11-17)\ECS-master\ECS\ECS.DAL\obj\Debug\ECS.DAL.dll
+C:\Users\cicic_000\Downloads\ECS-master (02-11-17)\ECS-master\ECS\ECS.DAL\obj\Debug\ECS.DAL.pdb

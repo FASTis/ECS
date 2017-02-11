@@ -91,8 +91,7 @@ namespace ECS
             int minVal = Convert.ToInt32(Session["Minutes"]);
 
             Bll bll = new Bll();
-            //string returnedValue = bll.LogInKind(volunteerId, taskId, centerId, hoursVal, minVal);
-            string returnedValue = "success"; // forgot to check in the DAL and BLL updates for this. Removing the above to fix build.
+            string returnedValue = bll.LogInKind(volunteerId, taskId, centerId, hoursVal, minVal);
 
             if (!returnedValue.Contains("success"))
             {

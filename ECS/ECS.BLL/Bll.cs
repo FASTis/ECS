@@ -141,5 +141,11 @@ namespace ECS.BLL
             Dal db = new Dal();
             return db.GetReportForMonth(monthNum);
         }
+
+        public string LogInKind(int volunteerId, int taskId, int centerId, int hoursVal, int minVal)
+        {
+            Dal db = new Dal();
+            return db.LogInKind(volunteerId, taskId, centerId, hoursVal, minVal);
+        }
     }
 }
