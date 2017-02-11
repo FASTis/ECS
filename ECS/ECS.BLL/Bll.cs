@@ -136,5 +136,10 @@ namespace ECS.BLL
             Dal db = new Dal();
             return db.AddStaffType(sType);
         }
+        public DataTable GetReportForMonth(int monthNum)
+        {
+            Dal db = new Dal();
+            return db.GetReportForMonth(monthNum);
+        }
     }
 }
