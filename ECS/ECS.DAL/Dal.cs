@@ -157,7 +157,6 @@ namespace ECS.DAL
                 using (SqlCommand command = new SqlCommand("SelectUserByUserId", conn))
                 {
                     command.CommandType = CommandType.StoredProcedure;
-
                     command.Parameters.AddWithValue("UserId", userId);
 
                     conn.Open();
@@ -261,7 +260,7 @@ namespace ECS.DAL
             return dtTask;
         }
 
-        public object GetStaffTypes()
+        public DataTable GetStaffTypes()
         {
             DataTable dtStaffTypes = new DataTable();
             using (SqlConnection conn = new SqlConnection(Conn))
@@ -396,6 +395,23 @@ namespace ECS.DAL
                 retVal = ex.Message;
             }
             return retVal;
+        }
+        public DataTable GetReportForMonth(int monthNum)
+        {
+            DataTable dtReportData = new DataTable();
+            using (SqlConnection conn = new SqlConnection(Conn))
+            {
+                string sql = "SelectReportForMonth";
+                using (SqlCommand command = new SqlCommand(sql, conn))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("monthNum", monthNum);
+                    conn.Open();
+                    dtReportData.Load(command.ExecuteReader());
+                    conn.Close();
+                }
+            }
+            return dtReportData;
         }
     }
 }
