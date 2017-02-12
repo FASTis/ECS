@@ -89,7 +89,9 @@
     <Content Include="RunReports.aspx" />
     <Content Include="signatureForm.aspx" />
     <Content Include="sql\procedures\InsertNewUser.sql" />
+    <Content Include="sql\procedures\SelectAllUsers.sql" />
     <Content Include="sql\procedures\SelectCenter.sql" />
+    <Content Include="sql\procedures\SelectReportForMonth.sql" />
     <Content Include="sql\procedures\SelectTask.sql" />
     <Content Include="sql\procedures\SelectUserByUserId.sql" />
     <Content Include="sql\procedures\SelectVolunteerTypes.sql" />
