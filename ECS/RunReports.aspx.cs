@@ -16,13 +16,23 @@ namespace ECS
                 Response.Redirect("Default.aspx");
             else
             {
-                int monthNumber = Convert.ToInt16(ddMonths.SelectedValue);                
-                Bll bll = new Bll();
-                gvReportData.DataSource = bll.GetReportForMonth(monthNumber);
-                gvReportData.DataBind();
+                Load_gvReportData();
             }
         }
 
+        private void Load_gvReportData()
+        {
+            int monthNumber = Convert.ToInt16(ddMonths.SelectedValue);
+            Bll bll = new Bll();
+            gvReportData.DataSource = bll.GetReportForMonth(monthNumber);
+            gvReportData.DataBind();
+
+        }
+        protected void gvReportData_Paging(object sender, GridViewPageEventArgs e)
+        {
+            gvReportData.PageIndex = e.NewPageIndex;
+            Load_gvReportData();
+        }
         protected void btnRunReport_Click(object sender, EventArgs e)
         {
 

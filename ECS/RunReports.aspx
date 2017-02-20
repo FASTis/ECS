@@ -24,7 +24,8 @@
         <asp:ListItem Value="12">December</asp:ListItem>
     </asp:DropDownList>
     <br /><br />
-    <asp:GridView ID="gvReportData" runat="server" CssClass="table table-striped table-hover" AutoGenerateColumns="false" Width="90%">
+    <asp:GridView ID="gvReportData" runat="server" CssClass="table table-striped table-hover" AutoGenerateColumns="false" Width="90%"
+         PageSize="5" AllowPaging="true" OnPageIndexChanging="gvReportData_Paging">
         <Columns>
             <asp:BoundField DataField="FirstName" HeaderText="First Name" />
             <asp:BoundField DataField="LastName" HeaderText="Last Name" />
@@ -34,6 +35,9 @@
             <asp:BoundField DataField="NumberMinutes" HeaderText="Minutes" />
             <asp:BoundField DataField="PricePerMinute" HeaderText="Price Per Minute" />
         </Columns>
+        <pagerstyle BackColor="#d34615" ForeColor="White" 
+            HorizontalAlign="Center">
+        </pagerstyle>
     </asp:GridView>
 
 </asp:Content>
