@@ -40,4 +40,7 @@
         </pagerstyle>
     </asp:GridView>
 
+    <br />
+    <asp:Button ID="btnExport" runat="server" Text="Export To Excel" OnClick = "ExportToExcel" />
+
 </asp:Content>
