@@ -280,6 +280,7 @@ namespace ECS.DAL
             }
             return dtStaffTypes;
         }
+
         /// <summary>
         /// Returns PIN
         /// </summary>
@@ -313,6 +314,14 @@ namespace ECS.DAL
                 }
             }
             return pin;
+        }
+
+        ///
+        /// Needs to be worked on && method of same name in Bll
+        ///
+        public string GetUsername()
+        {
+            return null;
         }
 
         public string GetStaffTypeForID(string id)

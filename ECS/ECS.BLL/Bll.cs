@@ -84,14 +84,6 @@ namespace ECS.BLL
             return db.UpdateUser(firstName, lastName, last4Digits, userId, pin);
         }
 
-        // ad
-        // need rework dal code & create sp
-        //
-        //public string InsertNewInKind(int centerID, int taskID, string mintues)
-        //{
-        //    Dal db = new Dal();
-        //    return db.InsertNewInKind(centerID, taskID, mintues);
-        //}
 
         // ad
         public DataTable GetCenters()
@@ -117,6 +109,15 @@ namespace ECS.BLL
         {
             Dal db = new Dal();
             return db.GetPIN(username, last4ofPhone);
+        }
+
+        ///
+        /// Needs to be worked on && method of same name in Dal
+        ///
+        public string GetUsername(string firstName, string lastname, string last4ofPhone)
+        {
+            Dal db = new Dal();
+            return db.GetUsername();
         }
 
         public string GetStaffTypeForID(string id)

@@ -32,7 +32,7 @@
                        <div class="form-group">
                             <asp:Label ID="Label8" runat="server" Text="4-Digit PIN" CssClass="col-lg-2 control-label"></asp:Label>
                             <div class="col-lg-10">
-                                <asp:TextBox ID="txtPIN" runat="server" placeholder="PIN" CssClass="form-control"></asp:TextBox>
+                                <asp:TextBox ID="txtPIN" runat="server" placeholder="PIN"  TextMode="Password" CssClass="form-control"></asp:TextBox>
                             </div>
                         </div>
                         <div class="form-group">

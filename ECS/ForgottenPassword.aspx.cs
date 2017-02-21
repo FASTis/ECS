@@ -23,11 +23,13 @@ namespace ECS
                 string username = txtUserName.Text;
                 string last4ofPhone = txtPhone.Text;
 
-                Bll bll = new Bll();
-                string pin = bll.GetPIN(username, last4ofPhone);
-                string returnedValue = "Your PIN is: " + pin;
-                string radalertscript = "<script language='javascript'>function f(){radalert('" + returnedValue + "', 300, 100, 'ECS Volunteer App: Forgot Password'); Sys.Application.remove_load(f);}; Sys.Application.add_load(f);</script>";
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "radalert", radalertscript);
+                Response.Redirect("ResetPassword.aspx");
+
+                //Bll bll = new Bll();
+                //string pin = bll.GetPIN(username, last4ofPhone);
+                //string returnedValue = "Your PIN is: " + pin;
+                //string radalertscript = "<script language='javascript'>function f(){radalert('" + returnedValue + "', 300, 100, 'ECS Volunteer App: Forgot Password'); Sys.Application.remove_load(f);}; Sys.Application.add_load(f);</script>";
+                //Page.ClientScript.RegisterStartupScript(this.GetType(), "radalert", radalertscript);
 
             }
 

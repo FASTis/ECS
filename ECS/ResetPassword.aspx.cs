@@ -13,5 +13,34 @@ namespace ECS
         {
 
         }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private bool ValidEntry()
+        {
+            bool valid = false;
+            if (!String.IsNullOrEmpty(txtNewPass.Text) && !String.IsNullOrEmpty(txtConPass.Text))
+            {
+                if(string.Equals(txtNewPass, txtConPass))
+                {
+                    valid = true;
+                }
+
+                else
+                {
+                    valid = false;
+                }
+            }
+
+            return valid;
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Default.aspx");
+        }
     }
 }

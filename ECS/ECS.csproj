@@ -88,6 +88,7 @@
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery.backstretch.js" />
     <Content Include="js\jquery.js" />
+    <Content Include="ResetPassword.aspx" />
     <Content Include="RunReports.aspx" />
     <Content Include="signatureForm.aspx" />
     <Content Include="sql\procedures\InsertNewUser.sql" />
@@ -183,6 +184,13 @@
     </Compile>
     <Compile Include="Profile.aspx.designer.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="RunReports.aspx.cs">
       <DependentUpon>RunReports.aspx</DependentUpon>
