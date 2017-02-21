@@ -72,6 +72,7 @@ namespace ECS.DAL
             {
                 using (SqlConnection conn = new SqlConnection(Conn))
                 {
+                    //TODO: Convert this to a stored procedure, then use CommandType.StoredProcedure.
                     string sql1 = String.Format(@"Update {0} set FirstName='{1}', LastName='{2}', Last4DigitsOfPhone='{3}' where 
                                                 VolunteerID = (select VolunteerID from UserLogon where UserId='{4}')",
                                                 "Volunteer", firstName, lastName, last4Digits, userId, pin);
@@ -193,7 +194,7 @@ namespace ECS.DAL
             {
                 using (SqlCommand command = new SqlCommand("SelectVolunteerTypes", conn))
                 {
-                    command.CommandType = CommandType.Text;
+                    command.CommandType = CommandType.StoredProcedure;
 
                     conn.Open();
                     dtVT.Load(command.ExecuteReader());
@@ -215,7 +216,7 @@ namespace ECS.DAL
             {
                 using (SqlCommand command = new SqlCommand("SelectAllUsers", conn))
                 {
-                    command.CommandType = CommandType.Text;
+                    command.CommandType = CommandType.StoredProcedure;
                     conn.Open();
                     dtVolunteers.Load(command.ExecuteReader());
                     conn.Close();
@@ -232,7 +233,7 @@ namespace ECS.DAL
             {
                 using (SqlCommand command = new SqlCommand("SelectCenter", conn))
                 {
-                    command.CommandType = CommandType.Text;
+                    command.CommandType = CommandType.StoredProcedure;
 
                     conn.Open();
                     dtCenter.Load(command.ExecuteReader());
@@ -250,7 +251,7 @@ namespace ECS.DAL
             {
                 using (SqlCommand command = new SqlCommand("SelectTask", conn))
                 {
-                    command.CommandType = CommandType.Text;
+                    command.CommandType = CommandType.StoredProcedure;
 
                     conn.Open();
                     dtTask.Load(command.ExecuteReader());
@@ -265,6 +266,7 @@ namespace ECS.DAL
             DataTable dtStaffTypes = new DataTable();
             using (SqlConnection conn = new SqlConnection(Conn))
             {
+                //TODO: Convert this to a stored procedure, then use CommandType.StoredProcedure.
                 string sel = String.Format("select StaffTypeId, StaffTypeDescr");
                 string tbl = "StaffType";
                 string sql = String.Format("{0} from {1}", sel, tbl);
@@ -292,6 +294,7 @@ namespace ECS.DAL
 
             using (SqlConnection conn = new SqlConnection(Conn))
             {
+                //TODO: Convert this to a stored procedure, then use CommandType.StoredProcedure.
                 string sel = "select PIN";
                 string tbl = "UserLogon u join Volunteer v on u.VolunteerID=v.VolunteerID";
                 string cri = string.Format("UserID='{0}' and Last4DigitsOfPhone='{1}'", username, last4ofPhone);
@@ -319,6 +322,7 @@ namespace ECS.DAL
 
             using (SqlConnection conn = new SqlConnection(Conn))
             {
+                //TODO: Convert this to a stored procedure, then use CommandType.StoredProcedure.
                 string sel = "select StaffTypeDescr";
                 string tbl = "StaffType";
                 string cri = string.Format("StaffTypeID='{0}'", id);
@@ -346,6 +350,7 @@ namespace ECS.DAL
             {
                 using (SqlConnection conn = new SqlConnection(Conn))
                 {
+                    //TODO: Convert this to a stored procedure, then use CommandType.StoredProcedure.
                     string sql = String.Format(@"Update {0} set StaffTypeDescr='{1}' where StaffTypeID={2}",
                                                 "StaffType", sType, id);
 
@@ -375,6 +380,7 @@ namespace ECS.DAL
             {
                 using (SqlConnection conn = new SqlConnection(Conn))
                 {
+                    //TODO: Convert this to a stored procedure, then use CommandType.StoredProcedure.
                     string sql = String.Format(@"Insert {0} (StaffTypeDescr) values ('{1}')",
                                                 "StaffType", sType);
 
@@ -431,8 +437,9 @@ namespace ECS.DAL
             {
                 using (SqlConnection conn = new SqlConnection(Conn))
                 {
+                    //TODO: Convert this to a stored procedure, then use CommandType.StoredProcedure.
                     string sql = String.Format(@"Insert {0} (VolunteerId, TaskId, CenterId, NumberMinutes)
-                                                 values ({1}, {2}, {3}, {4})", "dbo.VolunteerLog",
+                                                 values ({1}, {2}, {3}, {4})", "VolunteerLog",
                                                  volunteerId, taskId, centerId, totalMinutes);
                     using (SqlCommand command1 = new SqlCommand(sql, conn))
                     {
