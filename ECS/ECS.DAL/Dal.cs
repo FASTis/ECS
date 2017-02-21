@@ -458,5 +458,111 @@ namespace ECS.DAL
             }
             return retVal;
         }
+
+        public DataTable GetCompanies()
+        {
+            DataTable dtCompanies = new DataTable();
+            using (SqlConnection conn = new SqlConnection(Conn))
+            {
+                //TODO: Convert this to a stored procedure, then use CommandType.StoredProcedure.
+                string sql = String.Format("select {0} from {1}", "CompanyId, CompanyName","Company");
+                using (SqlCommand command = new SqlCommand(sql, conn))
+                {
+                    command.CommandType = CommandType.Text;
+                    conn.Open();
+                    dtCompanies.Load(command.ExecuteReader());
+                    conn.Close();
+                }
+            }
+            return dtCompanies;
+        }
+
+        public string GetCompanyForID(string id)
+        {
+            DataTable dt = new DataTable();
+            string company = "";
+
+            using (SqlConnection conn = new SqlConnection(Conn))
+            {
+                //TODO: Convert this to a stored procedure, then use CommandType.StoredProcedure.
+                string sel = "select CompanyName";
+                string tbl = "Company";
+                string cri = string.Format("CompanyID='{0}'", id);
+                string sql = String.Format("{0} from {1} where {2}", sel, tbl, cri);
+
+                using (SqlCommand command = new SqlCommand(sql, conn))
+                {
+                    command.CommandType = CommandType.Text;
+                    conn.Open();
+                    dt.Load(command.ExecuteReader());
+                    foreach (DataRow row in dt.Rows) // should only be one row.
+                    {
+                        company = row["CompanyName"].ToString();
+                    }
+                    conn.Close();
+                }
+            }
+            return company;
+        }
+
+        public string UpdateCompany(string id, string company)
+        {
+            string retVal; // this stands for "returned value". This is just what we're going to return to whatever called this method.
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Conn))
+                {
+                    //TODO: Convert this to a stored procedure, then use CommandType.StoredProcedure.
+                    string sql = String.Format(@"Update {0} set CompanyName='{1}' where CompanyID={2}",
+                                                "Company", company, id);
+
+                    //create a new sql command, and execute the query.
+                    using (SqlCommand command = new SqlCommand(sql, conn))
+                    {
+                        command.CommandType = CommandType.Text;
+                        conn.Open();
+                        command.ExecuteNonQuery(); // this is used for adds, updates, and deletes.
+                    }
+
+                    conn.Close();
+                    retVal = String.Format("Company successfully updated.");
+                }
+            }
+            catch (Exception ex)
+            {
+                retVal = ex.Message;
+            }
+            return retVal;
+        }
+
+        public string AddCompany(string company)
+        {
+            string retVal; // this stands for "returned value". This is just what we're going to return to whatever called this method.
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Conn))
+                {
+                    //TODO: Convert this to a stored procedure, then use CommandType.StoredProcedure.
+                    string sql = String.Format(@"Insert {0} (CompanyName) values ('{1}')",
+                                                "Company", company);
+
+                    //create a new sql command, and execute the query.
+                    using (SqlCommand command = new SqlCommand(sql, conn))
+                    {
+                        command.CommandType = CommandType.Text;
+                        conn.Open();
+                        command.ExecuteNonQuery(); // this is used for adds, updates, and deletes.
+                    }
+
+                    conn.Close();
+                    retVal = String.Format("Company successfully added.");
+                }
+            }
+            catch (Exception ex)
+            {
+                retVal = ex.Message;
+            }
+            return retVal;
+        }
     }
 }

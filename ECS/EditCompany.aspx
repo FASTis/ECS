@@ -1,22 +1,22 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditStaffType.aspx.cs" Inherits="ECS.EditStaffType" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditCompany.aspx.cs" Inherits="ECS.EditCompany" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <ul class="breadcrumb">
         <li><a href="Default.aspx">Home</a></li>
         <li><a href="EditTables.aspx">Edit Tables</a></li>
-        <li><a href="ManageStaffTypes.aspx">Manage Staff Types</a></li>
-        <li class="active">Edit Staff Type</li>
+        <li><a href="ManageStaffTypes.aspx">Manage Companies</a></li>
+        <li class="active">Edit Company</li>
     </ul>
     
         <div class="form-horizontal">
             <fieldset>
-                <legend>Edit Staff Type</legend>
+                <legend>Edit Company</legend>
 
                 <!-- form entry -->
                 <div class="form-group">
-                    <asp:Label ID="lblStaffType" runat="server" Text="Staff Type:" CssClass="col-lg-2 control-label"></asp:Label>
+                    <asp:Label ID="lblCompany" runat="server" Text="Company:" CssClass="col-lg-2 control-label"></asp:Label>
                     <div class="col-lg-10">
-                        <asp:TextBox ID="txtStaffType" runat="server" placeholder="" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="txtCompany" runat="server" placeholder="" CssClass="form-control"></asp:TextBox>
                     </div>
                 </div>
 

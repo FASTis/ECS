@@ -147,5 +147,29 @@ namespace ECS.BLL
             Dal db = new Dal();
             return db.LogInKind(volunteerId, taskId, centerId, hoursVal, minVal);
         }
+
+        public DataTable GetCompanies()
+        {
+            Dal db = new Dal();
+            return db.GetCompanies();
+        }
+
+        public string GetCompanyForID(string id)
+        {
+            Dal db = new Dal();
+            return db.GetCompanyForID(id);
+        }
+
+        public string UpdateCompany(string id, string company)
+        {
+            Dal db = new Dal();
+            return db.UpdateCompany(id, company);
+        }
+
+        public string AddCompany(string company)
+        {
+            Dal db = new Dal();
+            return db.AddCompany(company);
+        }
     }
 }

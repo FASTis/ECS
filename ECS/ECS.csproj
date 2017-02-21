@@ -63,9 +63,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="EditCompany.aspx" />
     <Content Include="EditStaffType.aspx" />
     <Content Include="ForgottenPassword.aspx" />
     <Content Include="ForgottenUsername.aspx" />
+    <Content Include="ManageCompanies.aspx" />
     <Content Include="ManageStaffTypes.aspx" />
     <Content Include="controls\Telerik.Web.UI.dll" />
     <Content Include="controls\Telerik.Web.UI.xml" />
@@ -112,6 +114,13 @@
     <Content Include="LogInKind.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EditCompany.aspx.cs">
+      <DependentUpon>EditCompany.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditCompany.aspx.designer.cs">
+      <DependentUpon>EditCompany.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EditStaffType.aspx.cs">
       <DependentUpon>EditStaffType.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -132,6 +141,13 @@
     </Compile>
     <Compile Include="ForgottenUsername.aspx.designer.cs">
       <DependentUpon>ForgottenUsername.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCompanies.aspx.cs">
+      <DependentUpon>ManageCompanies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCompanies.aspx.designer.cs">
+      <DependentUpon>ManageCompanies.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageStaffTypes.aspx.cs">
       <DependentUpon>ManageStaffTypes.aspx</DependentUpon>
