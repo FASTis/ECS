@@ -10,8 +10,10 @@ namespace ECS.Model
         public int VolunteerID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string VolunteerTypeDescr { get; set; }        
-        public string CompanyName { get; set; }        
+        public int VolunteerTypeID { get; set; }
+        public string VolunteerTypeDescr { get; set; }
+        public int CompanyID { get; set; }
+        public string CompanyName { get; set; }
         public string Last4DigitsOfPhone { get; set; }
         public string UserID { get; set; }
         public string PIN { get; set; }
