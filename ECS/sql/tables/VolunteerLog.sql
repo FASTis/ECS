@@ -13,5 +13,7 @@ Create Table VolunteerLog
 	,TaskID integer
 	,CenterID integer
 	,NumberMinutes integer
+	,DateTimeLogged datetime not null
+	,SignatureReceived bit
 	,PRIMARY KEY (VolunteerLogID)
 );
