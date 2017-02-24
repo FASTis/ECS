@@ -1,0 +1,9 @@
+C:\Users\cicic_000\Documents\ECS-master\ECS\ECS.BLL\bin\Release\ECS.BLL.dll
+C:\Users\cicic_000\Documents\ECS-master\ECS\ECS.BLL\bin\Release\ECS.BLL.pdb
+C:\Users\cicic_000\Documents\ECS-master\ECS\ECS.BLL\bin\Release\ECS.DAL.dll
+C:\Users\cicic_000\Documents\ECS-master\ECS\ECS.BLL\bin\Release\ECS.Model.dll
+C:\Users\cicic_000\Documents\ECS-master\ECS\ECS.BLL\bin\Release\ECS.DAL.pdb
+C:\Users\cicic_000\Documents\ECS-master\ECS\ECS.BLL\bin\Release\ECS.Model.pdb
+C:\Users\cicic_000\Documents\ECS-master\ECS\ECS.BLL\obj\Release\ECS.BLL.csprojResolveAssemblyReference.cache
+C:\Users\cicic_000\Documents\ECS-master\ECS\ECS.BLL\obj\Release\ECS.BLL.dll
+C:\Users\cicic_000\Documents\ECS-master\ECS\ECS.BLL\obj\Release\ECS.BLL.pdb

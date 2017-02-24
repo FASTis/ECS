@@ -1,0 +1,7 @@
+C:\Users\cicic_000\Documents\ECS-master\ECS\ECS.DAL\bin\Release\ECS.DAL.dll
+C:\Users\cicic_000\Documents\ECS-master\ECS\ECS.DAL\bin\Release\ECS.DAL.pdb
+C:\Users\cicic_000\Documents\ECS-master\ECS\ECS.DAL\bin\Release\ECS.Model.dll
+C:\Users\cicic_000\Documents\ECS-master\ECS\ECS.DAL\bin\Release\ECS.Model.pdb
+C:\Users\cicic_000\Documents\ECS-master\ECS\ECS.DAL\obj\Release\ECS.DAL.csprojResolveAssemblyReference.cache
+C:\Users\cicic_000\Documents\ECS-master\ECS\ECS.DAL\obj\Release\ECS.DAL.dll
+C:\Users\cicic_000\Documents\ECS-master\ECS\ECS.DAL\obj\Release\ECS.DAL.pdb

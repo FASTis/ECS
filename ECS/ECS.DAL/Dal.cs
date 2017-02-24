@@ -411,16 +411,15 @@ namespace ECS.DAL
             }
             return retVal;
         }
-        public DataTable GetReportForMonth(int monthNum)
+        public DataTable GetReport()
         {
             DataTable dtReportData = new DataTable();
             using (SqlConnection conn = new SqlConnection(Conn))
             {
-                string sql = "SelectReportForMonth";
+                string sql = "SelectReport";
                 using (SqlCommand command = new SqlCommand(sql, conn))
                 {
                     command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("monthNum", monthNum);
                     conn.Open();
                     dtReportData.Load(command.ExecuteReader());
                     conn.Close();

@@ -137,10 +137,41 @@ namespace ECS.BLL
             Dal db = new Dal();
             return db.AddStaffType(sType);
         }
-        public DataTable GetReportForMonth(int monthNum)
+        
+        public DataTable GetReport()
         {
             Dal db = new Dal();
-            return db.GetReportForMonth(monthNum);
+            return db.GetReport();
+        }
+        public DataTable GetReportForMonth(int monthNum)
+        {
+            DataTable table = GetReport(); // use above method to get all data, then restrict it below.
+            DataTable rpt = new DataTable(); // this is what we will use to store the new report data.
+
+            if (monthNum > 0)
+            {
+                var thisMonthRows = table.AsEnumerable() // (from http://stackoverflow.com/questions/14477600/get-rows-filtered-by-month-from-a-date-column)
+                    .Where(r => r.Field<DateTime>("DateTimeLogged").Month == monthNum);
+
+                rpt = thisMonthRows.CopyToDataTable();
+            }
+
+            return rpt;
+        }
+        public DataTable GetReportForUser(int volunteerId)
+        {
+            DataTable table = GetReport(); // use above method to get all data, then restrict it below.
+            DataTable rpt = new DataTable(); // this is what we will use to store the new report data.
+
+            if (volunteerId > 0)
+            {
+                var thisVolunteerRows = table.AsEnumerable() // (from http://stackoverflow.com/questions/14477600/get-rows-filtered-by-month-from-a-date-column)
+                    .Where(r => r.Field<Int32>("VolunteerID") == volunteerId);
+
+                rpt = thisVolunteerRows.CopyToDataTable();
+            }
+
+            return rpt;
         }
 
         public string LogInKind(int volunteerId, int taskId, int centerId, int hoursVal, int minVal)
@@ -177,6 +208,7 @@ namespace ECS.BLL
         {
             /*
              * Re-use the GetVolunteerTypes() method above and restrict return to a single row. [Cici-2/23/2017]
+             * (From https://www.dotnetperls.com/datatable-select)
             */
             DataTable dt = GetVolunteerTypes(); 
             DataRow[] result = dt.Select(String.Format("VolunteerTypeID = {0}", id));
