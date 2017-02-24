@@ -30,7 +30,7 @@
                     <asp:Button ID="btnTasks" runat="server" Width="200" Text="Manage Tasks" CssClass="btn btn-info"/>
                 </div>
                 <div class="form-group">
-                    <asp:Button ID="btnAccounts" runat="server" Width="200" Text="Manage Accounts" CssClass="btn btn-info"/>
+                    <asp:Button ID="btnVolunteers" runat="server" Width="200" Text="Manage Volunteers" CssClass="btn btn-info" OnClick="btnVolunteers_Click"/>
                 </div>                             
             </td>
         </tr>

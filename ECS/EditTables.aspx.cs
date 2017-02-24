@@ -29,5 +29,10 @@ namespace ECS
         {
             Response.Redirect("ManageCompanies.aspx");
         }
+
+        protected void btnVolunteers_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ManageVolunteers.aspx");
+        }
     }
 }

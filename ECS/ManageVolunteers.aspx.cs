@@ -17,10 +17,21 @@ namespace ECS
                 Response.Redirect("Default.aspx");
             else
             {
-                Bll bll = new Bll();
-                gvVolunteers.DataSource = bll.GetVolunteers();
-                gvVolunteers.DataBind();
+                LoadVolunteers();
             }
+        }
+
+        private void LoadVolunteers()
+        {
+            Bll bll = new Bll();
+            gvVolunteers.DataSource = bll.GetVolunteers();
+            gvVolunteers.DataBind();
+        }
+
+        protected void gvVolunteers_Paging(object sender, GridViewPageEventArgs e)
+        {
+            gvVolunteers.PageIndex = e.NewPageIndex;
+            LoadVolunteers();
         }
 
     }
