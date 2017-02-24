@@ -14,6 +14,8 @@ namespace ECS
             try
             {
                 string s = Session["IsAdmin"].ToString(); // test to make sure user is an Admin.
+                if (s.Equals("false"))
+                    Response.Redirect("Default.aspx");
             }
             catch (NullReferenceException)
             {

@@ -37,6 +37,7 @@ namespace ECS
 
         private void SetSessionVariablesForUser(User user)
         {
+            Session.Clear(); // remove anything set by a previous logon
             Session["FirstName"] = user.FirstName;
             Session["LastName"] = user.LastName;
             Session["VolunteerType"] = user.VolunteerTypeDescr;
