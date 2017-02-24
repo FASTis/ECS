@@ -7,6 +7,6 @@ GO
 Create Procedure SelectCenter
 as
 begin
-	Select CenterID, CenterName from Center
+	Select CenterID, CenterName, StreetAddress, City, Zip from Center
 end
 go
