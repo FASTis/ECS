@@ -172,5 +172,32 @@ namespace ECS.BLL
             Dal db = new Dal();
             return db.AddCompany(company);
         }
+
+        public string GetVolunteerTypeForID(string id)
+        {
+            /*
+             * Re-use the GetVolunteerTypes() method above and restrict return to a single row. [Cici-2/23/2017]
+            */
+            DataTable dt = GetVolunteerTypes(); 
+            DataRow[] result = dt.Select(String.Format("VolunteerTypeID = {0}", id));
+            string volunteerType="";
+            foreach (DataRow row in result) // should only return one row
+            {
+                volunteerType = row["VolunteerTypeDescr"].ToString();
+            }
+            return volunteerType;
+        }
+
+        public string UpdateVolunteerType(string id, string sType)
+        {
+            Dal db = new Dal();
+            return db.UpdateVolunteerType(id, sType);
+        }
+
+        public string AddVolunteerType(string sType)
+        {
+            Dal db = new Dal();
+            return db.AddVolunteerType(sType);
+        }
     }
 }

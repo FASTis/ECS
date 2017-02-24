@@ -1,22 +1,21 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditCompany.aspx.cs" Inherits="ECS.EditCompany" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditVolunteerType.aspx.cs" Inherits="ECS.EditVolunteerType" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
     <ul class="breadcrumb">
         <li><a href="Default.aspx">Home</a></li>
         <li><a href="EditTables.aspx">Edit Tables</a></li>
-        <li><a href="ManageCompanies.aspx">Manage Companies</a></li>
-        <li class="active">Edit Company</li>
+        <li><a href="ManageVolunteerTypes.aspx">Manage Volunteer Types</a></li>
+        <li class="active">Edit Volunteer Type</li>
     </ul>
     
         <div class="form-horizontal">
             <fieldset>
-                <legend>Edit Company</legend>
+                <legend>Edit Volunteer Type</legend>
 
                 <!-- form entry -->
                 <div class="form-group">
-                    <asp:Label ID="lblCompany" runat="server" Text="Company:" CssClass="col-lg-2 control-label"></asp:Label>
+                    <asp:Label ID="lblVolunteerType" runat="server" Text="Volunteer Type:" CssClass="col-lg-2 control-label"></asp:Label>
                     <div class="col-lg-10">
-                        <asp:TextBox ID="txtCompany" runat="server" placeholder="" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="txtVolunteerType" runat="server" placeholder="" CssClass="form-control"></asp:TextBox>
                     </div>
                 </div>
 
@@ -30,4 +29,5 @@
                 </div>
             </fieldset>
         </div>
+
 </asp:Content>

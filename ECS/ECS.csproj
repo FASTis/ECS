@@ -65,6 +65,8 @@
   <ItemGroup>
     <Content Include="EditCompany.aspx" />
     <Content Include="EditStaffType.aspx" />
+    <Content Include="EditVolunteer.aspx" />
+    <Content Include="EditVolunteerType.aspx" />
     <Content Include="ForgottenPassword.aspx" />
     <Content Include="ForgottenUsername.aspx" />
     <Content Include="ManageCompanies.aspx" />
@@ -81,6 +83,7 @@
     <Content Include="Login.aspx" />
     <Content Include="LogInKindThankYou.aspx" />
     <Content Include="ManageVolunteers.aspx" />
+    <Content Include="ManageVolunteerTypes.aspx" />
     <Content Include="Profile.aspx" />
     <Content Include="Registration.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -128,6 +131,20 @@
     </Compile>
     <Compile Include="EditStaffType.aspx.designer.cs">
       <DependentUpon>EditStaffType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditVolunteer.aspx.cs">
+      <DependentUpon>EditVolunteer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditVolunteer.aspx.designer.cs">
+      <DependentUpon>EditVolunteer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditVolunteerType.aspx.cs">
+      <DependentUpon>EditVolunteerType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditVolunteerType.aspx.designer.cs">
+      <DependentUpon>EditVolunteerType.aspx</DependentUpon>
     </Compile>
     <Compile Include="ForgottenPassword.aspx.cs">
       <DependentUpon>ForgottenPassword.aspx</DependentUpon>
@@ -177,6 +194,13 @@
     </Compile>
     <Compile Include="LogInKindThankYou.aspx.designer.cs">
       <DependentUpon>LogInKindThankYou.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageVolunteerTypes.aspx.cs">
+      <DependentUpon>ManageVolunteerTypes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageVolunteerTypes.aspx.designer.cs">
+      <DependentUpon>ManageVolunteerTypes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Profile.aspx.cs">
       <DependentUpon>Profile.aspx</DependentUpon>

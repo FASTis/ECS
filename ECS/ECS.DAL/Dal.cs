@@ -573,5 +573,65 @@ namespace ECS.DAL
             }
             return retVal;
         }
+
+        public string UpdateVolunteerType(string id, string sType)
+        {
+            string retVal; // this stands for "returned value". This is just what we're going to return to whatever called this method.
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Conn))
+                {
+                    //TODO: Convert this to a stored procedure, then use CommandType.StoredProcedure.
+                    string sql = String.Format(@"Update {0} set VolunteerTypeDescr='{1}' where VolunteerTypeID={2}",
+                                                "VolunteerType", sType, id);
+
+                    //create a new sql command, and execute the query.
+                    using (SqlCommand command = new SqlCommand(sql, conn))
+                    {
+                        command.CommandType = CommandType.Text;
+                        conn.Open();
+                        command.ExecuteNonQuery(); // this is used for adds, updates, and deletes.
+                    }
+
+                    conn.Close();
+                    retVal = String.Format("Volunteer Type successfully updated.");
+                }
+            }
+            catch (Exception ex)
+            {
+                retVal = ex.Message;
+            }
+            return retVal;
+        }
+
+        public string AddVolunteerType(string sType)
+        {
+            string retVal; // this stands for "returned value". This is just what we're going to return to whatever called this method.
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Conn))
+                {
+                    //TODO: Convert this to a stored procedure, then use CommandType.StoredProcedure.
+                    string sql = String.Format(@"Insert {0} (VolunteerTypeDescr) values ('{1}')",
+                                                "VolunteerType", sType);
+
+                    //create a new sql command, and execute the query.
+                    using (SqlCommand command = new SqlCommand(sql, conn))
+                    {
+                        command.CommandType = CommandType.Text;
+                        conn.Open();
+                        command.ExecuteNonQuery(); // this is used for adds, updates, and deletes.
+                    }
+
+                    conn.Close();
+                    retVal = String.Format("Volunteer Type successfully added.");
+                }
+            }
+            catch (Exception ex)
+            {
+                retVal = ex.Message;
+            }
+            return retVal;
+        }
     }
 }

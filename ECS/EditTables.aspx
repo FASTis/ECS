@@ -18,7 +18,7 @@
                     <asp:Button ID="btnCompanies" runat="server" Width="200" Text="Manage Companies" CssClass="btn btn-info" OnClick="btnCompanies_Click"/>
                 </div>
                 <div class="form-group">
-                    <asp:Button ID="btnVolunteerTypes" runat="server" Width="200" Text="Manage Volunteer Types" CssClass="btn btn-info" />
+                    <asp:Button ID="btnVolunteerTypes" runat="server" Width="200" Text="Manage Volunteer Types" CssClass="btn btn-info" OnClick="btnVolunteerTypes_Click" />
                 </div>
             </td>
             <td width="100px">&nbsp;</td>
