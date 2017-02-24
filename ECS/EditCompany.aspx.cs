@@ -18,8 +18,14 @@ namespace ECS
         protected void Page_Load(object sender, EventArgs e)
         {
             //Make sure the person is a valid Admin user, and isn't just browsing to this page to wreak havoc...
-            if (Session["IsAdmin"].ToString().Equals("false"))
-                Response.Redirect("Default.aspx");
+            try
+            {
+                string s = Session["IsAdmin"].ToString(); // test to make sure user is an Admin.
+            }
+            catch (NullReferenceException)
+            {
+                Response.Redirect("Default.aspx"); // if the IsAdmin flag is null, redirect to Default page.
+            }
 
             //Get the values in the query string and store them in variables...
             _mode = Request.QueryString["mode"];

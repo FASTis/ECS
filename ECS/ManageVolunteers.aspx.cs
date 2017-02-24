@@ -13,12 +13,15 @@ namespace ECS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["IsAdmin"].ToString().Equals("false"))
-                Response.Redirect("Default.aspx");
-            else
+            try
             {
-                LoadVolunteers();
+                string s = Session["IsAdmin"].ToString(); // test to make sure user is an Admin.
             }
+            catch (NullReferenceException)
+            {
+                Response.Redirect("Default.aspx"); // if the IsAdmin flag is null, redirect to Default page.
+            }
+            LoadVolunteers();
         }
 
         private void LoadVolunteers()

@@ -11,8 +11,14 @@ namespace ECS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["IsAdmin"].ToString().Equals("false"))
-                Response.Redirect("Default.aspx");
+            try
+            {
+                string s = Session["IsAdmin"].ToString(); // test to make sure user is an Admin.
+            }
+            catch (NullReferenceException)
+            {
+                Response.Redirect("Default.aspx"); // if the IsAdmin flag is null, redirect to Default page.
+            }
         }
 
         protected void btnStaffTypes_Click(object sender, EventArgs e)
