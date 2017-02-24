@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="RunReports.aspx.cs" Inherits="ECS.RunReports" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/Site.Master" autoeventwireup="true" codebehind="RunReports.aspx.cs" inherits="ECS.RunReports" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:content id="Content1" contentplaceholderid="ContentPlaceHolder1" runat="server">
 
     <ul class="breadcrumb">
         <li><a href="Default.aspx">Home</a></li>
@@ -8,7 +8,10 @@
     </ul>
 
     <legend>Run Reports</legend>
-    <asp:DropDownList ID="ddMonths" runat="server" CssClass="form-control" AutoPostBack="true">
+    <table>
+        <tr>
+            <td>
+                <asp:DropDownList ID="ddMonths" runat="server" CssClass="form-control" AutoPostBack="true">
         <asp:ListItem Value="0">Select a Month</asp:ListItem>
         <asp:ListItem Value="1">January</asp:ListItem>
         <asp:ListItem Value="2">February</asp:ListItem>
@@ -22,9 +25,19 @@
         <asp:ListItem Value="10">October</asp:ListItem>
         <asp:ListItem Value="11">November</asp:ListItem>
         <asp:ListItem Value="12">December</asp:ListItem>
-    </asp:DropDownList>
-    <br /><br />
-    <asp:GridView ID="gvReportData" runat="server" CssClass="table table-striped table-hover" AutoGenerateColumns="false" Width="90%"
+                </asp:DropDownList>
+
+            </td>
+            <td>&nbsp; &nbsp; &nbsp;</td>
+            <td>
+                <asp:Button ID="Button1" runat="server" Text="Export To Excel" class="btn btn-success" OnClick = "ExportToExcel" />
+            </td>
+        </tr>
+    </table>
+
+    <br /><br />   
+    
+     <asp:GridView ID="gvReportData" runat="server" CssClass="table table-striped table-hover" AutoGenerateColumns="false" Width="90%"
          PageSize="5" AllowPaging="true" OnPageIndexChanging="gvReportData_Paging">
         <Columns>
             <asp:BoundField DataField="FirstName" HeaderText="First Name" />
@@ -35,12 +48,9 @@
             <asp:BoundField DataField="NumberMinutes" HeaderText="Minutes" />
             <asp:BoundField DataField="PricePerMinute" HeaderText="Price Per Minute" />
         </Columns>
-        <pagerstyle BackColor="#d34615" ForeColor="White" 
-            HorizontalAlign="Center">
-        </pagerstyle>
+       
+        <pagerstyle BackColor="#d34615" ForeColor="White" HorizontalAlign="Center" />
     </asp:GridView>
 
-    <br />
-    <asp:Button ID="btnExport" runat="server" Text="Export To Excel" OnClick = "ExportToExcel" />
 
-</asp:Content>
+</asp:content>

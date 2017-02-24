@@ -36,7 +36,7 @@ namespace ECS
         protected void gvReportData_Paging(object sender, GridViewPageEventArgs e)
         {
             gvReportData.PageIndex = e.NewPageIndex;
-            Load_gvReportData();
+            gvReportData.DataBind();
         }
         protected void btnRunReport_Click(object sender, EventArgs e)
         {
