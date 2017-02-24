@@ -42,5 +42,15 @@ namespace ECS
         {
             Response.Redirect("ManageVolunteers.aspx");
         }
+
+        protected void btnCenters_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ManageCenters.aspx");
+        }
+
+        protected void btnTasks_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ManageTasks.aspx");
+        }
     }
 }

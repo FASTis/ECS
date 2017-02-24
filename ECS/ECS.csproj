@@ -69,6 +69,7 @@
     <Content Include="EditVolunteerType.aspx" />
     <Content Include="ForgottenPassword.aspx" />
     <Content Include="ForgottenUsername.aspx" />
+    <Content Include="ManageCenters.aspx" />
     <Content Include="ManageCompanies.aspx" />
     <Content Include="ManageStaffTypes.aspx" />
     <Content Include="controls\Telerik.Web.UI.dll" />
@@ -82,6 +83,7 @@
     <Content Include="js\signature_pad.js" />
     <Content Include="Login.aspx" />
     <Content Include="LogInKindThankYou.aspx" />
+    <Content Include="ManageTasks.aspx" />
     <Content Include="ManageVolunteers.aspx" />
     <Content Include="ManageVolunteerTypes.aspx" />
     <Content Include="Profile.aspx" />
@@ -160,6 +162,13 @@
     <Compile Include="ForgottenUsername.aspx.designer.cs">
       <DependentUpon>ForgottenUsername.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenters.aspx.cs">
+      <DependentUpon>ManageCenters.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenters.aspx.designer.cs">
+      <DependentUpon>ManageCenters.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCompanies.aspx.cs">
       <DependentUpon>ManageCompanies.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -194,6 +203,13 @@
     </Compile>
     <Compile Include="LogInKindThankYou.aspx.designer.cs">
       <DependentUpon>LogInKindThankYou.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageTasks.aspx.cs">
+      <DependentUpon>ManageTasks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageTasks.aspx.designer.cs">
+      <DependentUpon>ManageTasks.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageVolunteerTypes.aspx.cs">
       <DependentUpon>ManageVolunteerTypes.aspx</DependentUpon>

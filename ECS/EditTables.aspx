@@ -24,10 +24,10 @@
             <td width="100px">&nbsp;</td>
             <td valign="top">    
                 <div class="form-group">
-                    <asp:Button ID="btnCenters" runat="server" Width="200" Text="Manage Centers" CssClass="btn btn-info"/>
+                    <asp:Button ID="btnCenters" runat="server" Width="200" Text="Manage Centers" CssClass="btn btn-info" OnClick="btnCenters_Click"/>
                 </div>
                 <div class="form-group">
-                    <asp:Button ID="btnTasks" runat="server" Width="200" Text="Manage Tasks" CssClass="btn btn-info"/>
+                    <asp:Button ID="btnTasks" runat="server" Width="200" Text="Manage Tasks" CssClass="btn btn-info" OnClick="btnTasks_Click"/>
                 </div>
                 <div class="form-group">
                     <asp:Button ID="btnVolunteers" runat="server" Width="200" Text="Manage Volunteers" CssClass="btn btn-info" OnClick="btnVolunteers_Click"/>
