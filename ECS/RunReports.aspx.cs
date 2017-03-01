@@ -21,15 +21,25 @@ namespace ECS
                 Response.Redirect("Default.aspx");
             else
             {
-                Load_gvReportData();
+                if (!IsPostBack)
+                {
+                    LoadCenters();
+                    LoadTasks();
+                    LoadVolunteerTypes();
+                }
+                LoadReport();
             }
         }
 
-        private void Load_gvReportData()
+        private void LoadReport()
         {
             int monthNumber = Convert.ToInt16(ddMonths.SelectedValue);
+            int taskId = Convert.ToInt16(ddTask.SelectedValue);
+            int volunteerTypeId = Convert.ToInt16(ddVolunteerType.SelectedValue);
+            int centerId = Convert.ToInt16(ddCenter.SelectedValue);
+
             Bll bll = new Bll();
-            gvReportData.DataSource = bll.GetReportForMonth(monthNumber);
+            gvReportData.DataSource = bll.GetReport(monthNumber, taskId, volunteerTypeId, centerId);
             gvReportData.DataBind();
 
         }
@@ -38,12 +48,46 @@ namespace ECS
             gvReportData.PageIndex = e.NewPageIndex;
             gvReportData.DataBind();
         }
-        protected void btnRunReport_Click(object sender, EventArgs e)
-        {
 
+        protected void btnExport_Click(object sender, EventArgs e)
+        {
+            ExportToExcel();
         }
 
-        protected void ExportToExcel(object sender, EventArgs e)
+        private void LoadVolunteerTypes()
+        {
+            DataTable dt = new DataTable();
+            Bll bll = new Bll();
+            dt = bll.GetVolunteerTypes(true);
+            ddVolunteerType.DataTextField = "VolunteerTypeDescr";
+            ddVolunteerType.DataValueField = "VolunteerTypeID";
+            ddVolunteerType.DataSource = dt;
+            ddVolunteerType.DataBind();
+        }
+
+        private void LoadCenters()
+        {
+            DataTable dt = new DataTable();
+            Bll bll = new Bll();
+            dt = bll.GetCenters(true);
+            ddCenter.DataTextField = "CenterName";
+            ddCenter.DataValueField = "CenterID";
+            ddCenter.DataSource = dt;
+            ddCenter.DataBind();
+        }
+
+        private void LoadTasks()
+        {
+            DataTable dt = new DataTable();
+            Bll bll = new Bll();
+            dt = bll.GetTasks(true);
+            ddTask.DataTextField = "TaskDescr";
+            ddTask.DataValueField = "TaskID";
+            ddTask.DataSource = dt;
+            ddTask.DataBind();
+        }
+
+        protected void ExportToExcel()
         {
             Response.Clear();
             Response.Buffer = true;

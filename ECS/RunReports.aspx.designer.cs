@@ -22,13 +22,40 @@ namespace ECS {
         protected global::System.Web.UI.WebControls.DropDownList ddMonths;
         
         /// <summary>
-        /// Button1 control.
+        /// ddTask control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.DropDownList ddTask;
+        
+        /// <summary>
+        /// ddVolunteerType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddVolunteerType;
+        
+        /// <summary>
+        /// ddCenter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddCenter;
+        
+        /// <summary>
+        /// btnExport control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnExport;
         
         /// <summary>
         /// gvReportData control.

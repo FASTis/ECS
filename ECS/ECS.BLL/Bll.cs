@@ -41,6 +41,24 @@ namespace ECS.BLL
         /// <summary>
         /// Cici Carter
         /// </summary>
+        /// <Date>3/1/2017</Date>
+        /// <returns></returns>
+        public DataTable GetVolunteerTypes(bool addSelectRow) //overloaded GetVolunteerTypes()
+        {
+            DataTable tbl = GetVolunteerTypes(); //use above bll method
+            if (addSelectRow)
+            {
+                DataRow row = tbl.NewRow();
+                row["VolunteerTypeID"] = 0;
+                row["VolunteerTypeDescr"] = "Select a Volunteer Type";
+                tbl.Rows.InsertAt(row, 0); // insert this new row at the top
+            }
+            return tbl;
+        }
+
+        /// <summary>
+        /// Cici Carter
+        /// </summary>
         /// <param name="userId"></param>
         /// <param name="pin"></param>
         /// <returns></returns>
@@ -92,11 +110,47 @@ namespace ECS.BLL
             return db.GetCenters();
         }
 
+        /// <summary>
+        /// Cici Carter
+        /// </summary>
+        /// <Date>3/1/2017</Date>
+        /// <returns></returns>
+        public DataTable GetCenters(bool addSelectRow) //overloaded GetCenters()
+        {
+            DataTable tbl = GetCenters(); //use above bll method
+            if (addSelectRow)
+            {                
+                DataRow row = tbl.NewRow();
+                row["CenterID"] = 0;
+                row["CenterName"] = "Select a Center";
+                tbl.Rows.InsertAt(row, 0); // insert this new row at the top
+            }
+            return tbl;
+        }
+
         // ad
         public DataTable GetTasks()
         {
             Dal db = new Dal();
             return db.GetTasks();
+        }
+
+        /// <summary>
+        /// Cici Carter
+        /// </summary>
+        /// <Date>3/1/2017</Date>
+        /// <returns></returns>
+        public DataTable GetTasks(bool addSelectRow) //overloaded GetTasks()
+        {
+            DataTable tbl = GetTasks(); //use above bll method
+            if (addSelectRow)
+            {
+                DataRow row = tbl.NewRow();
+                row["TaskID"] = 0;
+                row["TaskDescr"] = "Select a Task";
+                tbl.Rows.InsertAt(row, 0); // insert this new row at the top
+            }
+            return tbl;
         }
 
         public object GetStaffTypes()
@@ -138,40 +192,10 @@ namespace ECS.BLL
             return db.AddStaffType(sType);
         }
         
-        public DataTable GetReport()
+        public DataTable GetReport(int monthNum, int taskId, int volunteerTypeId, int centerId)
         {
             Dal db = new Dal();
-            return db.GetReport();
-        }
-        public DataTable GetReportForMonth(int monthNum)
-        {
-            DataTable table = GetReport(); // use above method to get all data, then restrict it below.
-            DataTable rpt = new DataTable(); // this is what we will use to store the new report data.
-
-            if (monthNum > 0)
-            {
-                var thisMonthRows = table.AsEnumerable() // (from http://stackoverflow.com/questions/14477600/get-rows-filtered-by-month-from-a-date-column)
-                    .Where(r => r.Field<DateTime>("DateTimeLogged").Month == monthNum);
-
-                rpt = thisMonthRows.CopyToDataTable();
-            }
-
-            return rpt;
-        }
-        public DataTable GetReportForUser(int volunteerId)
-        {
-            DataTable table = GetReport(); // use above method to get all data, then restrict it below.
-            DataTable rpt = new DataTable(); // this is what we will use to store the new report data.
-
-            if (volunteerId > 0)
-            {
-                var thisVolunteerRows = table.AsEnumerable() // (from http://stackoverflow.com/questions/14477600/get-rows-filtered-by-month-from-a-date-column)
-                    .Where(r => r.Field<Int32>("VolunteerID") == volunteerId);
-
-                rpt = thisVolunteerRows.CopyToDataTable();
-            }
-
-            return rpt;
+            return db.GetReport(monthNum, taskId, volunteerTypeId, centerId);
         }
 
         public string LogInKind(int volunteerId, int taskId, int centerId, int hoursVal, int minVal)

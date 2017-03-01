@@ -411,7 +411,7 @@ namespace ECS.DAL
             }
             return retVal;
         }
-        public DataTable GetReport()
+        public DataTable GetReport(int monthNum, int taskId, int volunteerTypeId, int centerId)
         {
             DataTable dtReportData = new DataTable();
             using (SqlConnection conn = new SqlConnection(Conn))
@@ -420,6 +420,10 @@ namespace ECS.DAL
                 using (SqlCommand command = new SqlCommand(sql, conn))
                 {
                     command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@MonthNum", monthNum);
+                    command.Parameters.AddWithValue("@TaskId", taskId);
+                    command.Parameters.AddWithValue("@VolunteerTypeId", volunteerTypeId);
+                    command.Parameters.AddWithValue("@CenterID", centerId);
                     conn.Open();
                     dtReportData.Load(command.ExecuteReader());
                     conn.Close();
