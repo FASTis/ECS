@@ -12,6 +12,7 @@ Create Table VolunteerLog
 	,VolunteerID integer
 	,TaskID integer
 	,CenterID integer
+	,ChildID integer
 	,NumberMinutes integer
 	,DateTimeLogged datetime not null
 	,SignatureReceived bit
