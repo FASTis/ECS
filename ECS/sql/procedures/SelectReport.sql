@@ -1,10 +1,19 @@
 /*
 	Created by Cici Carter
 	02-24-2017 
-	(to replace SelectReportByMonth)
+	(to replace SelectReportByMonth; used by RunReports.aspx)
+
+	03-01-2017 - Ccarter - modified to add parameters
 */
 
 Create Proc SelectReport
+(
+ @MonthNum int,
+ @TaskID int,
+ @VolunteerTypeID int,
+ @CenterID int
+ )
+ -- SelectReport 2, 0, 0, 1
 as
 begin
 	select v.LastName + ', ' + v.FirstName Volunteer, vt.VolunteerTypeDescr, c.CenterName, vl.DateTimeLogged, 
@@ -18,4 +27,8 @@ begin
 	join VolunteerType vt on vt.VolunteerTypeID=v.VolunteerTypeID
 	left join Family f on f.VolunteerID=v.VolunteerID
 	left join Child ch on ch.ChildID=f.ChildID
+	where	(@MonthNum = 0 or (datepart(month, vl.DateTimeLogged)=@MonthNum))
+		and (@TaskID = 0 or t.TaskID=@TaskID)
+		and (@VolunteerTypeID = 0 or vt.VolunteerTypeID=@VolunteerTypeID)
+		and (@CenterID = 0 or c.CenterID=@CenterID)
 end
