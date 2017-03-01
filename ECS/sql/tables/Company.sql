@@ -10,6 +10,7 @@ Create Table Company
 (
 	 CompanyID integer identity(1,1)
 	,CompanyName varchar(30)
+	,Active bit
 	,PRIMARY KEY (CompanyID)
 );
 

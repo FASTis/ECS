@@ -10,6 +10,7 @@ Create Table VolunteerType
 (
 	 VolunteerTypeID integer identity(1,1)
 	,VolunteerTypeDescr varchar(50)
+	,Active bit
 	,PRIMARY KEY (VolunteerTypeID)
 );
 

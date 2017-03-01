@@ -12,5 +12,6 @@ Create Table Family
 	,ChildID integer
 	,VolunteerID integer
 	,Descr varchar(20) -- father, mother, step-father, grandmother, etc.
+	,Active bit
 	,PRIMARY KEY (FamilyID, ChildID)
 );

@@ -12,6 +12,7 @@ Create Table Task
 	,TaskDescr varchar(50)
 	,PricePerMinute decimal(18,2)
 	,RestrictToVolunteerTypes varchar(5)
+	,Active bit
 	,PRIMARY KEY (TaskID)
 );
 

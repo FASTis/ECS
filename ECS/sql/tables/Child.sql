@@ -12,5 +12,6 @@ Create Table Child
 	,FirstName varchar(30)
 	,LastName varchar(30)
 	,DOB datetime
+	,Active bit
 	,PRIMARY KEY (ChildID)
 );

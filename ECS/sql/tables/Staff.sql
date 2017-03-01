@@ -12,5 +12,6 @@ Create Table Staff
 	,FirstName varchar(30)
 	,LastName varchar(30)
 	,StaffTypeID integer
+	,Active bit
 	,PRIMARY KEY (StaffID)
 );

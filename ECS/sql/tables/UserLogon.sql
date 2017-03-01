@@ -12,5 +12,6 @@ Create Table UserLogon
 	,PIN varchar(4)
 	,VolunteerID integer
 	,StaffID integer
+	,Active bit
 	,PRIMARY KEY (UserID)
 );

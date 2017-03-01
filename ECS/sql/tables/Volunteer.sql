@@ -14,5 +14,6 @@ Create Table Volunteer
 	,VolunteerTypeID integer
 	,CompanyID integer
 	,Last4DigitsOfPhone varchar(4)
+	,Active bit
 	,PRIMARY KEY (VolunteerID)
 );

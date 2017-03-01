@@ -10,6 +10,7 @@ Create Table StaffType
 (
 	 StaffTypeID integer identity(1,1)
 	,StaffTypeDescr varchar(30)
+	,Active bit
 	,PRIMARY KEY (StaffTypeID)
 );
 

@@ -13,6 +13,7 @@ Create Table Center
 	,StreetAddress varchar(50)
 	,City varchar(30)
 	,Zip varchar(5)
+	,Active bit
 	,PRIMARY KEY (CenterID)
 );
 
