@@ -39,10 +39,7 @@
                 </div>
                 <div class="collapse navbar-collapse" id="navbar-menubuilder-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="http://www.ecs4kids.org/">ECS Home</a> </li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="Default.aspx">Home</a> </li>
+                        <li><a href="#">Updated <%= System.IO.File.GetLastWriteTime(System.Reflection.Assembly.GetExecutingAssembly().Location).ToShortDateString() %></a> </li>
                     </ul>
                 </div>
             </div>
@@ -61,6 +58,8 @@
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
+        <hr />
+        <%="<center><h5>&copy; 2016-" + DateTime.Now.Year + " by FAST Integrated Services</h5></center>" %>
     </div>
     </form>
 </body>
