@@ -370,7 +370,7 @@ namespace ECS.DAL
                         conn.Open();
                         command.ExecuteNonQuery(); // this is used for adds, updates, and deletes.
                     }
-                    
+
                     conn.Close();
                     retVal = String.Format("Staff Type successfully updated.");
                 }
@@ -477,7 +477,7 @@ namespace ECS.DAL
             using (SqlConnection conn = new SqlConnection(Conn))
             {
                 //TODO: Convert this to a stored procedure, then use CommandType.StoredProcedure.
-                string sql = String.Format("select {0} from {1}", "CompanyId, CompanyName","Company");
+                string sql = String.Format("select {0} from {1}", "CompanyId, CompanyName", "Company");
                 using (SqlCommand command = new SqlCommand(sql, conn))
                 {
                     command.CommandType = CommandType.Text;
@@ -635,6 +635,39 @@ namespace ECS.DAL
                 retVal = ex.Message;
             }
             return retVal;
+        }
+
+        public bool ValidateUserInfo(string userId, string phone)
+        {
+            DataTable dtRetVal = new DataTable();
+            int retVal = 0;
+            using (SqlConnection conn = new SqlConnection(Conn))
+            {
+                using (SqlCommand command = new SqlCommand("ValidateUserInfo", conn))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("UserId", userId);
+                    command.Parameters.AddWithValue("Last4DigitsOfPhone", phone);
+
+                    conn.Open();
+                    dtRetVal.Load(command.ExecuteReader());
+
+                    foreach (DataRow row in dtRetVal.Rows) // should only be one row.
+                    {
+                        retVal = (int)row["ReturnValue"];
+                    }
+                    conn.Close();
+                }
+            }
+            if (retVal == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }
