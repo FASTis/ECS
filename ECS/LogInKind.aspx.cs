@@ -18,12 +18,25 @@ namespace ECS
 
             if (!IsPostBack)
             {
+                int volunteerId = Convert.ToInt32(Session["VolunteerID"]);
                 LoadHours();
                 LoadMinutes();
                 LoadCenters();
-                LoadTasks();
+                LoadTasks();                
+                LoadChildren(volunteerId);
                 calendarInKind.SelectedDate = DateTime.Today;
             }
+        }
+
+        private void LoadChildren(int volunteerId)
+        {
+            DataTable dt = new DataTable();
+            Bll bll = new Bll();
+            dt = bll.GetChildren(volunteerId);
+            ddChildren.DataTextField = "Child";
+            ddChildren.DataValueField = "ChildID";
+            ddChildren.DataSource = dt;
+            ddChildren.DataBind();
         }
 
         private void LoadHours()
@@ -44,7 +57,7 @@ namespace ECS
         {
             DataTable dt = new DataTable();
             Bll bll = new Bll();
-            dt = bll.GetCenters();
+            dt = bll.GetCenters(true);
             ddCenters.DataTextField = "CenterName";
             ddCenters.DataValueField = "CenterID";
             ddCenters.DataSource = dt;
@@ -55,7 +68,7 @@ namespace ECS
         {
             DataTable dt = new DataTable();
             Bll bll = new Bll();
-            dt = bll.GetTasks();
+            dt = bll.GetTasks(true);
             ddTasks.DataTextField = "TaskDescr";
             ddTasks.DataValueField = "TaskID";
             ddTasks.DataSource = dt;
@@ -85,13 +98,14 @@ namespace ECS
         private void LogToDb()
         {
             int volunteerId = Convert.ToInt32(Session["VolunteerID"]);
+            int childId = Convert.ToInt32(ddChildren.SelectedValue);
             int taskId = Convert.ToInt32(Session["TaskID"]);
             int centerId = Convert.ToInt32(Session["CenterId"]);
             int hoursVal = Convert.ToInt32(Session["Hours"]);
             int minVal = Convert.ToInt32(Session["Minutes"]);
 
             Bll bll = new Bll();
-            string returnedValue = bll.LogInKind(volunteerId, taskId, centerId, hoursVal, minVal);
+            string returnedValue = bll.LogInKind(volunteerId, childId, taskId, centerId, hoursVal, minVal);
 
             if (!returnedValue.Contains("success"))
             {
