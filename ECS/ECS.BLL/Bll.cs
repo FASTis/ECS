@@ -28,6 +28,20 @@ namespace ECS.BLL
             return db.InsertNewUser(firstName, lastName, volTypeId, compId, last4Digits, userId, pin);
         }
 
+        public DataTable GetChildren(int volunteerId)
+        {
+            Dal db = new Dal();
+            DataTable tbl = db.GetChildren(volunteerId);
+
+            DataRow row = tbl.NewRow();
+            row["ChildID"] = 0;
+            row["Child"] = "N/A";
+            tbl.Rows.InsertAt(row, 0); // insert this new row at the top
+
+            return tbl;
+        }
+
+
         /// <summary>
         /// Cici Carter
         /// </summary>
@@ -159,11 +173,11 @@ namespace ECS.BLL
             return db.GetStaffTypes();
         }
 
-        //public string GetPIN(string username, string last4ofPhone)
-        //{
-        //    Dal db = new Dal();
-        //    return db.GetPIN(username, last4ofPhone);
-        //}
+        public string GetPIN(string username, string last4ofPhone)
+        {
+            Dal db = new Dal();
+            return db.GetPIN(username, last4ofPhone);
+        }
 
         ///
         /// Needs to be worked on && method of same name in Dal
@@ -198,10 +212,10 @@ namespace ECS.BLL
             return db.GetReport(monthNum, taskId, volunteerTypeId, centerId);
         }
 
-        public string LogInKind(int volunteerId, int taskId, int centerId, int hoursVal, int minVal)
+        public string LogInKind(int volunteerId, int childId, int taskId, int centerId, int hoursVal, int minVal)
         {
             Dal db = new Dal();
-            return db.LogInKind(volunteerId, taskId, centerId, hoursVal, minVal);
+            return db.LogInKind(volunteerId, childId, taskId, centerId, hoursVal, minVal);
         }
 
         public DataTable GetCompanies()
@@ -255,12 +269,11 @@ namespace ECS.BLL
             Dal db = new Dal();
             return db.AddVolunteerType(sType);
         }
-
+        //ad
         public bool ValidateUserInfo(string userId, string phone)
         {
             Dal db = new Dal();
             return db.ValidateLogin(userId, phone);
         }
     }
-
 }
