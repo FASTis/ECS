@@ -115,6 +115,13 @@
     <Content Include="sql\tables\Volunteer.sql" />
     <Content Include="sql\tables\VolunteerLog.sql" />
     <Content Include="sql\tables\VolunteerType.sql" />
+    <Content Include="taskDescr\NoDescription.html" />
+    <Content Include="taskDescr\EHSPrimaryCaregiverPerParent.html" />
+    <Content Include="taskDescr\Facilities.html" />
+    <Content Include="taskDescr\HSAssistantTeacher.html" />
+    <Content Include="taskDescr\Index.html" />
+    <Content Include="taskDescr\KitchenAide.html" />
+    <Content Include="taskDescr\ProgramAsistant.html" />
     <Content Include="TestOfWebformUsingMasterPage.aspx" />
     <Content Include="Web.config" />
     <Content Include="LogInKind.aspx" />

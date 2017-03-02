@@ -31,7 +31,7 @@
                         <asp:DropDownList ID="ddTasks" runat="server" CssClass="form-control ddl" AutoPostBack="False">
                             <asp:ListItem></asp:ListItem>
                         </asp:DropDownList><br />
-                        <asp:CheckBox ID="chkTask" runat="server" AutoPostBack="False"></asp:CheckBox>&nbsp;&nbsp;I have read the <a href="#">activity description</a> for the activity above.
+                        <asp:CheckBox ID="chkTask" runat="server" AutoPostBack="False"></asp:CheckBox>&nbsp;&nbsp;I have read the <a href="taskDescr/Index.html" target="_blank">activity description</a> for the activity above.
                     </div>
                 </div>
 
