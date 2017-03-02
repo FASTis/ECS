@@ -18,28 +18,24 @@ namespace ECS
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (ValidEntry())
-            {
-                string username = txtUserName.Text;
-                string last4ofPhone = txtPhone.Text;
-
-                Response.Redirect("ResetPassword.aspx");
-
-                //Bll bll = new Bll();
-                //string pin = bll.GetPIN(username, last4ofPhone);
-                //string returnedValue = "Your PIN is: " + pin;
-                //string radalertscript = "<script language='javascript'>function f(){radalert('" + returnedValue + "', 300, 100, 'ECS Volunteer App: Forgot Password'); Sys.Application.remove_load(f);}; Sys.Application.add_load(f);</script>";
-                //Page.ClientScript.RegisterStartupScript(this.GetType(), "radalert", radalertscript);
-
-            }
-
+            ValidEntry();
         }
 
         private bool ValidEntry()
         {
+            string username = txtUserName.Text;
+            string last4 = txtPhone.Text;
+
             bool valid = false;
-            if (!String.IsNullOrEmpty(txtPhone.Text) && !String.IsNullOrEmpty(txtUserName.Text))
+            if (!String.IsNullOrEmpty(last4) && !String.IsNullOrEmpty(username))
+            {
+                
                 valid = true;
+            }
+            else
+            {
+                //TODO Display error msg (not all info filled in)
+            }
 
             return valid;
         }

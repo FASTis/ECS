@@ -16,7 +16,7 @@ namespace ECS
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-
+            ValidEntry();
         }
 
         private bool ValidEntry()
@@ -24,14 +24,15 @@ namespace ECS
             bool valid = false;
             if (!String.IsNullOrEmpty(txtNewPass.Text) && !String.IsNullOrEmpty(txtConPass.Text))
             {
-                if(string.Equals(txtNewPass, txtConPass))
+                if(string.Equals(txtNewPass.Text, txtConPass.Text))
                 {
                     valid = true;
+                    //TODO Connect to Db to enter new pass
                 }
 
                 else
                 {
-                    valid = false;
+                    //TODO Display error msg
                 }
             }
 
