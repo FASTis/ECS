@@ -159,11 +159,11 @@ namespace ECS.BLL
             return db.GetStaffTypes();
         }
 
-        public string GetPIN(string username, string last4ofPhone)
-        {
-            Dal db = new Dal();
-            return db.GetPIN(username, last4ofPhone);
-        }
+        //public string GetPIN(string username, string last4ofPhone)
+        //{
+        //    Dal db = new Dal();
+        //    return db.GetPIN(username, last4ofPhone);
+        //}
 
         ///
         /// Needs to be worked on && method of same name in Dal
@@ -255,5 +255,12 @@ namespace ECS.BLL
             Dal db = new Dal();
             return db.AddVolunteerType(sType);
         }
+
+        public bool ValidateUserInfo(string userId, string phone)
+        {
+            Dal db = new Dal();
+            return db.ValidateLogin(userId, phone);
+        }
     }
+
 }
