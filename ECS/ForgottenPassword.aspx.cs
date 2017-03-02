@@ -21,6 +21,10 @@ namespace ECS
             ValidEntry();
         }
 
+
+        //check info entered into text boxes, if info missing display error
+        //if all there, check db for match (UserLogon.UserID & Volunteer.Last4DigitsOfPhone)
+        //if match in db redirect to pass reset, else display error
         private bool ValidEntry()
         {
             string username = txtUserName.Text;
@@ -42,7 +46,7 @@ namespace ECS
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Default.aspx");
+            Response.Redirect("Login.aspx");
         }
     }
 }
