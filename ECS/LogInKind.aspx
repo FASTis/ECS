@@ -49,7 +49,10 @@
                 <div class="form-group">
                     <asp:Label ID="lblDateMonth" runat="server" Text="Select the date you volunteered:" CssClass="col-lg-2 control-label"></asp:Label>
                     <div class="col-lg-4">
-                        <asp:Calendar ID="calendarInKind" runat="server" BackColor="#f8f8f8" BorderColor="#aea79f" Font-Size="9pt" ForeColor="#333333" Height="200px" Width="90%" BorderWidth="1px" DayNameFormat="Shortest" ShowGridLines="True">
+                        <asp:Calendar ID="calendarInKind" runat="server" BackColor="#f8f8f8" BorderColor="#aea79f" 
+                            Font-Size="9pt" ForeColor="#333333" Height="200px" Width="90%" BorderWidth="1px" 
+                            DayNameFormat="Shortest" ShowGridLines="True"
+                            OnDayRender="calendarInKind_DayRender">
                             <DayHeaderStyle Font-Bold="True" Height="1px" BackColor="#741f72" ForeColor="#f7f7f7" />
                             <NextPrevStyle Font-Size="9pt" ForeColor="#333333" />
                             <OtherMonthDayStyle ForeColor="#c6c6c6" />

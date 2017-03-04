@@ -24,10 +24,15 @@ namespace ECS
                 LoadCenters();
                 LoadTasks();                
                 LoadChildren(volunteerId);
-                calendarInKind.SelectedDate = DateTime.Today;
             }
         }
-
+        protected void calendarInKind_DayRender(object sender, DayRenderEventArgs e)
+        { // found this via Google: https://forums.asp.net/t/1230073.aspx?How+to+disable+future+dates+in+a+calendar+control+
+            if (e.Day.Date > DateTime.Today)
+            {
+                e.Day.IsSelectable = false;
+            }
+        }
         private void LoadChildren(int volunteerId)
         {
             DataTable dt = new DataTable();
@@ -98,7 +103,7 @@ namespace ECS
         private void LogToDb()
         {
             int volunteerId = Convert.ToInt32(Session["VolunteerID"]);
-            int childId = Convert.ToInt32(ddChildren.SelectedValue);
+            int childId = Convert.ToInt32(Session["ChildID"]);
             int taskId = Convert.ToInt32(Session["TaskID"]);
             int centerId = Convert.ToInt32(Session["CenterId"]);
             int hoursVal = Convert.ToInt32(Session["Hours"]);
@@ -123,6 +128,8 @@ namespace ECS
             Session["CenterId"] = ddCenters.SelectedValue;
             Session["Task"] = ddTasks.SelectedItem.ToString();
             Session["TaskId"] = ddTasks.SelectedValue;
+            Session["Child"] = ddChildren.SelectedItem.ToString();
+            Session["ChildId"] = ddChildren.SelectedValue;
             Session["ReadDescr"] = chkTask.Checked;
             Session["Date"] = calendarInKind.SelectedDate.ToString().Replace(" 12:00:00 AM", ""); // remove the midnight text! argh!
             Session["Hours"] = ddHours.SelectedValue;

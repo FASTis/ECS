@@ -41,8 +41,8 @@
 
                 </div>
                 <div class="collapse navbar-collapse" id="navbar-menubuilder-collapse-1">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Updated <%= System.IO.File.GetLastWriteTime(System.Reflection.Assembly.GetExecutingAssembly().Location) %></a> </li>
+                    <ul class="nav navbar-nav navbar-right">                        
+                        <li><a href="#">Updated 3/4/2017 at 4:42pm</a> </li>
                     </ul>
                 </div>
             </div>

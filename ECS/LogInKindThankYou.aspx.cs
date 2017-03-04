@@ -41,13 +41,15 @@ namespace ECS
             string dateVal = Session["Date"].ToString();
             string hoursVal = Session["Hours"].ToString();
             string minVal = Session["Minutes"].ToString();
+            string child = Session["Child"].ToString();
 
             s = String.Format(@"<b>Center:</b> {0}
                                 <br /><b>Task:</b> {1}
                                 <br /><b>Read Description?</b> {2}
                                 <br /><b>Date:</b> {3}</td>
-                                <br /><b>Time Logged:</b> {4} hours : {5} minutes",
-                              center, task, readDescr, dateVal, hoursVal, minVal);
+                                <br /><b>Time Logged:</b> {4} hours : {5} minutes
+                                <br /><b>For Child:</b> {6}",
+                              center, task, readDescr, dateVal, hoursVal, minVal, child);
 
             divConfirmation.InnerHtml = s;
         }
