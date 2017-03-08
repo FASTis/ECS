@@ -45,7 +45,11 @@
             </td>
             <td>&nbsp;&nbsp;&nbsp;</td>
             <td>
-                <asp:Button ID="btnExport" runat="server" Text="Export To Excel" class="btn btn-success" OnClick="btnExport_Click" />
+                <asp:Button ID="btnExport" runat="server" Text="Export Grid To Excel" class="btn btn-success" OnClick="btnExport_Click" />                
+            </td>
+            <td>&nbsp;&nbsp;&nbsp;</td>
+            <td>                
+                <asp:Button ID="btnMonthlySummary" runat="server" Text="Export Monthly Summary Report" class="btn btn-success" OnClick="btnMonthlySummary_Click" />
             </td>
         </tr>
     </table>
@@ -76,5 +80,7 @@
         of
         <%=gvReportData.PageCount%>
         </i>
+
+    <div id="divMonthlyRpt" runat="server"><asp:GridView ID="gvMonthlySummaryReport" runat="server" Visible="true"></asp:GridView></div>
 
 </asp:content>

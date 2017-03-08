@@ -28,6 +28,7 @@ namespace ECS
                     LoadVolunteerTypes();
                 }
                 LoadReport();
+                divMonthlyRpt.Visible = false;
             }
         }
 
@@ -39,8 +40,12 @@ namespace ECS
             int centerId = Convert.ToInt16(ddCenter.SelectedValue);
 
             Bll bll = new Bll();
+            
             gvReportData.DataSource = bll.GetReport(monthNumber, taskId, volunteerTypeId, centerId);
             gvReportData.DataBind();
+
+            gvMonthlySummaryReport.DataSource = bll.GetMonthlySummaryReport(monthNumber);
+            gvMonthlySummaryReport.DataBind();
 
         }
         protected void gvReportData_Paging(object sender, GridViewPageEventArgs e)
@@ -52,6 +57,42 @@ namespace ECS
         protected void btnExport_Click(object sender, EventArgs e)
         {
             ExportToExcel();
+        }
+
+        protected void btnMonthlySummary_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(ddMonths.SelectedValue) > 0)
+            {
+                ExportMonthlySummary();
+            }
+            else
+                DisplayPopup("Please select a month for the report.");
+        }
+
+        private void ExportMonthlySummary()
+        {
+
+            // copied this part from Tillman's method, but causes a popup warning.
+            Response.Clear();
+            Response.Buffer = true;
+            Response.AddHeader("content-disposition", "attachment;filename=MonthlySummaryReport.xls");
+            Response.Charset = "";
+            Response.ContentType = "application/vnd.ms-excel";
+            using (StringWriter sw = new StringWriter())
+            {
+                HtmlTextWriter hw = new HtmlTextWriter(sw);
+                gvMonthlySummaryReport.RenderControl(hw);
+                Response.Output.Write(sw.ToString());
+                Response.Flush();
+                Response.End();
+            }
+
+        }
+       
+        private void DisplayPopup(string returnedMessage)
+        {
+            string radalertscript = "<script language='javascript'>function f(){radalert('" + returnedMessage + "', 300, 100, 'ECS Volunteer App: Edit Staff Type'); Sys.Application.remove_load(f);}; Sys.Application.add_load(f);</script>";
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "radalert", radalertscript);
         }
 
         private void LoadVolunteerTypes()
