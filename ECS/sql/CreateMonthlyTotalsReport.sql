@@ -7,7 +7,7 @@ declare @tbl table
  Child varchar(100), 
  NumberMinutes integer, 
  PricePerMinute decimal, 
- TotalValue decimal, 
+ TotalValue money, 
  VolunteerID integer, 
  TaskID integer, 
  CenterID integer, 
@@ -15,7 +15,7 @@ declare @tbl table
  ChildId integer)
 
 insert @tbl
-exec SelectReport
+exec SelectReport 2,0,0,0 -- whatever the user selects...
 
 SELECT 	CenterName as Center,
 	sum(TotalValue) as [Volunteers(6720)],
@@ -31,4 +31,3 @@ SELECT 	CenterName as Center,
 	sum(TotalValue) as [TOTAL]
 from @tbl
 Group By CenterName
-Having DateTimeLogged between @StartDate and @EndDate
