@@ -311,7 +311,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Site.Master" />
+    <None Include="Properties\PublishProfiles\c3techsolutions.com - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\c3techsolutions.com - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\c3techsolutions.com - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\c3techsolutions.com - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\ecs.pubxml" />
     <None Include="Web.Debug.config">
