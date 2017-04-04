@@ -16,13 +16,32 @@ namespace ECS
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-
+            ValidEntry();
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Default.aspx");
+            Response.Redirect("Login.aspx");
         }
 
+        private void ValidEntry()
+        {
+            //lblRetVal.Text = "";
+            //Bll bll = new Bll();
+            //bool retVal = bll.ValidateUserInfo(txtUserName.Text, txtPhone.Text);
+            //string username = txtUserName.Text;
+
+            //if (retVal)
+            //{
+            //    lblRetVal.Text = "Your username is";
+            //}
+
+
+            //else
+            //{
+            //    lblRetVal.Text = "Unable to find a username that matches the information.";
+
+            //}
+        }
     }
 }
