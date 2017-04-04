@@ -226,7 +226,7 @@ namespace ECS.DAL
             return dtVolunteers;
         }
 
-        // ad
+
         public DataTable GetCenters()
         {
             DataTable dtCenter = new DataTable();
@@ -244,7 +244,7 @@ namespace ECS.DAL
             return dtCenter;
         }
 
-        // ad
+
         public DataTable GetTasks()
         {
             DataTable dtTask = new DataTable();
@@ -659,7 +659,7 @@ namespace ECS.DAL
             return dt;
         }
 
-        //ad
+        
         public bool ValidateUserInfo(string userId, string phone)
         {
             DataTable dtRetVal = new DataTable();
@@ -740,5 +740,10 @@ namespace ECS.DAL
             }
             return dt;
         }
+
+        //public string ResetPassword(string pin)
+        //{
+
+        //}
     }
 }

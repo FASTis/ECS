@@ -25,26 +25,27 @@ namespace ECS
         //check info entered into text boxes, if info missing display error
         //if all there, check db for match (UserLogon.UserID & Volunteer.Last4DigitsOfPhone)
         //if match in db redirect to pass reset, else display error
-        private bool ValidEntry()
+        private void ValidEntry()
         {
+            lblRetVal.Text = "";
+            Bll bll = new Bll();
+            bool retVal = bll.ValidateUserInfo(txtUserName.Text, txtPhone.Text);
             string username = txtUserName.Text;
-            string last4 = txtPhone.Text;
 
-            bool valid = false;
-            if (!String.IsNullOrEmpty(last4) && !String.IsNullOrEmpty(username))
+            if (retVal)
             {
-                
-                valid = true;
-            }
+                Response.Redirect("ResetPassword.aspx?username="+username.Trim());
+            }            
+
+
             else
             {
-                //TODO Display error msg (not all info filled in)
-            }
+                lblRetVal.Text = "Invalid username or last four digits of phone number.";
 
-            return valid;
+            }
         }
 
-        protected void btnCancel_Click(object sender, EventArgs e)
+    protected void btnCancel_Click(object sender, EventArgs e)
         {
             Response.Redirect("Login.aspx");
         }

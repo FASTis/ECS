@@ -1,8 +1,8 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ResetPassword.aspx.cs" Inherits="ECS.ResetPassword" %>
 
-<asp:Content id="ContentResetPassword" contentplaceholderid="ContentPlaceHolder1" runat="server">
+<asp:Content ID="ContentResetPassword" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-        <div class="resetPassword">
+    <div class="resetPassword">
         <div class="form-horizontal">
             <fieldset>
                 <legend>Reset Password</legend>
@@ -11,7 +11,7 @@
                 <div class="form-group">
                     <asp:Label ID="lblNewPass" runat="server" Text="New Password:" CssClass="col-lg-2 control-label"></asp:Label>
                     <div class="col-lg-10">
-                        <asp:TextBox ID="txtNewPass" runat="server" placeholder=""  TextMode="Password" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="txtNewPass" runat="server" placeholder="" TextMode="Password" CssClass="form-control"></asp:TextBox>
                     </div>
                 </div>
 
@@ -19,7 +19,7 @@
                 <div class="form-group">
                     <asp:Label ID="lblConPass" runat="server" Text="Confirm Password:" CssClass="col-lg-2 control-label"></asp:Label>
                     <div class="col-lg-10">
-                        <asp:TextBox ID="txtConPass" runat="server" placeholder=""  TextMode="Password" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="txtConPass" runat="server" placeholder="" TextMode="Password" CssClass="form-control"></asp:TextBox>
                     </div>
                 </div>
 
@@ -27,8 +27,12 @@
                 <br />
                 <div class="form-group">
                     <div class="col-lg-10 col-lg-offset-2">
-                            <asp:Button ID="btnSubmit" runat="server" CssClass="btn btn-primary" Text="Submit" OnClick="btnSubmit_Click" />
-                            <asp:Button ID="btnCancel" runat="server" CssClass="btn btn-warning" Text="Cancel" OnClick="btnCancel_Click" />
+                        <asp:Button ID="btnSubmit" runat="server" CssClass="btn btn-primary" Text="Submit" OnClick="btnSubmit_Click" />
+                        <asp:Button ID="btnCancel" runat="server" CssClass="btn btn-warning" Text="Cancel" OnClick="btnCancel_Click" />
+                        <br />
+                        <br />
+                        <h5><strong>
+                            <asp:Label ID="lblRetVal" ForeColor="Orange" runat="server"></asp:Label></strong></h5>
                     </div>
                 </div>
             </fieldset>

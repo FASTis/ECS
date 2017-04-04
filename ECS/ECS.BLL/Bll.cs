@@ -273,7 +273,7 @@ namespace ECS.BLL
         public bool ValidateUserInfo(string userId, string phone)
         {
             Dal db = new Dal();
-            return db.ValidateLogin(userId, phone);
+            return db.ValidateUserInfo(userId, phone);
         }
 
         public object GetMonthlySummaryReport(int monthNumber)
@@ -281,5 +281,11 @@ namespace ECS.BLL
             Dal db = new Dal();
             return db.GetMonthlySummaryReport(monthNumber);
         }
+
+        //public string ResetPassword(string pin)
+        //{
+        //    Dal db = new Dal();
+        //    return db.ResetPassword(pin);
+        //}
     }
 }

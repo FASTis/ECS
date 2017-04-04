@@ -19,8 +19,9 @@ namespace ECS
             ValidEntry();
         }
 
-        private bool ValidEntry()
+        private void ValidEntry()
         {
+            var userName = Request.QueryString["username"];
             bool valid = false;
             if (!String.IsNullOrEmpty(txtNewPass.Text) && !String.IsNullOrEmpty(txtConPass.Text))
             {
@@ -36,12 +37,11 @@ namespace ECS
                 }
             }
 
-            return valid;
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Default.aspx");
+            Response.Redirect("Login.aspx");
         }
     }
 }
