@@ -92,5 +92,10 @@ namespace ECS
         {
             Response.Redirect("Default.aspx");
         }
+
+        protected void btnAddChildren_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AddChildren.aspx");
+        }
     }
 }

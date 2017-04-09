@@ -68,6 +68,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddChildren.aspx" />
     <Content Include="EditCompany.aspx" />
     <Content Include="EditStaffType.aspx" />
     <Content Include="EditVolunteer.aspx" />
@@ -132,6 +133,13 @@
     <Content Include="LogInKind.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddChildren.aspx.cs">
+      <DependentUpon>AddChildren.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddChildren.aspx.designer.cs">
+      <DependentUpon>AddChildren.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EditCompany.aspx.cs">
       <DependentUpon>EditCompany.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
