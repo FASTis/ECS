@@ -83,7 +83,17 @@ namespace ECS
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             // Validate entries before saving.
-            if (!chkTask.Checked)
+            if (ddCenters.SelectedIndex == 0)
+            {
+                string radalertscript = "<script language='javascript'>function f(){radalert('You must select a center.', 300, 100, 'ECS Volunteer App: In-Kind'); Sys.Application.remove_load(f);}; Sys.Application.add_load(f);</script>";
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "radalert", radalertscript);
+            }
+            else if (ddTasks.SelectedIndex == 0)
+            {
+                string radalertscript = "<script language='javascript'>function f(){radalert('You must select an activity.', 300, 100, 'ECS Volunteer App: In-Kind'); Sys.Application.remove_load(f);}; Sys.Application.add_load(f);</script>";
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "radalert", radalertscript);
+            }
+            else if (!chkTask.Checked)
             {
                 string radalertscript = "<script language='javascript'>function f(){radalert('You must click the checkbox indicating that you have read the activity description.', 300, 100, 'ECS Volunteer App: In-Kind'); Sys.Application.remove_load(f);}; Sys.Application.add_load(f);</script>";
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "radalert", radalertscript);
