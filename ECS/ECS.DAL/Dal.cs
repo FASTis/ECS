@@ -442,7 +442,7 @@ namespace ECS.DAL
         /// <param name="numHrs"></param>
         /// <param name="numMins"></param>
         /// <returns></returns>
-        public string LogInKind(int volunteerId, int childId, int taskId, int centerId, int numHrs, int numMins)
+        public string LogInKind(int volunteerId, int childId, int taskId, int centerId, int numHrs, int numMins, DateTime logDate)
         {
             int totalMinutes = (60 * numHrs) + numMins;
             string retVal;
@@ -451,9 +451,9 @@ namespace ECS.DAL
                 using (SqlConnection conn = new SqlConnection(Conn))
                 {
                     //TODO: Convert this to a stored procedure, then use CommandType.StoredProcedure.
-                    string sql = String.Format(@"Insert {0} (VolunteerId, ChildId, TaskId, CenterId, NumberMinutes)
-                                                 values ({1}, {2}, {3}, {4}, {5})", "VolunteerLog",
-                                                 volunteerId, childId, taskId, centerId, totalMinutes);
+                    string sql = String.Format(@"Insert {0} (VolunteerId, ChildId, TaskId, CenterId, NumberMinutes, DateTimeLogged)
+                                                 values ({1}, {2}, {3}, {4}, {5}, '{6}')", "VolunteerLog",
+                                                 volunteerId, childId, taskId, centerId, totalMinutes, logDate);
                     using (SqlCommand command1 = new SqlCommand(sql, conn))
                     {
                         command1.CommandType = CommandType.Text;
