@@ -62,7 +62,7 @@
             <asp:BoundField DataField="Volunteer" HeaderText="Volunteer" />
             <asp:BoundField DataField="VolunteerTypeDescr" HeaderText="Volunteer Type" />
             <asp:BoundField DataField="CenterName" HeaderText="Center" />
-            <asp:BoundField DataField="DateTimeLogged" HeaderText="Timestamp" />
+            <asp:BoundField DataField="DateTimeLogged" HeaderText="Date" />
             <asp:BoundField DataField="TaskDescr" HeaderText="Task" />
             <asp:BoundField DataField="Child" HeaderText="Child" />
             <asp:BoundField DataField="NumberMinutes" HeaderText="Minutes" />

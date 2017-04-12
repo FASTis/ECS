@@ -24,6 +24,7 @@ namespace ECS
                 LoadCenters();
                 LoadTasks();                
                 LoadChildren(volunteerId);
+                calendarInKind.SelectedDate = DateTime.Today;
             }
         }
         protected void calendarInKind_DayRender(object sender, DayRenderEventArgs e)
@@ -33,6 +34,7 @@ namespace ECS
                 e.Day.IsSelectable = false;
             }
         }
+
         private void LoadChildren(int volunteerId)
         {
             DataTable dt = new DataTable();
@@ -118,9 +120,10 @@ namespace ECS
             int centerId = Convert.ToInt32(Session["CenterId"]);
             int hoursVal = Convert.ToInt32(Session["Hours"]);
             int minVal = Convert.ToInt32(Session["Minutes"]);
+            DateTime logDate = calendarInKind.SelectedDate;
 
             Bll bll = new Bll();
-            string returnedValue = bll.LogInKind(volunteerId, childId, taskId, centerId, hoursVal, minVal);
+            string returnedValue = bll.LogInKind(volunteerId, childId, taskId, centerId, hoursVal, minVal, logDate);
 
             if (!returnedValue.Contains("success"))
             {
