@@ -1,3 +1,10 @@
+/*
+================================================
+Author:      	Cici Carter
+Create date:    04/11/2017
+Description:    Gets PIN for user and phone.
+================================================
+*/
 Create Procedure GetPIN
 (
 	 @userId varchar(25)

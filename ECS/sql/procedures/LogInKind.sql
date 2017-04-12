@@ -1,11 +1,18 @@
+/*
+================================================
+Author:      	Cici Carter
+Create date:    04/11/2017
+Description:    Logs volunteer hours.
+================================================
+*/
+
 Create Procedure LogInKind
 (
 	   @volunteerId integer
 	 , @childId integer
 	 , @taskId integer
 	 , @centerId integer
-	 , @numHrs integer
-	 , @numMins integer
+	 , @totalMinutes integer
 )
 
 as
