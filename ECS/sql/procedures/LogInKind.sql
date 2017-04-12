@@ -13,12 +13,13 @@ Create Procedure LogInKind
 	 , @taskId integer
 	 , @centerId integer
 	 , @totalMinutes integer
+	 , @logDate datetime
 )
 
 as
 
 begin
-		Insert VolunteerLog (VolunteerId, ChildId, TaskId, CenterId, NumberMinutes) 
-		Values (@volunteerId, @childId, @taskId, @centerId, @totalMinutes) 
+		Insert VolunteerLog (VolunteerId, ChildId, TaskId, CenterId, NumberMinutes, DateTimeLogged) 
+		Values (@volunteerId, @childId, @taskId, @centerId, @totalMinutes, @logDate) 
 
 end
