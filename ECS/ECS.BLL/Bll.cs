@@ -212,10 +212,10 @@ namespace ECS.BLL
             return db.GetReport(monthNum, taskId, volunteerTypeId, centerId);
         }
 
-        public string LogInKind(int volunteerId, int childId, int taskId, int centerId, int hoursVal, int minVal)
+        public string LogInKind(int volunteerId, int childId, int taskId, int centerId, int hoursVal, int minVal, DateTime logDate)
         {
             Dal db = new Dal();
-            return db.LogInKind(volunteerId, childId, taskId, centerId, hoursVal, minVal);
+            return db.LogInKind(volunteerId, childId, taskId, centerId, hoursVal, minVal, logDate);
         }
 
         public DataTable GetCompanies()
