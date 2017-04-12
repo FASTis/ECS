@@ -1,5 +1,5 @@
 ﻿using System;
-
+using ECS.BLL;
 
 namespace ECS
 {
@@ -25,7 +25,18 @@ namespace ECS
                     divAdmin.Visible = true;
                 else
                     divAdmin.Visible = false;
+
+                lblHoursForCurrentMonth.Text = GetHoursForCurrentMonth().ToString();
             }
+        }
+        protected decimal GetHoursForCurrentMonth()
+        {
+            DateTime startDate = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+            DateTime endDate = startDate.AddMonths(1).AddDays(-1);
+            int volunteerID = Convert.ToInt32(Session["VolunteerID"]);
+
+            Bll bll = new Bll();
+            return bll.GetHoursForCurrentMonth(startDate, endDate, volunteerID);
         }
 
         protected void btnInkind_Click(object sender, EventArgs e)

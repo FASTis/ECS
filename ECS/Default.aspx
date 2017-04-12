@@ -30,6 +30,32 @@
                     </asp:Panel>
                 </div>                
             </td>
+            <td width="100px">&nbsp;</td>
+            <td valign="middle" style="border: 5px solid black;border-radius: 25px;">
+
+                    <table>
+                        <tr><td colspan="3">&nbsp</td></tr>
+                        <tr>
+                            <td width="20">&nbsp;</td>
+                            <td>
+                                <asp:Label Font-Bold="true" Font-Size="Large" runat="server" ID="lblHeadingForHoursForCurrentMonth">
+                                    Volunteer Hours for Current Month:
+                                </asp:Label>
+                            </td>
+                            <td width="20">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td align="center">
+                                <asp:Label Font-Bold="true" Font-Size="Large" runat="server" ID="lblHoursForCurrentMonth"></asp:Label>
+                            </td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr><tr><td colspan="3">&nbsp</td></tr></tr>
+
+                    </table>
+                
+            </td>
         </tr>
     </table>
 
