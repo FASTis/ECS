@@ -287,5 +287,19 @@ namespace ECS.BLL
         //    Dal db = new Dal();
         //    return db.ResetPassword(pin);
         //}
+
+        /// <summary>
+        /// Gets the current month's hours for a specified volunteer
+        /// [cici carter]
+        /// </summary>
+        /// <param name="startDate"></param>
+        /// <param name="endDate"></param>
+        /// <param name="volunteerID"></param>
+        /// <returns></returns>
+        public decimal GetHoursForCurrentMonth(DateTime startDate, DateTime endDate, int volunteerID)
+        {
+            Dal db = new Dal();
+            return db.GetHoursForCurrentMonth(startDate, endDate, volunteerID);
+        }
     }
 }
