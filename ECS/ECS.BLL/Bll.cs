@@ -296,7 +296,7 @@ namespace ECS.BLL
         /// <param name="endDate"></param>
         /// <param name="volunteerID"></param>
         /// <returns></returns>
-        public decimal GetHoursForCurrentMonth(DateTime startDate, DateTime endDate, int volunteerID)
+        public DataTable GetHoursForCurrentMonth(DateTime startDate, DateTime endDate, int volunteerID)
         {
             Dal db = new Dal();
             return db.GetHoursForCurrentMonth(startDate, endDate, volunteerID);
