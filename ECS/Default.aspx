@@ -33,7 +33,7 @@
             <td width="100px">&nbsp;</td>
             <td valign="middle" style="border: 5px solid black; border-radius: 10px;">
 
-                    <table width="350">
+                    <table width="375">
                         <tr><td colspan="3">&nbsp</td></tr>
                         <tr>
                             <td width="20">&nbsp;</td>
