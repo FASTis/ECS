@@ -43,7 +43,7 @@ namespace ECS
             foreach (DataRow row in dt.Rows)
             {
                 lblHoursForCurrentMonth.Text = row[0].ToString() + " Total Hours";
-                lblNonHomeHours.Text = "(" + row[1].ToString() + " Non-At-Home Hours)";
+                lblNonHomeHours.Text = "(" + row[1].ToString() + " In Center Hours)";
                 hrs = Convert.ToDecimal(row[1]);
             }
 
@@ -52,12 +52,12 @@ namespace ECS
             if (hrs > new decimal(10.00))
             {
                 lblNonHomeHours.BackColor = System.Drawing.Color.Yellow;
-                lblWarning.Text = "WARNING: You have exceeded the maximum number of non-At-Home hours allowed per month.";
+                lblWarning.Text = "WARNING: You have exceeded the maximum of 10 in center volunteer hours allowed per month.";
             }
             else if (hrs >= new decimal(9.00))
             {
                 lblNonHomeHours.BackColor = System.Drawing.Color.Yellow;
-                lblWarning.Text = "WARNING: You are close to the maximum number of non-At-Home hours allowed per month.";
+                lblWarning.Text = "WARNING: You are close to the maximum of 10 in center volunteer hours allowed per month.";
             }
             else
             {

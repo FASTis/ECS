@@ -31,9 +31,9 @@
                 </div>                
             </td>
             <td width="100px">&nbsp;</td>
-            <td valign="middle" style="border: 5px solid black;border-radius: 25px;">
+            <td valign="middle" style="border: 5px solid black; border-radius: 10px;">
 
-                    <table width="300">
+                    <table width="350">
                         <tr><td colspan="3">&nbsp</td></tr>
                         <tr>
                             <td width="20">&nbsp;</td>
@@ -47,8 +47,8 @@
                         <tr>
                             <td>&nbsp;</td>
                             <td align="center">
-                                <asp:Label Font-Bold="true" Font-Size="Large" runat="server" ID="lblHoursForCurrentMonth"></asp:Label><br />
-                                <asp:Label Font-Bold="true" Font-Size="Medium" runat="server" ID="lblNonHomeHours"></asp:Label><br />
+                                <br /><asp:Label Font-Bold="true" Font-Size="Large" runat="server" ID="lblHoursForCurrentMonth"></asp:Label><br /><br />
+                                <asp:Label Font-Bold="true" Font-Size="Medium" runat="server" ID="lblNonHomeHours"></asp:Label><br /><br />
                                 <asp:Label Font-Bold="true" Font-Size="Smaller" runat="server" ID="lblWarning" ForeColor="Red"></asp:Label>
                             </td>
                             <td>&nbsp;</td>
