@@ -746,10 +746,9 @@ namespace ECS.DAL
 
         //}
 
-        public decimal GetHoursForCurrentMonth(DateTime startDate, DateTime endDate, int volunteerID)
+        public DataTable GetHoursForCurrentMonth(DateTime startDate, DateTime endDate, int volunteerID)
         {
             DataTable dtRetVal = new DataTable();
-            decimal retVal = 0;
 
             using (SqlConnection conn = new SqlConnection(Conn))
             {
@@ -762,15 +761,11 @@ namespace ECS.DAL
 
                     conn.Open();
                     dtRetVal.Load(command.ExecuteReader());
-                    foreach (DataRow row in dtRetVal.Rows) // should only be one row.  
-                    {
-                        retVal = (decimal)row["HoursForPeriod"];
-                    }
                     conn.Close();
                 }
             }
 
-            return retVal;
+            return dtRetVal;
         }
     }
 }
