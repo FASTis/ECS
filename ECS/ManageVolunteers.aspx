@@ -14,7 +14,7 @@
     <br />
     <br />
     <asp:GridView ID="gvVolunteers" runat="server" CssClass="table table-striped table-hover" 
-        AllowPaging="true" PageSize="5" OnPageIndexChanging="gvVolunteers_Paging" AutoGenerateColumns="false" 
+        AllowPaging="true" PageSize="15" OnPageIndexChanging="gvVolunteers_Paging" AutoGenerateColumns="false" 
         Width="100%" >
         <Columns>
             <asp:BoundField DataField="LastName" HeaderText="Last Name" />

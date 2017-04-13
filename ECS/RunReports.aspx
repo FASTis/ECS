@@ -57,7 +57,7 @@
     <br /><br />   
     
      <asp:GridView ID="gvReportData" runat="server" CssClass="table table-striped table-hover" AutoGenerateColumns="false" Width="100%"
-         PageSize="5" AllowPaging="true" OnPageIndexChanging="gvReportData_Paging">
+         PageSize="15" AllowPaging="true" OnPageIndexChanging="gvReportData_Paging">
         <Columns>
             <asp:BoundField DataField="Volunteer" HeaderText="Volunteer" />
             <asp:BoundField DataField="VolunteerTypeDescr" HeaderText="Volunteer Type" />

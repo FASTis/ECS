@@ -13,7 +13,7 @@
     <br />
     <br />
     <asp:GridView ID="gvTasks" runat="server" CssClass="table table-striped table-hover" 
-        AllowPaging="true" PageSize="5" OnPageIndexChanging="gvTasks_Paging" AutoGenerateColumns="false" 
+        AllowPaging="true" PageSize="15" OnPageIndexChanging="gvTasks_Paging" AutoGenerateColumns="false" 
         Width="100%" >
         <Columns>
             <asp:BoundField DataField="TaskDescr" HeaderText="Task" />
@@ -31,9 +31,9 @@
     </asp:GridView>
 
     <!-- I found the below at https://msdn.microsoft.com/en-us/library/aa479347.aspx -->
-        <i>You are viewing page
+<%--        <i>You are viewing page
         <%=gvTasks.PageIndex + 1%>
         of
         <%=gvTasks.PageCount%>
-        </i>
+        </i>--%>
 </asp:Content>
