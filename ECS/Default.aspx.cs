@@ -1,5 +1,6 @@
 ﻿using System;
 using ECS.BLL;
+using System.Data;
 
 namespace ECS
 {
@@ -26,17 +27,44 @@ namespace ECS
                 else
                     divAdmin.Visible = false;
 
-                lblHoursForCurrentMonth.Text = GetHoursForCurrentMonth().ToString();
+                GetHoursForCurrentMonth();
             }
         }
-        protected decimal GetHoursForCurrentMonth()
+        protected void GetHoursForCurrentMonth()
         {
             DateTime startDate = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
             DateTime endDate = startDate.AddMonths(1).AddDays(-1);
             int volunteerID = Convert.ToInt32(Session["VolunteerID"]);
+            decimal hrs = 0;
 
             Bll bll = new Bll();
-            return bll.GetHoursForCurrentMonth(startDate, endDate, volunteerID);
+            DataTable dt = bll.GetHoursForCurrentMonth(startDate, endDate, volunteerID);
+
+            foreach (DataRow row in dt.Rows)
+            {
+                lblHoursForCurrentMonth.Text = row[0].ToString() + " Total Hours";
+                lblNonHomeHours.Text = "(" + row[1].ToString() + " Non-At-Home Hours)";
+                hrs = Convert.ToDecimal(row[1]);
+            }
+
+            //Alert when hours exceed 9 non-home hours.
+            hrs = Convert.ToInt32(dt.Rows[0][1]);
+            if (hrs > new decimal(10.00))
+            {
+                lblNonHomeHours.BackColor = System.Drawing.Color.Yellow;
+                lblWarning.Text = "WARNING: You have exceeded the maximum number of non-At-Home hours allowed per month.";
+            }
+            else if (hrs >= new decimal(9.00))
+            {
+                lblNonHomeHours.BackColor = System.Drawing.Color.Yellow;
+                lblWarning.Text = "WARNING: You are close to the maximum number of non-At-Home hours allowed per month.";
+            }
+            else
+            {
+                lblNonHomeHours.ForeColor = lblHoursForCurrentMonth.ForeColor;
+                lblWarning.Text = "";
+            }
+
         }
 
         protected void btnInkind_Click(object sender, EventArgs e)
