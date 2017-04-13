@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ManageTasks.aspx.cs" Inherits="ECS.ManageTasks" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <legend>Manage Tasks</legend>
+    
     <ul class="breadcrumb">
         <li><a href="Default.aspx">Home</a></li>
         <li><a href="EditTables.aspx">Edit Tables</a></li>
