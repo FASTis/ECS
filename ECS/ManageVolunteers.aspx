@@ -4,7 +4,6 @@
     <legend>Manage Volunteers</legend>
     <ul class="breadcrumb">
         <li><a href="Default.aspx">Home</a></li>
-        <li><a href="EditTables.aspx">Edit Tables</a></li>
         <li class="active">Manage Volunteers</li>
     </ul>
     

@@ -10,10 +10,12 @@
 
     <table>
         <tr>
-            <td valign="top">           
+            <td valign="top">  
+                <!--         
                 <div class="form-group">
                     <asp:Button ID="btnStaffTypes" runat="server" Width="200" Text="Manage Staff Types" CssClass="btn btn-info" OnClick="btnStaffTypes_Click"/>
                 </div>
+                -->
                 <div class="form-group">
                     <asp:Button ID="btnCompanies" runat="server" Width="200" Text="Manage Companies" CssClass="btn btn-info" OnClick="btnCompanies_Click"/>
                 </div>
@@ -28,10 +30,7 @@
                 </div>
                 <div class="form-group">
                     <asp:Button ID="btnTasks" runat="server" Width="200" Text="Manage Tasks" CssClass="btn btn-info" OnClick="btnTasks_Click"/>
-                </div>
-                <div class="form-group">
-                    <asp:Button ID="btnVolunteers" runat="server" Width="200" Text="Manage Volunteers" CssClass="btn btn-info" OnClick="btnVolunteers_Click"/>
-                </div>                             
+                </div>                           
             </td>
         </tr>
     </table>

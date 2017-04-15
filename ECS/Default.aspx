@@ -19,7 +19,10 @@
             <td width="100px">&nbsp;</td>
             <td valign="top">    
                 <div id="divAdmin" runat="server">
-                    <asp:Panel runat="server" GroupingText="Admin Tools">
+                        <div class="form-group">
+                            <asp:Button ID="btnVolunteers" runat="server" Width="200" Text="Manage Volunteers" CssClass="btn btn-info" OnClick="btnVolunteers_Click"/>
+                        </div>  
+
                         <div class="form-group">
                             <asp:Button ID="btnEditTables" runat="server" Width="200" Text="Edit Lookup Tables" CssClass="btn btn-info" OnClick="btnEditTables_Click" />
                         </div>
@@ -27,7 +30,6 @@
                         <div class="form-group">
                             <asp:Button ID="btnRunReports" runat="server" Width="200" Text="Run Reports" CssClass="btn btn-info" OnClick="btnRunReports_Click" />
                         </div>
-                    </asp:Panel>
                 </div>                
             </td>
             <td width="100px">&nbsp;</td>
