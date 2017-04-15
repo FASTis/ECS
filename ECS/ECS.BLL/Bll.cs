@@ -31,7 +31,7 @@ namespace ECS.BLL
         public DataTable GetChildren(int volunteerId)
         {
             Dal db = new Dal();
-            DataTable tbl = db.GetChildren(volunteerId);
+            DataTable tbl = db.GetChildrenByVolunteerId(volunteerId);
 
             DataRow row = tbl.NewRow();
             row["ChildID"] = 0;
