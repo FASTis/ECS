@@ -104,7 +104,6 @@
     <Content Include="ResetPassword.aspx" />
     <Content Include="RunReports.aspx" />
     <Content Include="signatureForm.aspx" />
-    <Content Include="sql\CreateMonthlyTotalsReport.sql" />
     <Content Include="sql\procedures\AddCenter.sql" />
     <Content Include="sql\procedures\AddCompany.sql" />
     <Content Include="sql\procedures\AddStaffType.sql" />
