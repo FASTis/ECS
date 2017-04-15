@@ -267,13 +267,9 @@ namespace ECS.DAL
             DataTable dtStaffTypes = new DataTable();
             using (SqlConnection conn = new SqlConnection(Conn))
             {
-                //TODO: Convert this to a stored procedure, then use CommandType.StoredProcedure.
-                string sel = String.Format("select StaffTypeId, StaffTypeDescr");
-                string tbl = "StaffType";
-                string sql = String.Format("{0} from {1}", sel, tbl);
-                using (SqlCommand command = new SqlCommand(sql, conn))
+                using (SqlCommand command = new SqlCommand("GetStaffTypes", conn))
                 {
-                    command.CommandType = CommandType.Text;
+                    command.CommandType = CommandType.StoredProcedure;
                     conn.Open();
                     dtStaffTypes.Load(command.ExecuteReader());
                     conn.Close();
@@ -296,15 +292,11 @@ namespace ECS.DAL
 
             using (SqlConnection conn = new SqlConnection(Conn))
             {
-                //TODO: Convert this to a stored procedure, then use CommandType.StoredProcedure.
-                string sel = "select PIN";
-                string tbl = "UserLogon u join Volunteer v on u.VolunteerID=v.VolunteerID";
-                string cri = string.Format("UserID='{0}' and Last4DigitsOfPhone='{1}'", username, last4ofPhone);
-                string sql = String.Format("{0} from {1} where {2}", sel, tbl, cri);
-
-                using (SqlCommand command = new SqlCommand(sql, conn))
+                using (SqlCommand command = new SqlCommand("GetPIN", conn))
                 {
-                    command.CommandType = CommandType.Text;
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("userId", username);
+                    command.Parameters.AddWithValue("last4Digits", last4ofPhone);
                     conn.Open();
                     dt.Load(command.ExecuteReader());
                     foreach (DataRow row in dt.Rows) // should only be one row.
@@ -332,15 +324,10 @@ namespace ECS.DAL
 
             using (SqlConnection conn = new SqlConnection(Conn))
             {
-                //TODO: Convert this to a stored procedure, then use CommandType.StoredProcedure.
-                string sel = "select StaffTypeDescr";
-                string tbl = "StaffType";
-                string cri = string.Format("StaffTypeID='{0}'", id);
-                string sql = String.Format("{0} from {1} where {2}", sel, tbl, cri);
-
-                using (SqlCommand command = new SqlCommand(sql, conn))
+                using (SqlCommand command = new SqlCommand("GetStaffTypeForID", conn))
                 {
-                    command.CommandType = CommandType.Text;
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("StaffTypeId", id);
                     conn.Open();
                     dt.Load(command.ExecuteReader());
                     foreach (DataRow row in dt.Rows) // should only be one row.
@@ -355,19 +342,16 @@ namespace ECS.DAL
 
         public string UpdateStaffType(string id, string sType)
         {
-            string retVal; // this stands for "returned value". This is just what we're going to return to whatever called this method.
+            string retVal; 
             try
             {
                 using (SqlConnection conn = new SqlConnection(Conn))
                 {
-                    //TODO: Convert this to a stored procedure, then use CommandType.StoredProcedure.
-                    string sql = String.Format(@"Update {0} set StaffTypeDescr='{1}' where StaffTypeID={2}",
-                                                "StaffType", sType, id);
-
-                    //create a new sql command, and execute the query.
-                    using (SqlCommand command = new SqlCommand(sql, conn))
+                    using (SqlCommand command = new SqlCommand("UpdateStaffType", conn))
                     {
-                        command.CommandType = CommandType.Text;
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("StaffTypeDescr", sType);
+                        command.Parameters.AddWithValue("StaffTypeID", id);
                         conn.Open();
                         command.ExecuteNonQuery(); // this is used for adds, updates, and deletes.
                     }
@@ -385,19 +369,15 @@ namespace ECS.DAL
 
         public string AddStaffType(string sType)
         {
-            string retVal; // this stands for "returned value". This is just what we're going to return to whatever called this method.
+            string retVal; 
             try
             {
                 using (SqlConnection conn = new SqlConnection(Conn))
                 {
-                    //TODO: Convert this to a stored procedure, then use CommandType.StoredProcedure.
-                    string sql = String.Format(@"Insert {0} (StaffTypeDescr) values ('{1}')",
-                                                "StaffType", sType);
-
-                    //create a new sql command, and execute the query.
-                    using (SqlCommand command = new SqlCommand(sql, conn))
+                    using (SqlCommand command = new SqlCommand("AddStaffType", conn))
                     {
-                        command.CommandType = CommandType.Text;
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("StaffTypeDescr", sType);
                         conn.Open();
                         command.ExecuteNonQuery(); // this is used for adds, updates, and deletes.
                     }
@@ -450,15 +430,17 @@ namespace ECS.DAL
             {
                 using (SqlConnection conn = new SqlConnection(Conn))
                 {
-                    //TODO: Convert this to a stored procedure, then use CommandType.StoredProcedure.
-                    string sql = String.Format(@"Insert {0} (VolunteerId, ChildId, TaskId, CenterId, NumberMinutes, DateTimeLogged)
-                                                 values ({1}, {2}, {3}, {4}, {5}, '{6}')", "VolunteerLog",
-                                                 volunteerId, childId, taskId, centerId, totalMinutes, logDate);
-                    using (SqlCommand command1 = new SqlCommand(sql, conn))
+                    using (SqlCommand command = new SqlCommand("LogInKind", conn))
                     {
-                        command1.CommandType = CommandType.Text;
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("volunteerId", volunteerId);
+                        command.Parameters.AddWithValue("childId", childId);
+                        command.Parameters.AddWithValue("taskId", taskId);
+                        command.Parameters.AddWithValue("centerId", centerId);
+                        command.Parameters.AddWithValue("totalMinutes", totalMinutes);
+                        command.Parameters.AddWithValue("logDate", logDate);
                         conn.Open();
-                        command1.ExecuteNonQuery();
+                        command.ExecuteNonQuery();
                     }
 
                     conn.Close();
@@ -477,11 +459,9 @@ namespace ECS.DAL
             DataTable dtCompanies = new DataTable();
             using (SqlConnection conn = new SqlConnection(Conn))
             {
-                //TODO: Convert this to a stored procedure, then use CommandType.StoredProcedure.
-                string sql = String.Format("select {0} from {1}", "CompanyId, CompanyName", "Company");
-                using (SqlCommand command = new SqlCommand(sql, conn))
+                using (SqlCommand command = new SqlCommand("GetCompanies", conn))
                 {
-                    command.CommandType = CommandType.Text;
+                    command.CommandType = CommandType.StoredProcedure;
                     conn.Open();
                     dtCompanies.Load(command.ExecuteReader());
                     conn.Close();
@@ -497,15 +477,10 @@ namespace ECS.DAL
 
             using (SqlConnection conn = new SqlConnection(Conn))
             {
-                //TODO: Convert this to a stored procedure, then use CommandType.StoredProcedure.
-                string sel = "select CompanyName";
-                string tbl = "Company";
-                string cri = string.Format("CompanyID='{0}'", id);
-                string sql = String.Format("{0} from {1} where {2}", sel, tbl, cri);
-
-                using (SqlCommand command = new SqlCommand(sql, conn))
+                using (SqlCommand command = new SqlCommand("GetCompanyForId", conn))
                 {
-                    command.CommandType = CommandType.Text;
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("CompanyId", id);
                     conn.Open();
                     dt.Load(command.ExecuteReader());
                     foreach (DataRow row in dt.Rows) // should only be one row.
@@ -520,19 +495,16 @@ namespace ECS.DAL
 
         public string UpdateCompany(string id, string company)
         {
-            string retVal; // this stands for "returned value". This is just what we're going to return to whatever called this method.
+            string retVal; 
             try
             {
                 using (SqlConnection conn = new SqlConnection(Conn))
                 {
-                    //TODO: Convert this to a stored procedure, then use CommandType.StoredProcedure.
-                    string sql = String.Format(@"Update {0} set CompanyName='{1}' where CompanyID={2}",
-                                                "Company", company, id);
-
-                    //create a new sql command, and execute the query.
-                    using (SqlCommand command = new SqlCommand(sql, conn))
+                    using (SqlCommand command = new SqlCommand("UpdateCompany", conn))
                     {
-                        command.CommandType = CommandType.Text;
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("CompanyId", id);
+                        command.Parameters.AddWithValue("CompanyName", company);
                         conn.Open();
                         command.ExecuteNonQuery(); // this is used for adds, updates, and deletes.
                     }
@@ -550,19 +522,15 @@ namespace ECS.DAL
 
         public string AddCompany(string company)
         {
-            string retVal; // this stands for "returned value". This is just what we're going to return to whatever called this method.
+            string retVal; 
             try
             {
                 using (SqlConnection conn = new SqlConnection(Conn))
                 {
-                    //TODO: Convert this to a stored procedure, then use CommandType.StoredProcedure.
-                    string sql = String.Format(@"Insert {0} (CompanyName) values ('{1}')",
-                                                "Company", company);
-
-                    //create a new sql command, and execute the query.
-                    using (SqlCommand command = new SqlCommand(sql, conn))
+                    using (SqlCommand command = new SqlCommand("AddCompany", conn))
                     {
-                        command.CommandType = CommandType.Text;
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("CompanyName", company);
                         conn.Open();
                         command.ExecuteNonQuery(); // this is used for adds, updates, and deletes.
                     }
@@ -580,19 +548,16 @@ namespace ECS.DAL
 
         public string UpdateVolunteerType(string id, string sType)
         {
-            string retVal; // this stands for "returned value". This is just what we're going to return to whatever called this method.
+            string retVal; 
             try
             {
                 using (SqlConnection conn = new SqlConnection(Conn))
                 {
-                    //TODO: Convert this to a stored procedure, then use CommandType.StoredProcedure.
-                    string sql = String.Format(@"Update {0} set VolunteerTypeDescr='{1}' where VolunteerTypeID={2}",
-                                                "VolunteerType", sType, id);
-
-                    //create a new sql command, and execute the query.
-                    using (SqlCommand command = new SqlCommand(sql, conn))
+                    using (SqlCommand command = new SqlCommand("UpdateVolunteerType", conn))
                     {
-                        command.CommandType = CommandType.Text;
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("VolunteerTypeID", Convert.ToInt32(id));
+                        command.Parameters.AddWithValue("VolunteerTypeDescr", sType);
                         conn.Open();
                         command.ExecuteNonQuery(); // this is used for adds, updates, and deletes.
                     }
@@ -610,19 +575,15 @@ namespace ECS.DAL
 
         public string AddVolunteerType(string sType)
         {
-            string retVal; // this stands for "returned value". This is just what we're going to return to whatever called this method.
+            string retVal; 
             try
             {
                 using (SqlConnection conn = new SqlConnection(Conn))
                 {
-                    //TODO: Convert this to a stored procedure, then use CommandType.StoredProcedure.
-                    string sql = String.Format(@"Insert {0} (VolunteerTypeDescr) values ('{1}')",
-                                                "VolunteerType", sType);
-
-                    //create a new sql command, and execute the query.
-                    using (SqlCommand command = new SqlCommand(sql, conn))
+                    using (SqlCommand command = new SqlCommand("AddVolunteerType", conn))
                     {
-                        command.CommandType = CommandType.Text;
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("volunteerTypeDescr", sType);
                         conn.Open();
                         command.ExecuteNonQuery(); // this is used for adds, updates, and deletes.
                     }
@@ -637,21 +598,16 @@ namespace ECS.DAL
             }
             return retVal;
         }
-        public DataTable GetChildren(int volunteerId)
+        public DataTable GetChildrenByVolunteerId(int volunteerId)
         {
             DataTable dt = new DataTable();
 
             using (SqlConnection conn = new SqlConnection(Conn))
             {
-                //TODO: Convert this to a stored procedure, then use CommandType.StoredProcedure.
-                string sel = "select c.ChildID, c.LastName+', '+c.FirstName Child";
-                string tbl = "Child c join Family f on c.ChildID=f.FamilyID";
-                string cri = string.Format("f.VolunteerID='{0}'", volunteerId);
-                string sql = String.Format("{0} from {1} where {2}", sel, tbl, cri);
-
-                using (SqlCommand command = new SqlCommand(sql, conn))
+                using (SqlCommand command = new SqlCommand("GetChildrenByVolunteerID", conn))
                 {
-                    command.CommandType = CommandType.Text;
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("volunteerId", volunteerId);
                     conn.Open();
                     dt.Load(command.ExecuteReader());
                 }
@@ -696,44 +652,10 @@ namespace ECS.DAL
 
             using (SqlConnection conn = new SqlConnection(Conn))
             {
-                //TODO: Convert this to a stored procedure, then use CommandType.StoredProcedure.
-                string sql = String.Format(@"declare @tbl table 
-                                            (Volunteer varchar(100), 
-                                             VolunteerTypeDescr varchar(100), 
-                                             CenterName varchar(100), 
-                                             DateTimeLogged datetime,  
-                                             TaskDescr varchar(100), 
-                                             Child varchar(100), 
-                                             NumberMinutes integer, 
-                                             PricePerMinute decimal, 
-                                             TotalValue money, 
-                                             VolunteerID integer, 
-                                             TaskID integer, 
-                                             CenterID integer, 
-                                             VolunteerTypeID integer, 
-                                             ChildId integer)
-
-                                            insert @tbl
-                                            exec SelectReport {0},0,0,0
-
-                                            SELECT 	CenterName as Center,
-	                                            sum(TotalValue) as [Volunteers(6720)],
-	                                            0 as [Goods & Services(6740)],
-	                                            0 as [Donated Space(6740)],
-	                                            0 as [Donated Equipment(6740)],
-	                                            0 as [Prof. Svs(6740)],
-	                                            0 as [Travel(6730)],
-	                                            sum(TotalValue) as [Center Total],
-	                                            0 as [Rent(6710)],
-	                                            0 as [Small Grants],
-	                                            0 as [Canteen(6740)],
-	                                            sum(TotalValue) as [TOTAL]
-                                            from @tbl
-                                            Group By CenterName", monthNumber);
-
-                using (SqlCommand command = new SqlCommand(sql, conn))
+                using (SqlCommand command = new SqlCommand("GetMonthlySummaryReport", conn))
                 {
-                    command.CommandType = CommandType.Text;
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("monthNum", monthNumber);
                     conn.Open();
                     dt.Load(command.ExecuteReader());
                 }
