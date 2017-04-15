@@ -689,5 +689,36 @@ namespace ECS.DAL
 
             return dtRetVal;
         }
+
+        public Center GetCenterForID(string id)
+        {
+            DataTable dtRetVal = new DataTable();
+            Center c = new Center();
+
+            using (SqlConnection conn = new SqlConnection(Conn))
+            {
+                using (SqlCommand command = new SqlCommand("GetCenterForID", conn))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("CenterID", Convert.ToInt32(id));
+
+                    conn.Open();
+                    dtRetVal.Load(command.ExecuteReader());
+
+                    foreach (DataRow row in dtRetVal.Rows) // should only be one row.
+                    {
+                        c.CenterID = Convert.ToInt32(id);
+                        c.CenterName = row["CenterName"].ToString();
+                        c.StreetAddress = row["StreetAddress"].ToString();
+                        c.City = row["City"].ToString();
+                        c.Zip = row["Zip"].ToString();
+                    }
+
+                    conn.Close();
+                }
+            }
+            return c;
+      
+        }
     }
 }
