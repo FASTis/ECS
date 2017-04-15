@@ -16,6 +16,5 @@ Create Table VolunteerLog
 	,NumberMinutes integer
 	,DateTimeLogged datetime not null
 	,SignatureReceived bit
-	,Active bit
 	,PRIMARY KEY (VolunteerLogID)
 );
