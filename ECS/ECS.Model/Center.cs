@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ECS.Model
 {
-    class Center
+    public class Center
     {
         public int CenterID { get; set; }
         public string CenterName { get; set; }
