@@ -301,5 +301,11 @@ namespace ECS.BLL
             Dal db = new Dal();
             return db.GetHoursForCurrentMonth(startDate, endDate, volunteerID);
         }
+
+        public Center GetCenterForID(string id)
+        {
+            Dal db = new Dal();
+            return db.GetCenterForID(id);
+        }
     }
 }
