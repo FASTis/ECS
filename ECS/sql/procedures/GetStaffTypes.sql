@@ -13,4 +13,5 @@ begin
 		select StaffTypeId
 			 , StaffTypeDescr
 		from StaffType		
+		where Active=1
 end

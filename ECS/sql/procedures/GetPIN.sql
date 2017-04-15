@@ -20,4 +20,9 @@ begin
 		on 		u.VolunteerID=v.VolunteerID
 		where 	UserID=@userId 
 		and 	Last4DigitsOfPhone=@last4Digits 
+		and		v.Active=1
 end
+
+
+--updateuser 'Cici', 'Carter', '3909', 'ccarter','0825'
+--getpin 'ccarter','3909'

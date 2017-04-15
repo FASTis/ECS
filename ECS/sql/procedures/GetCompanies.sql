@@ -10,6 +10,6 @@ Create Procedure GetCompanies
 as
 
 begin
-		SELECT	CompanyId, CompanyName
+		SELECT	CompanyId, CompanyName, Active
 		FROM	Company
 end

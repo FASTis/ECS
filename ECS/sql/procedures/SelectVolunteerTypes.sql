@@ -6,15 +6,10 @@ Description:    Returns all volunteer types.
 ================================================
 */
 
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
 Create Procedure SelectVolunteerTypes 
 as
 begin
 	Select VolunteerTypeID, VolunteerTypeDescr from VolunteerType
+	where Active=1
 end
 go

@@ -3,6 +3,8 @@
 Author:      	Cici Carter
 Create date:    09/23/2016
 Description:    Inserts new user into db.
+
+4/15/2017 - Added Active field to insert.
 =============================================
 */
 
@@ -21,17 +23,17 @@ Create Procedure InsertNewUser(
 , @UserId          varchar(20)
 , @PIN             varchar(4)
 )
--- exec InsertNewUser 'Cici','Carter',3,3,'3909','ccarter','0825'
+-- exec InsertNewUser 'Double','Trouble',3,3,'3909','dtroub','1234'
 as
 begin
-	insert dbo.Volunteer(FirstName,LastName,VolunteerTypeID,CompanyID,Last4DigitsOfPhone)
-	values (@FirstName,@LastName,@VolunteerTypeID,@CompanyID,@Last4Digits)
+	insert dbo.Volunteer(FirstName,LastName,VolunteerTypeID,CompanyID,Last4DigitsOfPhone,Active)
+	values (@FirstName,@LastName,@VolunteerTypeID,@CompanyID,@Last4Digits,1)
 
 	declare @VolunteerID int
 	select @VolunteerID = SCOPE_IDENTITY() -- to get the ID of the row just created.
 
-	insert dbo.UserLogon(UserID,PIN,VolunteerID)
-	values (@UserId, @PIN, @VolunteerID)
+	insert dbo.UserLogon(UserID,PIN,VolunteerID,Active)
+	values (@UserId, @PIN, @VolunteerID,1)
 
 end
 go

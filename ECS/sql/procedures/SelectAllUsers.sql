@@ -9,6 +9,7 @@ begin
 	join dbo.VolunteerType vt on v.VolunteerTypeID=vt.VolunteerTypeID
 	left join dbo.Company c on v.CompanyID=c.CompanyID
 	join dbo.UserLogon u on v.VolunteerID=u.VolunteerID
+	where v.Active=1
 	order by LastName
 	
 end
