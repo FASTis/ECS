@@ -19,7 +19,7 @@ Create Procedure LogInKind
 as
 
 begin
-		Insert VolunteerLog (VolunteerId, ChildId, TaskId, CenterId, NumberMinutes, DateTimeLogged) 
-		Values (@volunteerId, @childId, @taskId, @centerId, @totalMinutes, @logDate) 
+		Insert VolunteerLog (VolunteerId, ChildId, TaskId, CenterId, NumberMinutes, DateTimeLogged, SignatureReceived) 
+		Values (@volunteerId, @childId, @taskId, @centerId, @totalMinutes, @logDate, 1) 
 
 end
