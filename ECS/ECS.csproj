@@ -69,8 +69,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddChildren.aspx" />
+    <Content Include="EditCenter.aspx" />
     <Content Include="EditCompany.aspx" />
     <Content Include="EditStaffType.aspx" />
+    <Content Include="EditTask.aspx" />
     <Content Include="EditVolunteer.aspx" />
     <Content Include="EditVolunteerType.aspx" />
     <Content Include="ForgottenPassword.aspx" />
@@ -102,13 +104,35 @@
     <Content Include="ResetPassword.aspx" />
     <Content Include="RunReports.aspx" />
     <Content Include="signatureForm.aspx" />
+    <Content Include="sql\CreateMonthlyTotalsReport.sql" />
+    <Content Include="sql\procedures\AddCenter.sql" />
+    <Content Include="sql\procedures\AddCompany.sql" />
+    <Content Include="sql\procedures\AddStaffType.sql" />
+    <Content Include="sql\procedures\AddVolunteerType.sql" />
+    <Content Include="sql\procedures\GetCenterForID.sql" />
+    <Content Include="sql\procedures\GetChildrenByVolunteerID.sql" />
+    <Content Include="sql\procedures\GetCompanies.sql" />
+    <Content Include="sql\procedures\GetCompanyForID.sql" />
+    <Content Include="sql\procedures\GetHoursForPeriodAndVolunteerID.sql" />
+    <Content Include="sql\procedures\GetMonthlySummaryReport.sql" />
+    <Content Include="sql\procedures\GetPIN.sql" />
+    <Content Include="sql\procedures\GetStaffTypeForID.sql" />
+    <Content Include="sql\procedures\GetStaffTypes.sql" />
+    <Content Include="sql\procedures\GetUserByUserId.sql" />
+    <Content Include="sql\procedures\InactivateCenter.sql" />
     <Content Include="sql\procedures\InsertNewUser.sql" />
+    <Content Include="sql\procedures\LogInKind.sql" />
     <Content Include="sql\procedures\SelectAllUsers.sql" />
     <Content Include="sql\procedures\SelectCenter.sql" />
+    <Content Include="sql\procedures\SelectReport.sql" />
     <Content Include="sql\procedures\SelectReportForMonth.sql" />
     <Content Include="sql\procedures\SelectTask.sql" />
-    <Content Include="sql\procedures\SelectUserByUserId.sql" />
     <Content Include="sql\procedures\SelectVolunteerTypes.sql" />
+    <Content Include="sql\procedures\UpdateCenter.sql" />
+    <Content Include="sql\procedures\UpdateCompany.sql" />
+    <Content Include="sql\procedures\UpdateStaffType.sql" />
+    <Content Include="sql\procedures\UpdateUser.sql" />
+    <Content Include="sql\procedures\UpdateVolunteerType.sql" />
     <Content Include="sql\procedures\ValidateLogin.sql" />
     <Content Include="sql\tables\Center.sql" />
     <Content Include="sql\tables\Child.sql" />
@@ -140,6 +164,13 @@
     <Compile Include="AddChildren.aspx.designer.cs">
       <DependentUpon>AddChildren.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EditCenter.aspx.cs">
+      <DependentUpon>EditCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditCenter.aspx.designer.cs">
+      <DependentUpon>EditCenter.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EditCompany.aspx.cs">
       <DependentUpon>EditCompany.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -153,6 +184,13 @@
     </Compile>
     <Compile Include="EditStaffType.aspx.designer.cs">
       <DependentUpon>EditStaffType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditTask.aspx.cs">
+      <DependentUpon>EditTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditTask.aspx.designer.cs">
+      <DependentUpon>EditTask.aspx</DependentUpon>
     </Compile>
     <Compile Include="EditVolunteer.aspx.cs">
       <DependentUpon>EditVolunteer.aspx</DependentUpon>

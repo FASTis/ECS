@@ -17,5 +17,6 @@ namespace ECS.Model
         public string Last4DigitsOfPhone { get; set; }
         public string UserID { get; set; }
         public string PIN { get; set; }
+        public bool IsAdmin { get; set; }
     }
 }

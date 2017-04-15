@@ -45,16 +45,7 @@ namespace ECS
             Session["VolunteerID"] = user.VolunteerID;
             Session["Last4OfPhone"] = user.Last4DigitsOfPhone;
             Session["PIN"] = user.PIN;
-
-            // TODO: Convert this to data-driven by "IsAdmin" flag in table. [Cici]
-            if ((Session["FirstName"].ToString().Contains("Cici")) ||
-                (Session["FirstName"].ToString().Contains("Ashley")) ||
-                (Session["FirstName"].ToString().Contains("Tillman")) ||
-                (Session["FirstName"].ToString().Contains("Shawna")) ||
-                (Session["FirstName"].ToString().Contains("Admin")))
-                Session["IsAdmin"] = "true"; 
-            else
-                Session["IsAdmin"] = "false";
+            Session["IsAdmin"] = user.IsAdmin.ToString().ToLower();
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)

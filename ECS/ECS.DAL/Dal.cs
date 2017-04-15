@@ -156,7 +156,7 @@ namespace ECS.DAL
 
             using (SqlConnection conn = new SqlConnection(Conn))
             {
-                using (SqlCommand command = new SqlCommand("SelectUserByUserId", conn))
+                using (SqlCommand command = new SqlCommand("GetUserByUserId", conn))
                 {
                     command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("UserId", userId);
@@ -174,6 +174,7 @@ namespace ECS.DAL
                         u.Last4DigitsOfPhone = row["Last4DigitsOfPhone"].ToString();
                         u.UserID = row["UserID"].ToString();
                         u.PIN = row["PIN"].ToString();
+                        u.IsAdmin = Convert.ToBoolean(row["IsAdmin"]);
                     }
                     conn.Close();
                 }
