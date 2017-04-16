@@ -3,7 +3,7 @@ create procedure AddChild (
 	, @childFName varchar(30)
 	, @childLName varchar(30)
 	, @dob datetime
-	, @relationship varchar(20) -- Volunteer's relationship to child.
+	, @relationship varchar(20) -- Relationship of child to volunteer.
 	)
 as
 -- AddChild 2, 'Lisa','Carter','3/29/2014','Mother'
