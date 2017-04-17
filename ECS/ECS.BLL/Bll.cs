@@ -33,10 +33,10 @@ namespace ECS.BLL
             Dal db = new Dal();
             DataTable tbl = db.GetChildrenByVolunteerId(volunteerId);
 
-            DataRow row = tbl.NewRow();
-            row["ChildID"] = 0;
-            row["Child"] = "N/A";
-            tbl.Rows.InsertAt(row, 0); // insert this new row at the top
+            //DataRow row = tbl.NewRow();
+            //row["ChildID"] = 0;
+            //row["Child"] = "N/A";
+            //tbl.Rows.InsertAt(row, 0); // insert this new row at the top
 
             return tbl;
         }
@@ -306,6 +306,23 @@ namespace ECS.BLL
         {
             Dal db = new Dal();
             return db.GetCenterForID(id);
+        }
+
+        public Child GetChildByChildID(string id)
+        {
+            Dal db = new Dal();
+            return db.GetChildByChildID(id);
+        }
+        public string AddChild(int volunteerID, string firstName, string lastName, DateTime dob, string relationship)
+        {
+            Dal db = new Dal();
+            return db.AddChild(volunteerID, firstName, lastName, dob, relationship);
+        }
+
+        public string UpdateChild(string childId, string firstName, string lastName, DateTime dob)
+        {
+            Dal db = new Dal();
+            return db.UpdateChild(childId, firstName, lastName, dob);
         }
     }
 }
