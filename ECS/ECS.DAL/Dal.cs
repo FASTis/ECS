@@ -721,5 +721,95 @@ namespace ECS.DAL
             return c;
       
         }
+
+        public Child GetChildByChildID(string id)
+        {
+            DataTable dtRetVal = new DataTable();
+            Child c = new Child();
+
+            using (SqlConnection conn = new SqlConnection(Conn))
+            {
+                using (SqlCommand command = new SqlCommand("GetChildByChildID", conn))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("childID", Convert.ToInt32(id));
+
+                    conn.Open();
+                    dtRetVal.Load(command.ExecuteReader());
+
+                    foreach (DataRow row in dtRetVal.Rows) // should only be one row.
+                    {
+                        c.ChildID = Convert.ToInt32(id);
+                        c.FirstName = row["FirstName"].ToString();
+                        c.LastName = row["LastName"].ToString();
+                        c.DOB = Convert.ToDateTime(row["DOB"]);
+                    }
+
+                    conn.Close();
+                }
+            }
+            return c;
+        }
+
+        public string AddChild(int volunteerID, string firstName, string lastName, DateTime dob, string relationship)
+        {
+            string retVal;
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Conn))
+                {
+                    using (SqlCommand command = new SqlCommand("AddChild", conn))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("volunteerID", volunteerID);
+                        command.Parameters.AddWithValue("childFName", firstName);
+                        command.Parameters.AddWithValue("childLName", lastName);
+                        command.Parameters.AddWithValue("DOB", dob);
+                        command.Parameters.AddWithValue("relationship", relationship);
+
+                        conn.Open();
+                        command.ExecuteNonQuery();
+                    }
+                    conn.Close();
+                    retVal = "Successfully added child.";
+                }
+            }
+
+            catch (Exception ex)
+            {
+                retVal = ex.Message;
+            }
+            return retVal;
+        }
+
+        public string UpdateChild(string childId, string firstName, string lastName, DateTime dob)
+        {
+            string retVal;
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Conn))
+                {
+                    using (SqlCommand command = new SqlCommand("UpdateChild", conn))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("childId", Convert.ToInt32(childId));
+                        command.Parameters.AddWithValue("childFName", firstName);
+                        command.Parameters.AddWithValue("childLName", lastName);
+                        command.Parameters.AddWithValue("DOB", dob);
+
+                        conn.Open();
+                        command.ExecuteNonQuery();
+                    }
+                    conn.Close();
+                    retVal = "Successfully updated child.";
+                }
+            }
+
+            catch (Exception ex)
+            {
+                retVal = ex.Message;
+            }
+            return retVal;
+        }
     }
 }
