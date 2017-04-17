@@ -47,7 +47,7 @@
                             <asp:Label ID="Label2" runat="server" Text="Last 4 Digits of Phone" CssClass="col-lg-2 control-label"></asp:Label>
                             <div class="col-lg-10">
                                 <asp:TextBox ID="txtLast4ofPhoneNumber" runat="server" placeholder="Last 4 of Phone Number" CssClass="form-control"></asp:TextBox><br />
-                                <asp:Button ID="btnAddChildren" runat="server" CssClass="btn btn-info" Width="300" Text="Add/Edit Children" OnClick="btnAddChildren_Click" />
+                                <asp:Button ID="btnManageChildren" runat="server" CssClass="btn btn-info" Width="300" Text="Manage Children" OnClick="btnManageChildren_Click" />
                             </div>
                         </div>
                         <div class="form-group">

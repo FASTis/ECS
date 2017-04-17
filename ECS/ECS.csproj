@@ -30,6 +30,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PublishDatabases>false</PublishDatabases>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -68,7 +70,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AddChildren.aspx" />
+    <Content Include="EditChild.aspx" />
+    <Content Include="ManageChildren.aspx" />
     <Content Include="EditCenter.aspx" />
     <Content Include="EditCompany.aspx" />
     <Content Include="EditStaffType.aspx" />
@@ -156,12 +159,19 @@
     <Content Include="LogInKind.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddChildren.aspx.cs">
-      <DependentUpon>AddChildren.aspx</DependentUpon>
+    <Compile Include="EditChild.aspx.cs">
+      <DependentUpon>EditChild.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AddChildren.aspx.designer.cs">
-      <DependentUpon>AddChildren.aspx</DependentUpon>
+    <Compile Include="EditChild.aspx.designer.cs">
+      <DependentUpon>EditChild.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageChildren.aspx.cs">
+      <DependentUpon>ManageChildren.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageChildren.aspx.designer.cs">
+      <DependentUpon>ManageChildren.aspx</DependentUpon>
     </Compile>
     <Compile Include="EditCenter.aspx.cs">
       <DependentUpon>EditCenter.aspx</DependentUpon>

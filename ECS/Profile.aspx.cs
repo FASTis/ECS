@@ -93,9 +93,12 @@ namespace ECS
             Response.Redirect("Default.aspx");
         }
 
-        protected void btnAddChildren_Click(object sender, EventArgs e)
+        protected void btnManageChildren_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AddChildren.aspx");
+            string volId = Session["VolunteerID"].ToString();
+            string fName = Session["FirstName"].ToString();
+            String lName = Session["LastName"].ToString();
+            Response.Redirect("ManageChildren.aspx?volId=" + volId + "&fname=" + fName + "&lname=" + lName);
         }
     }
 }
