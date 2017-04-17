@@ -67,7 +67,7 @@ namespace ECS
             //Return the value to the user.
             DisplayPopup(returnedMessage);
 
-            if (returnedMessage.Contains("success"))
+            if (returnedMessage.Contains("Success"))
             {
                 btnCancel.Text = "Close Form";
             }
