@@ -83,11 +83,10 @@ namespace ECS
             DoLogoff();
         }
 
-        public void DoLogoff()
+        protected void DoLogoff()
         {
             Session.Abandon();
-            Server.Transfer("Login.aspx");
-            //Response.Redirect("Default.aspx", false);     
+            Response.Redirect("Login.aspx");
         }
 
         protected void btnEditTables_Click(object sender, EventArgs e)

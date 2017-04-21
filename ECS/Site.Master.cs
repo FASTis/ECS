@@ -32,8 +32,8 @@ namespace ECS
         }
         protected void btnLogoff_Click(object sender, EventArgs e)
         {
-            Default main = new Default();
-            main.DoLogoff();
+            Session.Abandon();
+            Response.Redirect("Login.aspx");
         }
 
         
