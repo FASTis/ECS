@@ -22,11 +22,18 @@ namespace ECS
             {
                 sessionUser = String.Format(" ({0} {1})", Session["FirstName"].ToString(), Session["LastName"].ToString());
                 divUser.InnerText = sessionUser;
+                btnLogoff.Visible = true;
             }
             catch (NullReferenceException)
             {
                 sessionUser = "";
+                btnLogoff.Visible = false;
             }
+        }
+        protected void btnLogoff_Click(object sender, EventArgs e)
+        {
+            Default main = new Default();
+            main.DoLogoff();
         }
 
         

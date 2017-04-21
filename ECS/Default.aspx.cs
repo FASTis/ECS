@@ -2,6 +2,7 @@
 using ECS.BLL;
 using System.Data;
 
+
 namespace ECS
 {
     public partial class Default : System.Web.UI.Page
@@ -79,8 +80,14 @@ namespace ECS
 
         protected void btnLogoff_Click(object sender, EventArgs e)
         {
+            DoLogoff();
+        }
+
+        public void DoLogoff()
+        {
             Session.Abandon();
-            Response.Redirect("Default.aspx", false);
+            Server.Transfer("Login.aspx");
+            //Response.Redirect("Default.aspx", false);     
         }
 
         protected void btnEditTables_Click(object sender, EventArgs e)

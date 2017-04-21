@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <ul class="breadcrumb">
         <li><a href="Default.aspx">Home</a></li>
-        <li><a href="javascript:window.history.go(-1)">Previous Page</a></li>
+        <li><a href="Profile.aspx">My Profile</a></li>
         <li class="active">Manage Children</li>
     </ul>
     
