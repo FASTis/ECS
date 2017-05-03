@@ -32,6 +32,7 @@
                     <asp:Label ID="lblCity" runat="server" Text="City:" CssClass="col-lg-2 control-label"></asp:Label>
                     <div class="col-lg-10">
                         <asp:TextBox ID="txtCity" runat="server" placeholder="" CssClass="form-control"></asp:TextBox>
+                        <asp:DropDownList ID="ddCity" runat="server" CssClass="form-control"></asp:DropDownList>
                     </div>
                 </div>
 
