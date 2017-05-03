@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ECS.Model
 {
-    class Task
+    public class Task
     {
         public int TaskID { get; set; }
         public string TaskDescr { get; set; }
