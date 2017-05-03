@@ -175,6 +175,25 @@ namespace ECS.BLL
             return tbl;
         }
 
+        public Task GetTaskById(int taskId)
+        {
+            Task task = new Task();
+            DataTable dt = GetTasks();
+
+            DataRow[] result = dt.Select(String.Format("TaskID = {0}", taskId));
+            foreach (DataRow row in result) // should only return one row
+            {
+                task.TaskID = taskId;
+                task.TaskDescr = row["TaskDescr"].ToString();
+                task.PricePerMinute = Convert.ToDecimal(row["PricePerMinute"]);
+                task.RestrictToVolunteerTypes = row["RestrictToVolunteerTypes"].ToString();
+            }
+
+            return task;
+
+        }
+
+
         public object GetStaffTypes()
         {
             Dal db = new Dal();
@@ -343,6 +362,18 @@ namespace ECS.BLL
         {
             Dal db = new Dal();
             return db.AddCenter(center);
+        }
+
+        public string EditTask(Task task)
+        {
+            Dal db = new Dal();
+            return db.EditTask(task);
+        }
+
+        public string AddTask(Task task)
+        {
+            Dal db = new Dal();
+            return db.AddTask(task);
         }
     }
 }
