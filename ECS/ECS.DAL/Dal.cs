@@ -811,5 +811,66 @@ namespace ECS.DAL
             }
             return retVal;
         }
+
+        public string EditCenter(Center center)
+        {
+            string retVal;
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Conn))
+                {
+                    using (SqlCommand command = new SqlCommand("UpdateCenter", conn))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("centerID", center.CenterID);
+                        command.Parameters.AddWithValue("centerName", center.CenterName);
+                        command.Parameters.AddWithValue("streetAddr", center.StreetAddress);
+                        command.Parameters.AddWithValue("city", center.City);
+                        command.Parameters.AddWithValue("zip", center.Zip);
+
+                        conn.Open();
+                        command.ExecuteNonQuery();
+                    }
+                    conn.Close();
+                    retVal = "Successfully updated center.";
+                }
+            }
+
+            catch (Exception ex)
+            {
+                retVal = ex.Message;
+            }
+            return retVal;
+        }
+
+        public string AddCenter(Center center)
+        {
+            string retVal;
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Conn))
+                {
+                    using (SqlCommand command = new SqlCommand("AddCenter", conn))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("centerName", center.CenterName);
+                        command.Parameters.AddWithValue("streetAddr", center.StreetAddress);
+                        command.Parameters.AddWithValue("city", center.City);
+                        command.Parameters.AddWithValue("zip", center.Zip);
+
+                        conn.Open();
+                        command.ExecuteNonQuery();
+                    }
+                    conn.Close();
+                    retVal = "Successfully added center.";
+                }
+            }
+
+            catch (Exception ex)
+            {
+                retVal = ex.Message;
+            }
+            return retVal;
+        }
     }
 }

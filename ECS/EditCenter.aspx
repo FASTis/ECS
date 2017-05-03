@@ -29,6 +29,13 @@
                 </div>
 
                 <div class="form-group">
+                    <asp:Label ID="lblCity" runat="server" Text="City:" CssClass="col-lg-2 control-label"></asp:Label>
+                    <div class="col-lg-10">
+                        <asp:TextBox ID="txtCity" runat="server" placeholder="" CssClass="form-control"></asp:TextBox>
+                    </div>
+                </div>
+
+                <div class="form-group">
                     <asp:Label ID="lblState" runat="server" Text="Center:" CssClass="col-lg-2 control-label"></asp:Label>
                     <div class="col-lg-10">
                         <asp:TextBox ID="txtState" runat="server" Enabled="false" CssClass="form-control">Florida</asp:TextBox>
@@ -46,8 +53,8 @@
                 <br />
                 <div class="form-group">
                     <div class="col-lg-10 col-lg-offset-2">
-                            <asp:Button ID="btnSubmit" runat="server" CssClass="btn btn-primary" Text="Submit" />
-                            <asp:Button ID="btnCancel" runat="server" CssClass="btn btn-warning" Text="Cancel" />
+                            <asp:Button ID="btnSubmit" runat="server" CssClass="btn btn-primary" Text="Submit" OnClick="btnSubmit_Click" />
+                            <asp:Button ID="btnCancel" runat="server" CssClass="btn btn-warning" Text="Cancel" OnClick="btnCancel_Click" />
                     </div>
                 </div>
             </fieldset>

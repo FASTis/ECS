@@ -42,6 +42,7 @@ namespace ECS
                     Center center = _bll.GetCenterForID(_id);
                     txtCenter.Text = center.CenterName.ToString();
                     txtAddress.Text = center.StreetAddress.ToString();
+                    txtCity.Text = center.City.ToString();
                     txtZip.Text = center.Zip.ToString();
                 }
             }
@@ -49,6 +50,57 @@ namespace ECS
             if (_mode == "D")
                 btnSubmit.Text = "Delete";
 
+        }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            string returnedMessage = "";
+
+            Center center = new Center();
+            
+            if (!String.IsNullOrEmpty(_id))
+                center.CenterID = Convert.ToInt32(_id);
+
+            center.CenterName = txtCenter.Text;
+            center.StreetAddress = txtAddress.Text;
+            center.City = txtCity.Text;
+            center.Zip = txtZip.Text;
+
+            switch (_mode)
+            {
+                case "E":
+                    returnedMessage = _bll.EditCenter(center);
+                    break;
+                case "A":
+                    returnedMessage = _bll.AddCenter(center);
+                    break;
+                case "D":
+                    returnedMessage = "The delete feature has not yet been implemented.";
+                    btnCancel.Text = "Close Form";
+                    break;
+                default:
+                    break;
+            }
+
+            //Return the value to the user.
+            DisplayPopup(returnedMessage);
+
+            if (returnedMessage.Contains("success"))
+            {
+                btnCancel.Text = "Close Form";
+            }
+
+        }
+
+        private void DisplayPopup(string returnedMessage)
+        {
+            string radalertscript = "<script language='javascript'>function f(){radalert('" + returnedMessage.Replace("'","`") + "', 300, 100, 'ECS Volunteer App: Edit Staff Type'); Sys.Application.remove_load(f);}; Sys.Application.add_load(f);</script>";
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "radalert", radalertscript);
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ManageCenters.aspx");
         }
     }
 }

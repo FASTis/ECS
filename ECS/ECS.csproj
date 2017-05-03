@@ -145,6 +145,7 @@
     </Compile>
     <Compile Include="EditCenter.aspx.cs">
       <DependentUpon>EditCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="EditCenter.aspx.designer.cs">
       <DependentUpon>EditCenter.aspx</DependentUpon>
@@ -165,6 +166,7 @@
     </Compile>
     <Compile Include="EditTask.aspx.cs">
       <DependentUpon>EditTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="EditTask.aspx.designer.cs">
       <DependentUpon>EditTask.aspx</DependentUpon>

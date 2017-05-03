@@ -324,5 +324,17 @@ namespace ECS.BLL
             Dal db = new Dal();
             return db.UpdateChild(childId, firstName, lastName, dob);
         }
+
+        public string EditCenter(Center center)
+        {
+            Dal db = new Dal();
+            return db.EditCenter(center);
+        }
+
+        public string AddCenter(Center center)
+        {
+            Dal db = new Dal();
+            return db.AddCenter(center);
+        }
     }
 }
