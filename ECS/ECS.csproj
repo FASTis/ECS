@@ -70,6 +70,7 @@
   <ItemGroup>
     <Content Include="AddChildren.aspx" />
     <Content Include="EditCenter.aspx" />
+    <Content Include="EditChild.aspx" />
     <Content Include="EditCompany.aspx" />
     <Content Include="EditStaffType.aspx" />
     <Content Include="EditTask.aspx" />
@@ -78,6 +79,7 @@
     <Content Include="ForgottenPassword.aspx" />
     <Content Include="ForgottenUsername.aspx" />
     <Content Include="ManageCenters.aspx" />
+    <Content Include="ManageChildren.aspx" />
     <Content Include="ManageCompanies.aspx" />
     <Content Include="ManageStaffTypes.aspx" />
     <Content Include="controls\Telerik.Web.UI.dll" />
@@ -104,19 +106,48 @@
     <Content Include="ResetPassword.aspx" />
     <Content Include="RunReports.aspx" />
     <Content Include="signatureForm.aspx" />
+    <Content Include="sql\procedures\AddCenter.sql" />
+    <Content Include="sql\procedures\AddChild.sql" />
+    <Content Include="sql\procedures\AddCompany.sql" />
+    <Content Include="sql\procedures\AddStaffType.sql" />
+    <Content Include="sql\procedures\AddTask.sql" />
+    <Content Include="sql\procedures\AddVolunteerType.sql" />
+    <Content Include="sql\procedures\EditTask.sql" />
+    <Content Include="sql\procedures\GetCenterForID.sql" />
+    <Content Include="sql\procedures\GetChildByChildID.sql" />
+    <Content Include="sql\procedures\GetChildrenByVolunteerID.sql" />
+    <Content Include="sql\procedures\GetCompanies.sql" />
+    <Content Include="sql\procedures\GetCompanyForID.sql" />
+    <Content Include="sql\procedures\GetHoursForPeriodAndVolunteerID.sql" />
+    <Content Include="sql\procedures\GetMonthlySummaryReport.sql" />
+    <Content Include="sql\procedures\GetPIN.sql" />
+    <Content Include="sql\procedures\GetStaffTypeForID.sql" />
+    <Content Include="sql\procedures\GetStaffTypes.sql" />
+    <Content Include="sql\procedures\GetUserByUserId.sql" />
+    <Content Include="sql\procedures\InactivateCenter.sql" />
     <Content Include="sql\procedures\InsertNewUser.sql" />
+    <Content Include="sql\procedures\LogInKind.sql" />
     <Content Include="sql\procedures\SelectAllUsers.sql" />
     <Content Include="sql\procedures\SelectCenter.sql" />
+    <Content Include="sql\procedures\SelectReport.sql" />
     <Content Include="sql\procedures\SelectReportForMonth.sql" />
     <Content Include="sql\procedures\SelectTask.sql" />
     <Content Include="sql\procedures\SelectUserByUserId.sql" />
     <Content Include="sql\procedures\SelectVolunteerTypes.sql" />
+    <Content Include="sql\procedures\UpdateCenter.sql" />
+    <Content Include="sql\procedures\UpdateChild.sql" />
+    <Content Include="sql\procedures\UpdateCompany.sql" />
+    <Content Include="sql\procedures\UpdateStaffType.sql" />
+    <Content Include="sql\procedures\UpdateUser.sql" />
+    <Content Include="sql\procedures\UpdateVolunteerType.sql" />
     <Content Include="sql\procedures\ValidateLogin.sql" />
+    <Content Include="sql\procedures\ValidateUserInfo.sql" />
     <Content Include="sql\scripts\Script_SetActiveFlagOnAllTables.sql" />
     <Content Include="sql\tables\Center.sql" />
     <Content Include="sql\tables\Child.sql" />
     <Content Include="sql\tables\Company.sql" />
     <Content Include="sql\tables\Family.sql" />
+    <Content Include="sql\tables\FLCityLookup.sql" />
     <Content Include="sql\tables\Staff.sql" />
     <Content Include="sql\tables\StaffType.sql" />
     <Content Include="sql\tables\Task.sql" />
@@ -131,7 +162,6 @@
     <Content Include="taskDescr\Index.html" />
     <Content Include="taskDescr\KitchenAide.html" />
     <Content Include="taskDescr\ProgramAsistant.html" />
-    <Content Include="TestOfWebformUsingMasterPage.aspx" />
     <Content Include="Web.config" />
     <Content Include="LogInKind.aspx" />
   </ItemGroup>
@@ -149,6 +179,12 @@
     </Compile>
     <Compile Include="EditCenter.aspx.designer.cs">
       <DependentUpon>EditCenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditChild.aspx.cs">
+      <DependentUpon>EditChild.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditChild.aspx.designer.cs">
+      <DependentUpon>EditChild.aspx</DependentUpon>
     </Compile>
     <Compile Include="EditCompany.aspx.cs">
       <DependentUpon>EditCompany.aspx</DependentUpon>
@@ -205,6 +241,12 @@
     </Compile>
     <Compile Include="ManageCenters.aspx.designer.cs">
       <DependentUpon>ManageCenters.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageChildren.aspx.cs">
+      <DependentUpon>ManageChildren.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageChildren.aspx.designer.cs">
+      <DependentUpon>ManageChildren.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCompanies.aspx.cs">
       <DependentUpon>ManageCompanies.aspx</DependentUpon>
@@ -319,13 +361,6 @@
     <Compile Include="LogInKind.aspx.designer.cs">
       <DependentUpon>LogInKind.aspx</DependentUpon>
     </Compile>
-    <Compile Include="TestOfWebformUsingMasterPage.aspx.cs">
-      <DependentUpon>TestOfWebformUsingMasterPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="TestOfWebformUsingMasterPage.aspx.designer.cs">
-      <DependentUpon>TestOfWebformUsingMasterPage.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\fontawesome-webfont.eot" />
@@ -336,6 +371,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Site.Master" />
+    <Content Include="docs\List of Functions Still To Be Implemented.docx" />
     <None Include="Properties\PublishProfiles\c3techsolutions.com - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\c3techsolutions.com - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\c3techsolutions.com - Web Deploy %282%29.pubxml" />
