@@ -751,7 +751,7 @@ namespace ECS.DAL
             return c;
         }
 
-        public string AddChild(int volunteerID, string firstName, string lastName, DateTime dob, string relationship)
+        public string AddChild(int volunteerID, Child child)
         {
             string retVal;
             try
@@ -762,10 +762,10 @@ namespace ECS.DAL
                     {
                         command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("volunteerID", volunteerID);
-                        command.Parameters.AddWithValue("childFName", firstName);
-                        command.Parameters.AddWithValue("childLName", lastName);
-                        command.Parameters.AddWithValue("DOB", dob);
-                        command.Parameters.AddWithValue("relationship", relationship);
+                        command.Parameters.AddWithValue("childFName", child.FirstName);
+                        command.Parameters.AddWithValue("childLName", child.LastName);
+                        command.Parameters.AddWithValue("DOB", child.DOB);
+                        command.Parameters.AddWithValue("relationship", child.Relationship);
 
                         conn.Open();
                         command.ExecuteNonQuery();
@@ -782,7 +782,7 @@ namespace ECS.DAL
             return retVal;
         }
 
-        public string UpdateChild(string childId, string firstName, string lastName, DateTime dob)
+        public string UpdateChild(Child child)
         {
             string retVal;
             try
@@ -792,10 +792,10 @@ namespace ECS.DAL
                     using (SqlCommand command = new SqlCommand("UpdateChild", conn))
                     {
                         command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.AddWithValue("childId", Convert.ToInt32(childId));
-                        command.Parameters.AddWithValue("childFName", firstName);
-                        command.Parameters.AddWithValue("childLName", lastName);
-                        command.Parameters.AddWithValue("DOB", dob);
+                        command.Parameters.AddWithValue("childId", child.ChildID);
+                        command.Parameters.AddWithValue("childFName", child.FirstName);
+                        command.Parameters.AddWithValue("childLName", child.LastName);
+                        command.Parameters.AddWithValue("DOB", child.DOB);
 
                         conn.Open();
                         command.ExecuteNonQuery();
