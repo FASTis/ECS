@@ -33,10 +33,10 @@ namespace ECS.BLL
             Dal db = new Dal();
             DataTable tbl = db.GetChildrenByVolunteerId(volunteerId);
 
-            DataRow row = tbl.NewRow();
-            row["ChildID"] = 0;
-            row["Child"] = "N/A";
-            tbl.Rows.InsertAt(row, 0); // insert this new row at the top
+            //DataRow row = tbl.NewRow();
+            //row["ChildID"] = 0;
+            //row["Child"] = "N/A";
+            //tbl.Rows.InsertAt(row, 0); // insert this new row at the top
 
             return tbl;
         }
