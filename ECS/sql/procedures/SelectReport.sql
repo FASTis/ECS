@@ -4,6 +4,8 @@
 	(to replace SelectReportByMonth; used by RunReports.aspx)
 
 	03-01-2017 - Ccarter - modified to add parameters
+
+	05-03-2017 - Ccarter - fixed bug (may not have checked in the update before)
 */
 
 Create Proc SelectReport
@@ -25,8 +27,7 @@ begin
 	join Task t on t.TaskID=vl.TaskID
 	join Center c on c.CenterID=vl.CenterID
 	join VolunteerType vt on vt.VolunteerTypeID=v.VolunteerTypeID
-	left join Family f on f.VolunteerID=v.VolunteerID
-	left join Child ch on ch.ChildID=f.ChildID
+	left join Child ch on vl.ChildID=ch.ChildID
 	where	(@MonthNum = 0 or (datepart(month, vl.DateTimeLogged)=@MonthNum))
 		and (@TaskID = 0 or t.TaskID=@TaskID)
 		and (@VolunteerTypeID = 0 or vt.VolunteerTypeID=@VolunteerTypeID)
