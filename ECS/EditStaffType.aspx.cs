@@ -80,7 +80,7 @@ namespace ECS
 
         private void DisplayPopup(string returnedMessage)
         {
-            string radalertscript = "<script language='javascript'>function f(){radalert('" + returnedMessage + "', 300, 100, 'ECS Volunteer App: Edit Staff Type'); Sys.Application.remove_load(f);}; Sys.Application.add_load(f);</script>";
+            string radalertscript = "<script language='javascript'>function f(){radalert('" + returnedMessage.Replace("'", "`") + "', 300, 100, 'ECS Volunteer App: Edit Staff Type'); Sys.Application.remove_load(f);}; Sys.Application.add_load(f);</script>";
             Page.ClientScript.RegisterStartupScript(this.GetType(), "radalert", radalertscript);
         }
 
