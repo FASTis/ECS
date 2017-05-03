@@ -75,7 +75,7 @@ namespace ECS
                     returnedMessage = _bll.AddCenter(center);
                     break;
                 case "D":
-                    returnedMessage = "The delete feature has not yet been implemented.";
+                    returnedMessage = String.Format("Please ask your system administrator to deactivate Center ID {0} - {1}.", _id, center.CenterName); 
                     btnCancel.Text = "Close Form";
                     break;
                 default:

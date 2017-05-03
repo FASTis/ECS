@@ -61,7 +61,7 @@ namespace ECS
                     returnedMessage = _bll.AddVolunteerType(sType);
                     break;
                 case "D":
-                    returnedMessage = "The delete feature has not yet been implemented.";
+                    returnedMessage = String.Format("Please ask your system administrator to deactivate volunteer ID {0} - {1}.", _id, sType); 
                     btnCancel.Text = "Close Form";
                     break;
                 default:
