@@ -6,7 +6,7 @@ create procedure AddChild (
 	, @relationship varchar(20) -- Relationship of child to volunteer.
 	)
 as
--- AddChild 2, 'Lisa','Carter','3/29/2014','Mother'
+-- AddChild 2, 'Lisa','Carter','3/29/2014','Child'
 -- GetChildrenByVolunteerID 2
 begin
 
