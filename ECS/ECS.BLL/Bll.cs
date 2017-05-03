@@ -321,16 +321,16 @@ namespace ECS.BLL
             Dal db = new Dal();
             return db.GetChildByChildID(id);
         }
-        public string AddChild(int volunteerID, string firstName, string lastName, DateTime dob, string relationship)
+        public string AddChild(int volunteerID, Child child)
         {
             Dal db = new Dal();
-            return db.AddChild(volunteerID, firstName, lastName, dob, relationship);
+            return db.AddChild(volunteerID, child);
         }
 
-        public string UpdateChild(string childId, string firstName, string lastName, DateTime dob)
+        public string UpdateChild(Child child)
         {
             Dal db = new Dal();
-            return db.UpdateChild(childId, firstName, lastName, dob);
+            return db.UpdateChild(child);
         }
 
         public string EditCenter(Center center)
