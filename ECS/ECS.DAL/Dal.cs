@@ -872,5 +872,64 @@ namespace ECS.DAL
             }
             return retVal;
         }
+
+        public string EditTask(Task task)
+        {
+            string retVal;
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Conn))
+                {
+                    using (SqlCommand command = new SqlCommand("EditTask", conn))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("id", task.TaskID);
+                        command.Parameters.AddWithValue("taskDescr", task.TaskDescr);
+                        command.Parameters.AddWithValue("pricePerMinute", task.PricePerMinute);
+                        command.Parameters.AddWithValue("restrictToTypes", task.RestrictToVolunteerTypes);
+
+                        conn.Open();
+                        command.ExecuteNonQuery();
+                    }
+                    conn.Close();
+                    retVal = "Successfully updated task.";
+                }
+            }
+
+            catch (Exception ex)
+            {
+                retVal = ex.Message;
+            }
+            return retVal;
+        }
+
+        public string AddTask(Task task)
+        {
+            string retVal;
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Conn))
+                {
+                    using (SqlCommand command = new SqlCommand("AddTask", conn))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("taskDescr", task.TaskDescr);
+                        command.Parameters.AddWithValue("pricePerMinute", task.PricePerMinute);
+                        command.Parameters.AddWithValue("restrictToTypes", task.RestrictToVolunteerTypes);
+
+                        conn.Open();
+                        command.ExecuteNonQuery();
+                    }
+                    conn.Close();
+                    retVal = "Successfully added task.";
+                }
+            }
+
+            catch (Exception ex)
+            {
+                retVal = ex.Message;
+            }
+            return retVal;
+        }
     }
 }
