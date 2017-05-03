@@ -2,7 +2,7 @@ Create Procedure AddCenter
 (
 	 @centerName varchar(25)
 	,@streetAddr varchar(25)
-	,@city varchar(4)
+	,@city varchar(50) -- increase length.
 	,@zip varchar(25)
 )
 
