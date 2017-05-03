@@ -10,7 +10,7 @@
 namespace ECS {
     
     
-    public partial class AddChildren {
+    public partial class ManageChildren {
         
         /// <summary>
         /// lblVolunteerName control.

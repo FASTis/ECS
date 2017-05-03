@@ -8,7 +8,7 @@ using ECS.BLL;
 
 namespace ECS
 {
-    public partial class AddChildren : System.Web.UI.Page
+    public partial class ManageChildren : System.Web.UI.Page
     {
         //Instantiate a new BLL object so that you can access its methods later...
         Bll _bll = new Bll();
@@ -33,7 +33,7 @@ namespace ECS
 
         private void LoadChildren()
         {
-            gvChildren.DataSource = _bll.GetChildren(Convert.ToInt32(_volId));
+            gvChildren.DataSource = _bll.GetChildrenWithoutNA(Convert.ToInt32(_volId));
             gvChildren.DataBind();
         }
         protected void gvChildren_Paging(object sender, GridViewPageEventArgs e)

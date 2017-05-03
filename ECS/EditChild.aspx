@@ -33,6 +33,18 @@
                     </div>
                 </div>
 
+                <div class="form-group" id="divRelationship" runat="server">
+                    <asp:Label ID="lblRelationship" runat="server" Text="Relationship:" CssClass="col-lg-2 control-label"></asp:Label>
+                    <div class="col-lg-10">
+                        <asp:DropDownList ID="ddRelationship" runat="server" CssClass="form-control">
+                            <asp:ListItem>Child</asp:ListItem>
+                            <asp:ListItem>Grandchild</asp:ListItem>
+                            <asp:ListItem>Niece</asp:ListItem>
+                            <asp:ListItem>Nephew</asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
+                </div>
+
                 <!-- submit/cancel button -->
                 <br />
                 <div class="form-group">

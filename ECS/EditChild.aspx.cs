@@ -32,6 +32,8 @@ namespace ECS
                     txtFirstName.Text = c.FirstName;
                     txtLastName.Text = c.LastName;
                     txtDOB.Text = c.DOB.ToShortDateString();
+                    ddRelationship.SelectedValue = c.Relationship.ToString();
+                    ddRelationship.Enabled = false;
                 }
             }
 
@@ -40,7 +42,14 @@ namespace ECS
         {
             _id = Request.QueryString["id"];
             _volId = Request.QueryString["volId"];
-            string relationship = "Child";
+            
+            Child child = new Child();
+            child.ChildID = Convert.ToInt32(_id);
+            child.FirstName = txtFirstName.Text;
+            child.LastName = txtLastName.Text;
+            child.DOB = Convert.ToDateTime(txtDOB.Text);
+            child.Relationship = ddRelationship.SelectedValue.ToString();
+
             string returnedMessage = "";
 
             if (String.IsNullOrEmpty(_volId))
@@ -50,15 +59,14 @@ namespace ECS
             if (DateTime.TryParse(txtDOB.Text, out dob))
             {
                 int volunteerId = Convert.ToInt32(_volId);
-                string firstName = txtFirstName.Text;
-                string lastName = txtLastName.Text;
+                
                 switch (_mode)
                 {
                     case "E":
-                        returnedMessage = _bll.UpdateChild(_id, firstName, lastName, dob);
+                        returnedMessage = _bll.UpdateChild(child);
                         break;
                     case "A":
-                        returnedMessage = _bll.AddChild(volunteerId, firstName, lastName, dob, relationship);
+                        returnedMessage = _bll.AddChild(volunteerId, child);
                         break;
                     default:
                         break;
