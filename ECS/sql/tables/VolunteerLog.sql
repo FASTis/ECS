@@ -16,12 +16,13 @@ Create Table VolunteerLog
 	,NumberMinutes integer
 	,DateTimeLogged datetime not null
 	,SignatureReceived bit
+	,CreatedDate datetime
 	,PRIMARY KEY (VolunteerLogID)
 );
 
-ALTER TABLE [dbo].[VolunteerLog] ADD  CONSTRAINT [DF_VolunteerLog_DateTimeLogged]  DEFAULT (getdate()) FOR [DateTimeLogged]
+ALTER TABLE [VolunteerLog] ADD  CONSTRAINT [DF_VolunteerLog_DateTimeLogged]  DEFAULT (getdate()) FOR [DateTimeLogged]
 GO
 
-ALTER TABLE [dbo].[VolunteerLog] ADD  CONSTRAINT [DF_VolunteerLog_CreatedDate]  DEFAULT (getdate()) FOR [CreatedDate]
+ALTER TABLE [VolunteerLog] ADD  CONSTRAINT [DF_VolunteerLog_CreatedDate]  DEFAULT (getdate()) FOR [CreatedDate]
 GO
 
