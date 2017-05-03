@@ -33,14 +33,22 @@ namespace ECS.BLL
             Dal db = new Dal();
             DataTable tbl = db.GetChildrenByVolunteerId(volunteerId);
 
-            //DataRow row = tbl.NewRow();
-            //row["ChildID"] = 0;
-            //row["Child"] = "N/A";
-            //tbl.Rows.InsertAt(row, 0); // insert this new row at the top
+            //Add the "N/A" row.
+            DataRow row = tbl.NewRow();
+            row["ChildID"] = 0;
+            row["Child"] = "N/A";
+            tbl.Rows.InsertAt(row, 0); // insert this new row at the top
 
             return tbl;
         }
 
+        public DataTable GetChildrenWithoutNA(int volunteerId)
+        {
+            Dal db = new Dal();
+            DataTable tbl = db.GetChildrenByVolunteerId(volunteerId);
+
+            return tbl;
+        }
 
         /// <summary>
         /// Cici Carter
