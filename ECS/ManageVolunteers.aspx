@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master"  AutoEventWireup="true" CodeBehind="ManageVolunteers.aspx.cs" Inherits="ECS.ManageVolunteers" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <legend>Manage Volunteers</legend>
+    
     <ul class="breadcrumb">
         <li><a href="Default.aspx">Home</a></li>
         <li class="active">Manage Volunteers</li>
