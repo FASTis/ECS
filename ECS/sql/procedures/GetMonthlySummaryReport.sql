@@ -35,3 +35,4 @@ begin
 	from @tbl
 	Group By CenterName
 end
+go

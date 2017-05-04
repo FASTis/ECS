@@ -22,7 +22,7 @@ begin
 		and 	Last4DigitsOfPhone=@last4Digits 
 		and		v.Active=1
 end
-
+go
 
 --updateuser 'Cici', 'Carter', '3909', 'ccarter','0825'
 --getpin 'ccarter','3909'

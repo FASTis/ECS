@@ -31,3 +31,5 @@ begin
 	values (@familyID, @childID, @volunteerID, @relationship)
 	SET IDENTITY_INSERT Family OFF
 end
+
+GO

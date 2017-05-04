@@ -33,3 +33,5 @@ begin
 		and (@VolunteerTypeID = 0 or vt.VolunteerTypeID=@VolunteerTypeID)
 		and (@CenterID = 0 or c.CenterID=@CenterID)
 end
+
+go

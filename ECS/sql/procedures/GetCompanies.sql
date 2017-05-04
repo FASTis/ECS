@@ -13,3 +13,4 @@ begin
 		SELECT	CompanyId, CompanyName, Active
 		FROM	Company
 end
+go

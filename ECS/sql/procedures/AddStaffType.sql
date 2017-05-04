@@ -16,3 +16,4 @@ begin
 		Insert	StaffType (StaffTypeDescr)
 		Values  (@StaffTypeDescr)
 end
+go

@@ -17,3 +17,4 @@ begin
 		FROM	Company
 		WHERE	CompanyId=@CompanyId
 end
+go

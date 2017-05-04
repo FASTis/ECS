@@ -28,3 +28,5 @@ BEGIN
 	on x.ID=y.ID
 
 END
+
+GO

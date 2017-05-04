@@ -19,3 +19,5 @@ begin
 		Set		StaffTypeDescr=@StaffTypeDescr
 		WHERE	StaffTypeId=@StaffTypeId
 end
+
+go

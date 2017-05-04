@@ -4,3 +4,4 @@ begin
 		Insert Company (CompanyName) 
 		values (@companyName)
 end
+GO

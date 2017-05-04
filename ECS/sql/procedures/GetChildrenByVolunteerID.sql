@@ -6,3 +6,4 @@ begin
     from Child c join Family f on c.ChildID=f.ChildID
     where f.VolunteerID=@volunteerId
 end
+go

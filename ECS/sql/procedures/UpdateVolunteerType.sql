@@ -9,3 +9,4 @@ Create Procedure UpdateVolunteerType
 	set VolunteerTypeDescr=@volunteerTypeDescr
 	where VolunteerTypeID=@volunteerTypeId
  end
+ go

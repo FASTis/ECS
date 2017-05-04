@@ -15,3 +15,5 @@ begin
 	join Center c on c.CenterID=vl.CenterID
 	where DATEPART(m, vl.DateTimeLogged) = @monthNum
 end
+
+go

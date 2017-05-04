@@ -23,3 +23,4 @@ begin
 		Values (@volunteerId, @childId, @taskId, @centerId, @totalMinutes, @logDate, 1) 
 
 end
+go

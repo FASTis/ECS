@@ -10,8 +10,8 @@ Description:    Stores center staff IDs.
 
 Create Table Staff
 (
-	 VolunteerID integer
-	,StaffTypeID integer
-	,Active bit
+	 VolunteerID integer not null
+	,StaffTypeID integer not null
+	,Active bit null constraint DF_STAFF_ACTIVE default (1)
 	,PRIMARY KEY (VolunteerID, StaffTypeID)
 );

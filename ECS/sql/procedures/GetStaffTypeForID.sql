@@ -21,3 +21,4 @@ begin
 		WHERE	StaffTypeId=@StaffTypeId
 		AND		Active=1
 end
+go
