@@ -28,9 +28,16 @@ namespace ECS
             txtLast4ofPhoneNumber.Text = Session["Last4OfPhone"].ToString();
             txtUserName.Text = Session["Username"].ToString();
             txtPIN.Text = Session["PIN"].ToString();
-            ddVolunteerType.SelectedIndex = Convert.ToInt32(Session["VolunteerTypeID"]);
+
+            //Select the appropriate session item in the dropdown list...
+            string t = Session["VolunteerType"].ToString();
+            ddVolunteerType.Items.FindByText(t).Selected = true;
+
             txtUserName.Enabled = false;
             ddVolunteerType.Enabled = false;
+
+            if (!t.Equals("Parent/Guardian"))
+                btnManageChildren.Visible = false;
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
