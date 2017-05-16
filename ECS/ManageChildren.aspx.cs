@@ -41,5 +41,10 @@ namespace ECS
             gvChildren.PageIndex = e.NewPageIndex;
             LoadChildren();
         }
+
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("EditChild.aspx?mode=A&volId=" + _volId);
+        }
     }
 }

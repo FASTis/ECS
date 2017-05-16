@@ -28,6 +28,12 @@ namespace ECS.BLL
             return db.InsertNewUser(firstName, lastName, volTypeId, compId, last4Digits, userId, pin);
         }
 
+        //Overloaded method for above.
+        public string InsertNewUser(User u)
+        {
+            return InsertNewUser(u.FirstName, u.LastName, u.VolunteerTypeID, u.CompanyID, u.Last4DigitsOfPhone, u.UserID, u.PIN);
+        }
+
         public DataTable GetChildren(int volunteerId)
         {
             Dal db = new Dal();
@@ -335,10 +341,10 @@ namespace ECS.BLL
             return db.GetCenterForID(id);
         }
 
-        public Child GetChildByChildID(string id)
+        public Child GetChildByChildID(string childId, string volId)
         {
             Dal db = new Dal();
-            return db.GetChildByChildID(id);
+            return db.GetChildByChildID(childId, volId);
         }
         public string AddChild(int volunteerID, Child child)
         {
@@ -374,6 +380,12 @@ namespace ECS.BLL
         {
             Dal db = new Dal();
             return db.AddTask(task);
+        }
+
+        public User GetUserInfoForVolunteer(int volunteerId)
+        {
+            Dal db = new Dal();
+            return db.GetUserInfoForVolunteer(volunteerId);
         }
     }
 }

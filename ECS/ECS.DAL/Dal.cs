@@ -73,24 +73,16 @@ namespace ECS.DAL
             {
                 using (SqlConnection conn = new SqlConnection(Conn))
                 {
-                    //TODO: Convert this to a stored procedure, then use CommandType.StoredProcedure.
-                    string sql1 = String.Format(@"Update {0} set FirstName='{1}', LastName='{2}', Last4DigitsOfPhone='{3}' where 
-                                                VolunteerID = (select VolunteerID from UserLogon where UserId='{4}')",
-                                                "Volunteer", firstName, lastName, last4Digits, userId, pin);
-                    using (SqlCommand command1 = new SqlCommand(sql1, conn))
+                    using (SqlCommand command = new SqlCommand("UpdateUser", conn))
                     {
-                        command1.CommandType = CommandType.Text;
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("firstName", firstName);
+                        command.Parameters.AddWithValue("lastName", lastName);
+                        command.Parameters.AddWithValue("last4Digits", last4Digits);
+                        command.Parameters.AddWithValue("userId", userId);
+                        command.Parameters.AddWithValue("pin", pin);
                         conn.Open();
-                        command1.ExecuteNonQuery();
-                    }
-
-                    string sql2 = String.Format(@"Update {0} set PIN='{1}' where 
-                                                VolunteerID = (select VolunteerID from UserLogon where UserId='{2}')",
-                                                "UserLogon", pin, userId);
-                    using (SqlCommand command2 = new SqlCommand(sql2, conn))
-                    {
-                        command2.CommandType = CommandType.Text;
-                        command2.ExecuteNonQuery();
+                        command.ExecuteNonQuery();
                     }
                     conn.Close();
                     retVal = String.Format("Successfully updated user {0}.", userId);
@@ -722,7 +714,7 @@ namespace ECS.DAL
       
         }
 
-        public Child GetChildByChildID(string id)
+        public Child GetChildByChildID(string childId, string volunteerId)
         {
             DataTable dtRetVal = new DataTable();
             Child c = new Child();
@@ -732,17 +724,19 @@ namespace ECS.DAL
                 using (SqlCommand command = new SqlCommand("GetChildByChildID", conn))
                 {
                     command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("childID", Convert.ToInt32(id));
+                    command.Parameters.AddWithValue("childID", Convert.ToInt32(childId));
+                    command.Parameters.AddWithValue("volId", Convert.ToInt32(volunteerId));
 
                     conn.Open();
                     dtRetVal.Load(command.ExecuteReader());
 
                     foreach (DataRow row in dtRetVal.Rows) // should only be one row.
                     {
-                        c.ChildID = Convert.ToInt32(id);
+                        c.ChildID = Convert.ToInt32(childId);
                         c.FirstName = row["FirstName"].ToString();
                         c.LastName = row["LastName"].ToString();
                         c.DOB = Convert.ToDateTime(row["DOB"]);
+                        c.Relationship = row["Relationship"].ToString();
                     }
 
                     conn.Close();
@@ -931,5 +925,45 @@ namespace ECS.DAL
             }
             return retVal;
         }
+        /// <summary>
+        /// This retrieves the user information and stores it in the user's session.
+        /// </summary>
+        /// <developer>
+        /// Cici Carter
+        /// </developer>
+        public User GetUserInfoForVolunteer(int volunteerId)
+        {
+            DataTable dtRetVal = new DataTable();
+            User u = new User();
+
+            using (SqlConnection conn = new SqlConnection(Conn))
+            {
+                using (SqlCommand command = new SqlCommand("GetUserByVolunteerId", conn))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("volunteerId", volunteerId);
+
+                    conn.Open();
+                    dtRetVal.Load(command.ExecuteReader());
+
+                    foreach (DataRow row in dtRetVal.Rows) // should only be one row.
+                    {
+                        u.VolunteerID = (int)row["VolunteerID"];
+                        u.FirstName = row["FirstName"].ToString();
+                        u.LastName = row["LastName"].ToString();
+                        u.VolunteerTypeDescr = row["VolunteerTypeDescr"].ToString();
+                        u.CompanyName = row["CompanyName"].ToString();
+                        u.Last4DigitsOfPhone = row["Last4DigitsOfPhone"].ToString();
+                        u.UserID = row["UserID"].ToString();
+                        u.PIN = row["PIN"].ToString();
+                        u.IsAdmin = Convert.ToBoolean(row["IsAdmin"]);
+                    }
+                    conn.Close();
+                }
+            }
+            return u;
+
+        }
+
     }
 }

@@ -8,7 +8,7 @@
     
     <legend>Manage Children for <asp:Label ID="lblVolunteerName" runat="server"></asp:Label></legend>
     <br />
-    <asp:Button ID="btnAdd" runat="server" CssClass="btn btn-primary" Text="Add New Child" OnClientClick="window.location.href='EditChild.aspx?mode=A';return false;"/>
+    <asp:Button ID="btnAdd" runat="server" CssClass="btn btn-primary" Text="Add New Child" OnClick="btnAdd_Click"/>
     <br />
     <br />
     <asp:GridView ID="gvChildren" runat="server" CssClass="table table-striped table-hover" 

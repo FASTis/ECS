@@ -28,7 +28,8 @@ namespace ECS
                 if (!IsPostBack) //Don't do this on postback -- don't do the below unless we're loading the form for the first time!!!
                 {
                     _id = Request.QueryString["id"];
-                    Child c = _bll.GetChildByChildID(_id);
+                    _volId = Request.QueryString["volId"];
+                    Child c = _bll.GetChildByChildID(_id, _volId);
                     txtFirstName.Text = c.FirstName;
                     txtLastName.Text = c.LastName;
                     txtDOB.Text = c.DOB.ToShortDateString();
@@ -51,9 +52,6 @@ namespace ECS
             child.Relationship = ddRelationship.SelectedValue.ToString();
 
             string returnedMessage = "";
-
-            if (String.IsNullOrEmpty(_volId))
-                _volId = Session["VolunteerID"].ToString();
 
             DateTime dob;
             if (DateTime.TryParse(txtDOB.Text, out dob))
@@ -90,7 +88,7 @@ namespace ECS
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Default.aspx");
+            Response.Redirect("ManageVolunteers.aspx");
         }
     }
 }
