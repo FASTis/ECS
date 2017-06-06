@@ -34,7 +34,8 @@ namespace ECS
             _mode = Request.QueryString["mode"];
             _id = "";
 
-            LoadVolunteerTypes();
+            if(!IsPostBack)
+                LoadVolunteerTypes();
 
             if (_mode != "A") //if mode is not "A" for "add", then get the id from the query string and populate the Volunteer type textbox.
             {
@@ -133,10 +134,11 @@ namespace ECS
             string last4 = txtLast4ofPhoneNumber.Text;
             string uname = txtUserName.Text;
             string pin = txtPIN.Text;
+            string volunteerType = ddVolunteerType.SelectedValue;
 
             if (!string.IsNullOrEmpty(fname) && !string.IsNullOrEmpty(lname) && !string.IsNullOrEmpty(last4) && !string.IsNullOrEmpty(uname))
             {
-                retVal = bll.UpdateUser(fname, lname, last4, uname, pin);
+                retVal = bll.UpdateUser(fname, lname, last4, uname, pin, volunteerType);
             }
             else
                 retVal = "Please complete all fields.";

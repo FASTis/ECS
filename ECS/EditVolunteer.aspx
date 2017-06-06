@@ -39,7 +39,7 @@
                     <div class="form-group">
                         <asp:Label ID="Label5" runat="server" Text="Volunteer Type" CssClass="col-lg-2 control-label"></asp:Label>
                         <div class="col-lg-10">
-                            <asp:DropDownList ID="ddVolunteerType" runat="server" CssClass="form-control" AutoPostBack="False">
+                            <asp:DropDownList ID="ddVolunteerType" runat="server" CssClass="form-control" AutoPostBack="false">
                                 <asp:ListItem></asp:ListItem>
                             </asp:DropDownList>
                         </div>
