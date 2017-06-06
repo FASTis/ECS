@@ -131,6 +131,20 @@ namespace ECS.BLL
         }
 
 
+        /// <summary>
+        /// Cici Carter
+        /// </summary>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <param name="last4Digits"></param>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public string UpdateUser(string firstName, string lastName, string last4Digits, string userId, string pin, string volunteerType)
+        {
+            Dal db = new Dal();
+            return db.UpdateUser(firstName, lastName, last4Digits, userId, pin, volunteerType);
+        }
+
         // ad
         public DataTable GetCenters()
         {
