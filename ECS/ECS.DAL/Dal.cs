@@ -96,6 +96,42 @@ namespace ECS.DAL
         }
 
         /// <summary>
+        /// This updates info for an existing user.
+        /// </summary>
+        /// <developer>
+        /// Cici Carter
+        /// </developer>
+        public string UpdateUser(string firstName, string lastName, string last4Digits, string userId, string pin, string volunteerType)
+        {
+            string retVal;
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Conn))
+                {
+                    using (SqlCommand command = new SqlCommand("UpdateUserWithVolunteerType", conn))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("firstName", firstName);
+                        command.Parameters.AddWithValue("lastName", lastName);
+                        command.Parameters.AddWithValue("last4Digits", last4Digits);
+                        command.Parameters.AddWithValue("userId", userId);
+                        command.Parameters.AddWithValue("pin", pin);
+                        command.Parameters.AddWithValue("volunteerType", volunteerType);
+                        conn.Open();
+                        command.ExecuteNonQuery();
+                    }
+                    conn.Close();
+                    retVal = String.Format("Successfully updated user {0}.", userId);
+                }
+            }
+            catch (Exception ex)
+            {
+                retVal = ex.Message;
+            }
+            return retVal;
+        }
+
+        /// <summary>
         /// This determines whether a user login is valid.
         /// </summary>
         /// <developer>
