@@ -39,39 +39,44 @@ namespace ECS
         }
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            _id = Request.QueryString["id"];
-            _volId = Request.QueryString["volId"];
-
-            Task task = new Task();
-            task.TaskID = Convert.ToInt32(_id);
-            task.TaskDescr = txtTaskDescription.Text;
-            task.PricePerMinute = Convert.ToDecimal(txtPricePerMinute.Text);
-            task.RestrictToVolunteerTypes = txtRestrictToTypes.Text;
-
-            string returnedMessage = "";
-
-            switch (_mode)
+            if (EntryIsValid())
             {
-                case "E":
-                    returnedMessage = _bll.EditTask(task);
-                    break;
-                case "A":
-                    returnedMessage = _bll.AddTask(task);
-                    break;
-                case "D":
-                    returnedMessage = String.Format("Please ask your system administrator to deactivate Task ID {0} - {1}.", _id, task.TaskDescr);
+                _id = Request.QueryString["id"];
+                _volId = Request.QueryString["volId"];
+
+                Task task = new Task();
+                task.TaskID = Convert.ToInt32(_id);
+                task.TaskDescr = txtTaskDescription.Text;
+                task.PricePerMinute = Convert.ToDecimal(txtPricePerMinute.Text);
+                task.RestrictToVolunteerTypes = txtRestrictToTypes.Text;
+
+                string returnedMessage = "";
+
+                switch (_mode)
+                {
+                    case "E":
+                        returnedMessage = _bll.EditTask(task);
+                        break;
+                    case "A":
+                        returnedMessage = _bll.AddTask(task);
+                        break;
+                    case "D":
+                        returnedMessage = String.Format("Please ask your system administrator to deactivate Task ID {0} - {1}.", _id, task.TaskDescr);
+                        btnCancel.Text = "Close Form";
+                        break;
+                    default:
+                        break;
+                }
+                //Return the value to the user.
+                DisplayPopup(returnedMessage);
+
+                if (returnedMessage.Contains("Success"))
+                {
                     btnCancel.Text = "Close Form";
-                    break;
-                default:
-                    break;
+                }
             }
-            //Return the value to the user.
-            DisplayPopup(returnedMessage);
-
-            if (returnedMessage.Contains("Success"))
-            {
-                btnCancel.Text = "Close Form";
-            }
+            else
+                DisplayPopup("Please enter a valid Price Per Minute.");
 
 
         }
@@ -85,6 +90,18 @@ namespace ECS
         protected void btnCancel_Click(object sender, EventArgs e)
         {
             Response.Redirect("ManageTasks.aspx");
+        }
+
+        public bool EntryIsValid() 
+        {
+            bool validEntry = false;
+            try
+            {
+                decimal i = Convert.ToDecimal(txtPricePerMinute.Text);
+                validEntry = true;
+            }
+            catch { }
+            return validEntry;
         }
     }
 }
