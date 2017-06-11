@@ -11,7 +11,7 @@
                 <div class="form-group">
                     <asp:Label ID="lblNewPass" runat="server" Text="New Password:" CssClass="col-lg-2 control-label"></asp:Label>
                     <div class="col-lg-10">
-                        <asp:TextBox ID="txtNewPass" runat="server" placeholder="" TextMode="Password" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="txtNewPass" runat="server" TextMode="Password" CssClass="form-control" AutoPostBack="True" OnTextChanged="txtNewPass_TextChanged" MaxLength="4"></asp:TextBox>
                     </div>
                 </div>
 
@@ -19,7 +19,7 @@
                 <div class="form-group">
                     <asp:Label ID="lblConPass" runat="server" Text="Confirm Password:" CssClass="col-lg-2 control-label"></asp:Label>
                     <div class="col-lg-10">
-                        <asp:TextBox ID="txtConPass" runat="server" placeholder="" TextMode="Password" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="txtConPass" runat="server" TextMode="Password" CssClass="form-control" AutoPostBack="True" OnTextChanged="txtConPass_TextChanged" MaxLength="4"></asp:TextBox>
                     </div>
                 </div>
 

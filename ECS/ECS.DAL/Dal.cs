@@ -675,6 +675,58 @@ namespace ECS.DAL
             }
         }
 
+        public string GetForgottenUser(string firstName, string lastName, string last4Digits)
+        {
+            string result = "";
+            using (SqlConnection conn = new SqlConnection(Conn))
+            {
+                using (SqlCommand command = new SqlCommand("GetForgottenUser", conn))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("FirstName", firstName);
+                    command.Parameters.AddWithValue("LastName", lastName);
+                    command.Parameters.AddWithValue("Last4Digits", last4Digits);
+                    conn.Open();
+                    var getValue = command.ExecuteScalar();
+                    if (getValue != null)
+                    {
+                        result = getValue.ToString();
+                    }
+                    conn.Close();
+                }
+            }
+            return result;
+        }
+
+        public bool UpdateUserPin(string userId, string pin)
+        {
+            DataTable dtRetVal = new DataTable();
+            int retVal = 0;
+            using (SqlConnection conn = new SqlConnection(Conn))
+            {
+                using (SqlCommand command = new SqlCommand("UpdateUserPin", conn))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("UserId", userId);
+                    command.Parameters.AddWithValue("Pin", pin);
+                    conn.Open();
+                    dtRetVal.Load(command.ExecuteReader());
+                    foreach (DataRow row in dtRetVal.Rows) // should only be one row.  
+                    {
+                        retVal = (int)row["ReturnValue"];
+                    }
+                    conn.Close();
+                }
+                if (retVal == 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+        }
         public object GetMonthlySummaryReport(int monthNumber)
         {
             DataTable dt = new DataTable();

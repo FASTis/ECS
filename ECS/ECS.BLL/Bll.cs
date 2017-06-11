@@ -66,6 +66,12 @@ namespace ECS.BLL
             return db.GetVolunteerTypes();
         }
 
+        public string GetForgottenUser(string firstName, string lastName, string last4Digit)
+        {
+            Dal db = new Dal();
+            return db.GetForgottenUser(firstName, lastName, last4Digit);
+        }
+
         /// <summary>
         /// Cici Carter
         /// </summary>
@@ -321,6 +327,12 @@ namespace ECS.BLL
         {
             Dal db = new Dal();
             return db.ValidateUserInfo(userId, phone);
+        }
+
+        public bool UpdateUserPin(string userId, string pin)
+        {
+            Dal db = new Dal();
+            return db.UpdateUserPin(userId, pin);
         }
 
         public object GetMonthlySummaryReport(int monthNumber)
